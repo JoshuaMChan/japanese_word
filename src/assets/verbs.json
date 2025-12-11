@@ -9,7 +9,9 @@
       "逢"
     ],
     "KANA_END": "う",
-    "ACCENT_TYPE": "ATA",
+    "ACCENT_TYPE": [
+      "ATA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -21,7 +23,9 @@
       "擧"
     ],
     "KANA_END": "がる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -31,7 +35,9 @@
       "諦"
     ],
     "KANA_END": "める",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -43,7 +49,9 @@
       "明"
     ],
     "KANA_END": "く",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -55,7 +63,9 @@
       "明"
     ],
     "KANA_END": "ける",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -67,7 +77,9 @@
       "擧"
     ],
     "KANA_END": "げる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -77,7 +89,9 @@
       "遊"
     ],
     "KANA_END": "ぶ",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -87,7 +101,9 @@
       "与"
     ],
     "KANA_END": "える",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -98,7 +114,9 @@
       "暖"
     ],
     "KANA_END": "まる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -109,7 +127,9 @@
       "暖"
     ],
     "KANA_END": "める",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -120,7 +140,9 @@
       "中"
     ],
     "KANA_END": "たる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -130,7 +152,9 @@
       "集"
     ],
     "KANA_END": "まる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -140,7 +164,9 @@
       "集"
     ],
     "KANA_END": "める",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -151,7 +177,9 @@
       "充"
     ],
     "KANA_END": "てる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -161,7 +189,9 @@
       "浴"
     ],
     "KANA_END": "びる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "KAMI_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -171,7 +201,9 @@
       "余"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -182,7 +214,9 @@
       "誤"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VIT"
   },
@@ -192,7 +226,9 @@
       "洗"
     ],
     "KANA_END": "う",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -203,7 +239,9 @@
       "革"
     ],
     "KANA_END": "める",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -216,7 +254,9 @@
       "著"
     ],
     "KANA_END": "す",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -228,7 +268,9 @@
       "顕"
     ],
     "KANA_END": "れる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -240,7 +282,9 @@
       "在"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "ATA",
+    "ACCENT_TYPE": [
+      "ATA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -250,7 +294,9 @@
       "歩"
     ],
     "KANA_END": "く",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -262,7 +308,21 @@
       "謂"
     ],
     "KANA_END": "う",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
+    "CONJ_CLASS": "GODAN",
+    "TRANSITIVITY": "VT"
+  },
+  {
+    "KANA_START": "ゆ",
+    "KANJI_START": [
+      "云"
+    ],
+    "KANA_END": "う",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -273,7 +333,9 @@
       "活"
     ],
     "KANA_END": "きる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "KAMI_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -285,7 +347,22 @@
       "往"
     ],
     "KANA_END": "く",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
+    "CONJ_CLASS": "GODAN",
+    "TRANSITIVITY": "VI"
+  },
+  {
+    "KANA_START": "ゆ",
+    "KANJI_START": [
+      "行",
+      "逝"
+    ],
+    "KANA_END": "く",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -295,7 +372,9 @@
       "苛"
     ],
     "KANA_END": "める",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -305,7 +384,9 @@
       "急"
     ],
     "KANA_END": "ぐ",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -314,8 +395,11 @@
     "KANJI_START": [
       "致"
     ],
-    "KANA_END": "すいたす",
-    "ACCENT_TYPE": "NAKA",
+    "KANA_END": "す",
+    "ACCENT_TYPE": [
+      "NAKA",
+      "HEI"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -325,7 +409,9 @@
       "頂"
     ],
     "KANA_END": "く",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -336,7 +422,9 @@
       "祷"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -346,7 +434,9 @@
       "居"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "KAMI_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -357,7 +447,9 @@
       "入"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -368,7 +460,9 @@
       "淹"
     ],
     "KANA_END": "れる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -378,7 +472,9 @@
       "植"
     ],
     "KANA_END": "える",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -388,7 +484,9 @@
       "伺"
     ],
     "KANA_END": "う",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -400,7 +498,9 @@
       "享"
     ],
     "KANA_END": "ける",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -410,7 +510,9 @@
       "動"
     ],
     "KANA_END": "かす",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -420,7 +522,9 @@
       "動"
     ],
     "KANA_END": "く",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -429,8 +533,10 @@
     "KANJI_START": [
       "失"
     ],
-    "KANA_END": "うしらう",
-    "ACCENT_TYPE": "NAKA",
+    "KANA_END": "う",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -444,7 +550,9 @@
       "詠"
     ],
     "KANA_END": "う",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -454,7 +562,9 @@
       "疑"
     ],
     "KANA_END": "う",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -466,7 +576,9 @@
       "討"
     ],
     "KANA_END": "つ",
-    "ACCENT_TYPE": "ATA",
+    "ACCENT_TYPE": [
+      "ATA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -479,7 +591,9 @@
       "写"
     ],
     "KANA_END": "す",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -492,8 +606,10 @@
       "写"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
-    "CONJ_CLASS": "OTHER",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
+    "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
   {
@@ -501,8 +617,11 @@
     "KANJI_START": [
       "頷"
     ],
-    "KANA_END": "くうなずく",
-    "ACCENT_TYPE": "NAKA",
+    "KANA_END": "く",
+    "ACCENT_TYPE": [
+      "NAKA",
+      "HEI"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -513,7 +632,9 @@
       "産"
     ],
     "KANA_END": "まれる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -523,7 +644,9 @@
       "売"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -533,7 +656,9 @@
       "売"
     ],
     "KANA_END": "れる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -544,7 +669,9 @@
       "画"
     ],
     "KANA_END": "く",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -554,7 +681,9 @@
       "選"
     ],
     "KANA_END": "ぶ",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -565,18 +694,21 @@
       "獲"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "ATA",
+    "ACCENT_TYPE": [
+      "ATA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
   {
-    "KANA_START": "お",
+    "KANA_START": "おい",
     "KANJI_START": [
-      "御",
-      "出"
+      "御出"
     ],
-    "KANA_END": "いでになる",
-    "ACCENT_TYPE": "NAKA",
+    "KANA_END": "でになる",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "KAMI_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -587,7 +719,9 @@
       "逐"
     ],
     "KANA_END": "う",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -596,8 +730,11 @@
     "KANJI_START": [
       "応"
     ],
-    "KANA_END": "じるおうじる",
-    "ACCENT_TYPE": "NAKA",
+    "KANA_END": "じる",
+    "ACCENT_TYPE": [
+      "NAKA",
+      "HEI"
+    ],
     "CONJ_CLASS": "KAMI_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -607,7 +744,9 @@
       "終"
     ],
     "KANA_END": "える",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -617,7 +756,9 @@
       "起"
     ],
     "KANA_END": "きる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "KAMI_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -629,7 +770,9 @@
       "擱"
     ],
     "KANA_END": "く",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -640,7 +783,9 @@
       "贈"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -651,7 +796,9 @@
       "後"
     ],
     "KANA_END": "れる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -662,7 +809,9 @@
       "興"
     ],
     "KANA_END": "こす",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -672,19 +821,23 @@
       "行"
     ],
     "KANA_END": "う",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
   {
-    "KANA_START": "お",
+    "KANA_START": "おこ",
     "KANJI_START": [
       "起",
       "興",
       "怒"
     ],
-    "KANA_END": "こる",
-    "ACCENT_TYPE": "NAKA",
+    "KANA_END": "る",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -697,7 +850,9 @@
       "懼"
     ],
     "KANA_END": "れる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -709,7 +864,9 @@
       "墜"
     ],
     "KANA_END": "ちる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "KAMI_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -719,7 +876,9 @@
       "仰"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -727,11 +886,12 @@
     "KANA_START": "お",
     "KANJI_START": [
       "落",
-      "墜",
-      "貶"
+      "墜"
     ],
     "KANA_END": "とす",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -742,9 +902,11 @@
       "躍"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
-    "TRANSITIVITY": "OTHER"
+    "TRANSITIVITY": "VI"
   },
   {
     "KANA_START": "おどろ",
@@ -752,7 +914,9 @@
       "驚"
     ],
     "KANA_END": "かす",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -762,7 +926,9 @@
       "驚"
     ],
     "KANA_END": "く",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -772,7 +938,9 @@
       "教"
     ],
     "KANA_END": "える",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -785,7 +953,9 @@
       "捺"
     ],
     "KANA_END": "す",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -795,7 +965,9 @@
       "覚"
     ],
     "KANA_END": "える",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -808,7 +980,9 @@
       "念"
     ],
     "KANA_END": "う",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -819,7 +993,9 @@
       "游"
     ],
     "KANA_END": "ぐ",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -830,7 +1006,9 @@
       "下"
     ],
     "KANA_END": "りる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "KAMI_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -840,7 +1018,9 @@
       "居"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "ATA",
+    "ACCENT_TYPE": [
+      "ATA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -850,7 +1030,9 @@
       "終"
     ],
     "KANA_END": "わる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VIT"
   },
@@ -860,7 +1042,9 @@
       "買"
     ],
     "KANA_END": "う",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -870,7 +1054,9 @@
       "飼"
     ],
     "KANA_END": "う",
-    "ACCENT_TYPE": "ATA",
+    "ACCENT_TYPE": [
+      "ATA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -883,7 +1069,9 @@
       "還"
     ],
     "KANA_END": "す",
-    "ACCENT_TYPE": "ATA",
+    "ACCENT_TYPE": [
+      "ATA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -896,7 +1084,9 @@
       "還"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "ATA",
+    "ACCENT_TYPE": [
+      "ATA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -909,7 +1099,9 @@
       "換"
     ],
     "KANA_END": "える",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -921,7 +1113,9 @@
       "架"
     ],
     "KANA_END": "かる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -932,8 +1126,11 @@
       "関",
       "拘"
     ],
-    "KANA_END": "わるかかわる",
-    "ACCENT_TYPE": "NAKA",
+    "KANA_END": "わる",
+    "ACCENT_TYPE": [
+      "NAKA",
+      "HEI"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -943,7 +1140,9 @@
       "限"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VIT"
   },
@@ -955,7 +1154,9 @@
       "掻"
     ],
     "KANA_END": "く",
-    "ACCENT_TYPE": "ATA",
+    "ACCENT_TYPE": [
+      "ATA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -965,7 +1166,9 @@
       "嗅"
     ],
     "KANA_END": "ぐ",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -976,7 +1179,9 @@
       "懸"
     ],
     "KANA_END": "ける",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -986,7 +1191,9 @@
       "欠"
     ],
     "KANA_END": "ける",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -996,7 +1203,9 @@
       "囲"
     ],
     "KANA_END": "む",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -1006,7 +1215,9 @@
       "重"
     ],
     "KANA_END": "なる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -1016,7 +1227,9 @@
       "重"
     ],
     "KANA_END": "ねる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -1026,7 +1239,9 @@
       "飾"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -1036,7 +1251,9 @@
       "貸"
     ],
     "KANA_END": "す",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -1046,7 +1263,9 @@
       "数"
     ],
     "KANA_END": "える",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -1056,7 +1275,9 @@
       "勝"
     ],
     "KANA_END": "つ",
-    "ACCENT_TYPE": "ATA",
+    "ACCENT_TYPE": [
+      "ATA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -1067,7 +1288,9 @@
       "哀"
     ],
     "KANA_END": "しむ",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -1078,7 +1301,9 @@
       "冠"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -1088,7 +1313,9 @@
       "構"
     ],
     "KANA_END": "う",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VIT"
   },
@@ -1100,7 +1327,9 @@
       "嚼"
     ],
     "KANA_END": "む",
-    "ACCENT_TYPE": "ATA",
+    "ACCENT_TYPE": [
+      "ATA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -1110,7 +1339,9 @@
       "通"
     ],
     "KANA_END": "う",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -1120,7 +1351,9 @@
       "借"
     ],
     "KANA_END": "りる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "KAMI_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -1131,7 +1364,9 @@
       "渇"
     ],
     "KANA_END": "く",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -1144,7 +1379,9 @@
       "換"
     ],
     "KANA_END": "わる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -1154,7 +1391,9 @@
       "考"
     ],
     "KANA_END": "える",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -1164,7 +1403,9 @@
       "感"
     ],
     "KANA_END": "じる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "KAMI_ICHIDAN",
     "TRANSITIVITY": "VIT"
   },
@@ -1174,7 +1415,9 @@
       "消"
     ],
     "KANA_END": "える",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -1185,7 +1428,9 @@
       "聴"
     ],
     "KANA_END": "く",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -1196,7 +1441,9 @@
       "利"
     ],
     "KANA_END": "く",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -1207,7 +1454,9 @@
       "聴"
     ],
     "KANA_END": "こえる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -1218,7 +1467,9 @@
       "極"
     ],
     "KANA_END": "まる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -1229,7 +1480,9 @@
       "極"
     ],
     "KANA_END": "める",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -1239,7 +1492,9 @@
       "嫌"
     ],
     "KANA_END": "う",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -1250,7 +1505,9 @@
       "著"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "KAMI_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -1264,7 +1521,9 @@
       "截"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "ATA",
+    "ACCENT_TYPE": [
+      "ATA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -1274,7 +1533,9 @@
       "切"
     ],
     "KANA_END": "れる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -1285,7 +1546,9 @@
       "喰"
     ],
     "KANA_END": "う",
-    "ACCENT_TYPE": "ATA",
+    "ACCENT_TYPE": [
+      "ATA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -1295,7 +1558,9 @@
       "配"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -1305,7 +1570,9 @@
       "下"
     ],
     "KANA_END": "さる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -1315,7 +1582,9 @@
       "組"
     ],
     "KANA_END": "む",
-    "ACCENT_TYPE": "ATA",
+    "ACCENT_TYPE": [
+      "ATA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VIT"
   },
@@ -1325,7 +1594,9 @@
       "曇"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -1337,7 +1608,9 @@
       "競"
     ],
     "KANA_END": "べる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -1347,8 +1620,10 @@
       "来"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "ATA",
-    "CONJ_CLASS": "OTHER",
+    "ACCENT_TYPE": [
+      "ATA"
+    ],
+    "CONJ_CLASS": "KAHEN",
     "TRANSITIVITY": "VI"
   },
   {
@@ -1357,7 +1632,9 @@
       "苦"
     ],
     "KANA_END": "しむ",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -1366,8 +1643,11 @@
     "KANJI_START": [
       "加"
     ],
-    "KANA_END": "えるくわえる",
-    "ACCENT_TYPE": "NAKA",
+    "KANA_END": "える",
+    "ACCENT_TYPE": [
+      "NAKA",
+      "HEI"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -1376,8 +1656,11 @@
     "KANJI_START": [
       "加"
     ],
-    "KANA_END": "わるくわわる",
-    "ACCENT_TYPE": "NAKA",
+    "KANA_END": "わる",
+    "ACCENT_TYPE": [
+      "NAKA",
+      "HEI"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -1387,7 +1670,9 @@
       "呉"
     ],
     "KANA_END": "れる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -1397,7 +1682,9 @@
       "暮"
     ],
     "KANA_END": "れる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -1407,7 +1694,9 @@
       "消"
     ],
     "KANA_END": "す",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -1418,7 +1707,9 @@
       "越"
     ],
     "KANA_END": "える",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -1429,7 +1720,9 @@
       "越"
     ],
     "KANA_END": "す",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -1440,7 +1733,9 @@
       "応"
     ],
     "KANA_END": "える",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VIT"
   },
@@ -1450,7 +1745,9 @@
       "断"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -1460,7 +1757,9 @@
       "困"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -1471,7 +1770,9 @@
       "混"
     ],
     "KANA_END": "む",
-    "ACCENT_TYPE": "ATA",
+    "ACCENT_TYPE": [
+      "ATA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -1481,7 +1782,9 @@
       "転"
     ],
     "KANA_END": "ぶ",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -1492,7 +1795,9 @@
       "毀"
     ],
     "KANA_END": "す",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -1503,7 +1808,9 @@
       "毀"
     ],
     "KANA_END": "れる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -1514,7 +1821,9 @@
       "捜"
     ],
     "KANA_END": "す",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -1524,7 +1833,9 @@
       "下"
     ],
     "KANA_END": "がる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -1534,7 +1845,9 @@
       "咲"
     ],
     "KANA_END": "く",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -1544,7 +1857,9 @@
       "避"
     ],
     "KANA_END": "ける",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -1553,8 +1868,10 @@
     "KANJI_START": [
       "叫"
     ],
-    "KANA_END": "さげぶ",
-    "ACCENT_TYPE": "NAKA",
+    "KANA_END": "ぶ",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -1564,7 +1881,9 @@
       "下"
     ],
     "KANA_END": "げる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -1573,8 +1892,11 @@
     "KANJI_START": [
       "支"
     ],
-    "KANA_END": "えるささえる",
-    "ACCENT_TYPE": "NAKA",
+    "KANA_END": "える",
+    "ACCENT_TYPE": [
+      "NAKA",
+      "HEI"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -1586,7 +1908,9 @@
       "指"
     ],
     "KANA_END": "す",
-    "ACCENT_TYPE": "ATA",
+    "ACCENT_TYPE": [
+      "ATA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -1598,7 +1922,9 @@
       "醒"
     ],
     "KANA_END": "ます",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -1610,7 +1936,9 @@
       "醒"
     ],
     "KANA_END": "める",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -1620,7 +1948,9 @@
       "去"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "ATA",
+    "ACCENT_TYPE": [
+      "ATA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -1630,7 +1960,9 @@
       "騒"
     ],
     "KANA_END": "ぐ",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -1640,7 +1972,9 @@
       "触"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VIT"
   },
@@ -1651,7 +1985,9 @@
       "呵"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -1662,8 +1998,11 @@
       "随",
       "順"
     ],
-    "KANA_END": "うしたがう",
-    "ACCENT_TYPE": "NAKA",
+    "KANA_END": "う",
+    "ACCENT_TYPE": [
+      "NAKA",
+      "HEI"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -1673,7 +2012,9 @@
       "死"
     ],
     "KANA_END": "ぬ",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -1683,7 +2024,9 @@
       "縛"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -1693,7 +2036,9 @@
       "閉"
     ],
     "KANA_END": "まる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -1702,8 +2047,11 @@
     "KANJI_START": [
       "示"
     ],
-    "KANA_END": "すしめす",
-    "ACCENT_TYPE": "NAKA",
+    "KANA_END": "す",
+    "ACCENT_TYPE": [
+      "NAKA",
+      "HEI"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -1716,7 +2064,9 @@
       "絞"
     ],
     "KANA_END": "める",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -1726,7 +2076,9 @@
       "湿"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -1736,7 +2088,9 @@
       "喋"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -1746,7 +2100,9 @@
       "調"
     ],
     "KANA_END": "べる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -1756,7 +2112,9 @@
       "知"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -1765,8 +2123,11 @@
     "KANJI_START": [
       "信"
     ],
-    "KANA_END": "じるしんじる",
-    "ACCENT_TYPE": "NAKA",
+    "KANA_END": "じる",
+    "ACCENT_TYPE": [
+      "NAKA",
+      "HEI"
+    ],
     "CONJ_CLASS": "KAMI_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -1776,7 +2137,9 @@
       "吸"
     ],
     "KANA_END": "う",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -1786,7 +2149,9 @@
       "過"
     ],
     "KANA_END": "ぎる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "KAMI_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -1797,7 +2162,9 @@
       "済"
     ],
     "KANA_END": "う",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -1808,7 +2175,9 @@
       "勝"
     ],
     "KANA_END": "れる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -1818,7 +2187,9 @@
       "過"
     ],
     "KANA_END": "ごす",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -1828,7 +2199,9 @@
       "進"
     ],
     "KANA_END": "む",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -1841,7 +2214,9 @@
       "奨"
     ],
     "KANA_END": "める",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -1851,7 +2226,9 @@
       "涼"
     ],
     "KANA_END": "む",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -1862,7 +2239,9 @@
       "棄"
     ],
     "KANA_END": "てる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -1873,7 +2252,9 @@
       "辷"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "KAMI_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -1883,9 +2264,11 @@
       "済"
     ],
     "KANA_END": "ます",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
-    "TRANSITIVITY": "OTHER"
+    "TRANSITIVITY": "VT"
   },
   {
     "KANA_START": "す",
@@ -1896,7 +2279,9 @@
       "済"
     ],
     "KANA_END": "む",
-    "ACCENT_TYPE": "ATA",
+    "ACCENT_TYPE": [
+      "ATA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -1906,8 +2291,10 @@
       "為"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
-    "CONJ_CLASS": "OTHER",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
+    "CONJ_CLASS": "SAHEN",
     "TRANSITIVITY": "VT"
   },
   {
@@ -1918,7 +2305,9 @@
       "据"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -1929,7 +2318,9 @@
       "逼"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -1940,8 +2331,11 @@
       "添",
       "副"
     ],
-    "KANA_END": "うそう",
-    "ACCENT_TYPE": "NAKA",
+    "KANA_END": "う",
+    "ACCENT_TYPE": [
+      "ATA",
+      "HEI"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -1951,7 +2345,9 @@
       "育"
     ],
     "KANA_END": "つ",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -1961,7 +2357,9 @@
       "育"
     ],
     "KANA_END": "てる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "KAMI_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -1970,8 +2368,10 @@
     "KANJI_START": [
       "倒"
     ],
-    "KANA_END": "れす",
-    "ACCENT_TYPE": "NAKA",
+    "KANA_END": "す",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -1981,7 +2381,9 @@
       "倒"
     ],
     "KANA_END": "れる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -1991,7 +2393,9 @@
       "高"
     ],
     "KANA_END": "める",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -2002,7 +2406,9 @@
       "慥"
     ],
     "KANA_END": "かめる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -2012,7 +2418,9 @@
       "足"
     ],
     "KANA_END": "す",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -2022,7 +2430,9 @@
       "助"
     ],
     "KANA_END": "かる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -2032,7 +2442,9 @@
       "助"
     ],
     "KANA_END": "ける",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "KAMI_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -2043,7 +2455,9 @@
       "尋"
     ],
     "KANA_END": "れる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -2053,7 +2467,9 @@
       "畳"
     ],
     "KANA_END": "む",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -2066,7 +2482,9 @@
       "発"
     ],
     "KANA_END": "つ",
-    "ACCENT_TYPE": "ATA",
+    "ACCENT_TYPE": [
+      "ATA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -2077,7 +2495,9 @@
       "建"
     ],
     "KANA_END": "てる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -2087,7 +2507,9 @@
       "楽"
     ],
     "KANA_END": "しむ",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VIT"
   },
@@ -2098,7 +2520,9 @@
       "恃"
     ],
     "KANA_END": "む",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -2108,7 +2532,9 @@
       "食"
     ],
     "KANA_END": "べる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -2118,7 +2544,9 @@
       "溜"
     ],
     "KANA_END": "まる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -2128,7 +2556,9 @@
       "試"
     ],
     "KANA_END": "す",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -2138,7 +2568,9 @@
       "溜"
     ],
     "KANA_END": "める",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -2148,7 +2580,9 @@
       "保"
     ],
     "KANA_END": "つ",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -2159,7 +2593,9 @@
       "便"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -2169,7 +2605,9 @@
       "足"
     ],
     "KANA_END": "りる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "KAMI_ICHIDAN",
     "TRANSITIVITY": "VIT"
   },
@@ -2179,7 +2617,9 @@
       "足"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -2189,7 +2629,9 @@
       "出"
     ],
     "KANA_END": "す",
-    "ACCENT_TYPE": "ATA",
+    "ACCENT_TYPE": [
+      "ATA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -2199,7 +2641,9 @@
       "騙"
     ],
     "KANA_END": "す",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -2209,7 +2653,9 @@
       "黙"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -2219,7 +2665,9 @@
       "違"
     ],
     "KANA_END": "う",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -2229,7 +2677,9 @@
       "散"
     ],
     "KANA_END": "らかす",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -2239,7 +2689,9 @@
       "散"
     ],
     "KANA_END": "らかる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -2249,7 +2701,9 @@
       "散"
     ],
     "KANA_END": "らす",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -2259,7 +2713,9 @@
       "散"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -2269,7 +2725,9 @@
       "通"
     ],
     "KANA_END": "じる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "KAMI_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -2280,7 +2738,9 @@
       "遣"
     ],
     "KANA_END": "う",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -2292,7 +2752,9 @@
       "掴"
     ],
     "KANA_END": "まえる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -2304,7 +2766,9 @@
       "掴"
     ],
     "KANA_END": "まる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -2314,7 +2778,9 @@
       "掴"
     ],
     "KANA_END": "む",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -2324,7 +2790,9 @@
       "疲"
     ],
     "KANA_END": "れる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -2337,8 +2805,11 @@
       "就",
       "即"
     ],
-    "KANA_END": "くつく",
-    "ACCENT_TYPE": "NAKA",
+    "KANA_END": "く",
+    "ACCENT_TYPE": [
+      "ATA",
+      "HEI"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -2349,7 +2820,9 @@
       "造"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -2360,7 +2833,9 @@
       "亞"
     ],
     "KANA_END": "ぐ",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -2370,7 +2845,9 @@
       "注"
     ],
     "KANA_END": "ぐ",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -2385,7 +2862,9 @@
       "点"
     ],
     "KANA_END": "ける",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -2396,7 +2875,9 @@
       "浸"
     ],
     "KANA_END": "ける",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -2405,8 +2886,11 @@
     "KANJI_START": [
       "伝"
     ],
-    "KANA_END": "えるつたえる",
-    "ACCENT_TYPE": "NAKA",
+    "KANA_END": "える",
+    "ACCENT_TYPE": [
+      "NAKA",
+      "HEI"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -2416,7 +2900,9 @@
       "包"
     ],
     "KANA_END": "む",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -2426,7 +2912,9 @@
       "続"
     ],
     "KANA_END": "く",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -2436,7 +2924,9 @@
       "続"
     ],
     "KANA_END": "ける",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -2450,7 +2940,9 @@
       "勉"
     ],
     "KANA_END": "める",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -2460,7 +2952,9 @@
       "釣"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -2470,17 +2964,21 @@
       "連"
     ],
     "KANA_END": "れる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
   {
-    "KANA_START": "て",
+    "KANA_START": "てつだ",
     "KANJI_START": [
-      "手"
+      "手伝"
     ],
-    "KANA_END": "つだう",
-    "ACCENT_TYPE": "NAKA",
+    "KANA_END": "う",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -2489,8 +2987,11 @@
     "KANJI_START": [
       "照"
     ],
-    "KANA_END": "らすてらす",
-    "ACCENT_TYPE": "NAKA",
+    "KANA_END": "らす",
+    "ACCENT_TYPE": [
+      "NAKA",
+      "HEI"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -2500,7 +3001,9 @@
       "照"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "ATA",
+    "ACCENT_TYPE": [
+      "ATA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -2510,7 +3013,9 @@
       "出"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "ATA",
+    "ACCENT_TYPE": [
+      "ATA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -2520,8 +3025,11 @@
       "問",
       "訪"
     ],
-    "KANA_END": "うとう",
-    "ACCENT_TYPE": "NAKA",
+    "KANA_END": "う",
+    "ACCENT_TYPE": [
+      "ATA",
+      "HEI"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -2532,7 +3040,9 @@
       "徹"
     ],
     "KANA_END": "す",
-    "ACCENT_TYPE": "ATA",
+    "ACCENT_TYPE": [
+      "ATA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -2543,7 +3053,9 @@
       "徹"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "ATA",
+    "ACCENT_TYPE": [
+      "ATA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -2553,7 +3065,9 @@
       "溶"
     ],
     "KANA_END": "かす",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -2565,7 +3079,9 @@
       "解"
     ],
     "KANA_END": "く",
-    "ACCENT_TYPE": "ATA",
+    "ACCENT_TYPE": [
+      "ATA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -2576,7 +3092,9 @@
       "解"
     ],
     "KANA_END": "ける",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -2586,7 +3104,9 @@
       "届"
     ],
     "KANA_END": "く",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -2596,7 +3116,9 @@
       "届"
     ],
     "KANA_END": "ける",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -2606,7 +3128,9 @@
       "閉"
     ],
     "KANA_END": "じる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "KAMI_ICHIDAN",
     "TRANSITIVITY": "VIT"
   },
@@ -2618,7 +3142,9 @@
       "停"
     ],
     "KANA_END": "まる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -2628,7 +3154,9 @@
       "飛"
     ],
     "KANA_END": "ばす",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -2639,7 +3167,9 @@
       "跳"
     ],
     "KANA_END": "ぶ",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -2652,7 +3182,9 @@
       "泊"
     ],
     "KANA_END": "まる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -2665,7 +3197,9 @@
       "泊"
     ],
     "KANA_END": "める",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -2675,7 +3209,9 @@
       "伴"
     ],
     "KANA_END": "う",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -2690,7 +3226,9 @@
       "盗"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "ATA",
+    "ACCENT_TYPE": [
+      "ATA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -2701,7 +3239,9 @@
       "捕"
     ],
     "KANA_END": "れる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -2712,7 +3252,9 @@
       "治"
     ],
     "KANA_END": "す",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -2723,7 +3265,9 @@
       "治"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -2734,7 +3278,9 @@
       "鳴"
     ],
     "KANA_END": "く",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -2745,7 +3291,9 @@
       "亡"
     ],
     "KANA_END": "くす",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -2755,7 +3303,9 @@
       "流"
     ],
     "KANA_END": "す",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -2765,7 +3315,9 @@
       "眺"
     ],
     "KANA_END": "める",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -2775,7 +3327,9 @@
       "流"
     ],
     "KANA_END": "れる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -2784,8 +3338,10 @@
     "KANJI_START": [
       "殴"
     ],
-    "KANA_END": "ながれる",
-    "ACCENT_TYPE": "NAKA",
+    "KANA_END": "る",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -2795,7 +3351,9 @@
       "投"
     ],
     "KANA_END": "げる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -2805,7 +3363,9 @@
       "為"
     ],
     "KANA_END": "さる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -2815,7 +3375,9 @@
       "習"
     ],
     "KANA_END": "う",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -2825,7 +3387,9 @@
       "鳴"
     ],
     "KANA_END": "らす",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -2835,7 +3399,9 @@
       "並"
     ],
     "KANA_END": "ぶ",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -2845,7 +3411,9 @@
       "並"
     ],
     "KANA_END": "べる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -2855,7 +3423,9 @@
       "鳴"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -2867,7 +3437,9 @@
       "生"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "ATA",
+    "ACCENT_TYPE": [
+      "ATA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -2879,7 +3451,9 @@
       "狎"
     ],
     "KANA_END": "れる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -2889,7 +3463,9 @@
       "逃"
     ],
     "KANA_END": "がす",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -2899,7 +3475,9 @@
       "握"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -2909,7 +3487,9 @@
       "逃"
     ],
     "KANA_END": "げる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -2919,7 +3499,9 @@
       "似"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "KAMI_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -2929,7 +3511,9 @@
       "縫"
     ],
     "KANA_END": "う",
-    "ACCENT_TYPE": "ATA",
+    "ACCENT_TYPE": [
+      "ATA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -2939,7 +3523,9 @@
       "脱"
     ],
     "KANA_END": "ぐ",
-    "ACCENT_TYPE": "ATA",
+    "ACCENT_TYPE": [
+      "ATA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -2949,7 +3535,9 @@
       "盗"
     ],
     "KANA_END": "む",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -2959,7 +3547,9 @@
       "濡"
     ],
     "KANA_END": "らす",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -2969,7 +3559,9 @@
       "塗"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -2979,7 +3571,9 @@
       "濡"
     ],
     "KANA_END": "れる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -2988,8 +3582,10 @@
     "KANJI_START": [
       "願"
     ],
-    "KANA_END": "ぬがう",
-    "ACCENT_TYPE": "NAKA",
+    "KANA_END": "う",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -3000,7 +3596,9 @@
       "睡"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -3010,7 +3608,9 @@
       "寝"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -3020,7 +3620,9 @@
       "残"
     ],
     "KANA_END": "す",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -3030,7 +3632,9 @@
       "残"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -3041,7 +3645,9 @@
       "載"
     ],
     "KANA_END": "せる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -3051,7 +3657,9 @@
       "除"
     ],
     "KANA_END": "く",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -3063,7 +3671,9 @@
       "臨"
     ],
     "KANA_END": "く",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VIT"
   },
@@ -3073,7 +3683,9 @@
       "望"
     ],
     "KANA_END": "む",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -3084,7 +3696,9 @@
       "延"
     ],
     "KANA_END": "ばす",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -3095,7 +3709,9 @@
       "延"
     ],
     "KANA_END": "びる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "KAMI_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -3106,7 +3722,9 @@
       "陳"
     ],
     "KANA_END": "べる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -3118,7 +3736,9 @@
       "昇"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -3129,7 +3749,9 @@
       "呑"
     ],
     "KANA_END": "む",
-    "ACCENT_TYPE": "ATA",
+    "ACCENT_TYPE": [
+      "ATA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -3140,7 +3762,9 @@
       "載"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -3150,7 +3774,9 @@
       "入"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "ATA",
+    "ACCENT_TYPE": [
+      "ATA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -3165,7 +3791,9 @@
       "諮"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -3177,7 +3805,9 @@
       "佩"
     ],
     "KANA_END": "く",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -3187,7 +3817,9 @@
       "運"
     ],
     "KANA_END": "ぶ",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -3198,7 +3830,9 @@
       "奔"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -3208,7 +3842,9 @@
       "始"
     ],
     "KANA_END": "まる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -3218,7 +3854,9 @@
       "始"
     ],
     "KANA_END": "める",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -3228,7 +3866,9 @@
       "働"
     ],
     "KANA_END": "く",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -3240,7 +3880,9 @@
       "放"
     ],
     "KANA_END": "す",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -3251,7 +3893,9 @@
       "放"
     ],
     "KANA_END": "れる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -3261,7 +3905,9 @@
       "流行"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -3271,7 +3917,9 @@
       "払"
     ],
     "KANA_END": "う",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -3281,7 +3929,9 @@
       "貼"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -3291,7 +3941,9 @@
       "張"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VIT"
   },
@@ -3301,7 +3953,9 @@
       "晴"
     ],
     "KANA_END": "れる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -3311,7 +3965,9 @@
       "冷"
     ],
     "KANA_END": "える",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -3321,7 +3977,9 @@
       "光"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -3332,7 +3990,9 @@
       "退"
     ],
     "KANA_END": "く",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VIT"
   },
@@ -3345,7 +4005,9 @@
       "碾"
     ],
     "KANA_END": "く",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -3355,7 +4017,9 @@
       "響"
     ],
     "KANA_END": "く",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -3365,7 +4029,9 @@
       "開"
     ],
     "KANA_END": "く",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VIT"
   },
@@ -3375,7 +4041,9 @@
       "拾"
     ],
     "KANA_END": "う",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -3386,7 +4054,10 @@
       "拡"
     ],
     "KANA_END": "がる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA",
+      "HEI"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -3397,7 +4068,9 @@
       "拡"
     ],
     "KANA_END": "げる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -3407,8 +4080,10 @@
       "広",
       "弘"
     ],
-    "KANA_END": "まるひろまる",
-    "ACCENT_TYPE": "NAKA",
+    "KANA_END": "まる",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -3419,7 +4094,9 @@
       "弘"
     ],
     "KANA_END": "める",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -3430,7 +4107,9 @@
       "殖"
     ],
     "KANA_END": "える",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -3440,7 +4119,9 @@
       "深"
     ],
     "KANA_END": "める",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -3450,8 +4131,11 @@
       "吹",
       "噴"
     ],
-    "KANA_END": "くふく",
-    "ACCENT_TYPE": "NAKA",
+    "KANA_END": "く",
+    "ACCENT_TYPE": [
+      "ATA",
+      "HEI"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VIT"
   },
@@ -3461,7 +4145,9 @@
       "拭"
     ],
     "KANA_END": "く",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -3471,7 +4157,9 @@
       "含"
     ],
     "KANA_END": "む",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -3481,7 +4169,9 @@
       "含"
     ],
     "KANA_END": "める",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -3491,7 +4181,9 @@
       "防"
     ],
     "KANA_END": "ぐ",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -3502,7 +4194,9 @@
       "肥"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -3514,7 +4208,9 @@
       "履"
     ],
     "KANA_END": "む",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -3525,7 +4221,9 @@
       "殖"
     ],
     "KANA_END": "やす",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -3535,7 +4233,9 @@
       "降"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "ATA",
+    "ACCENT_TYPE": [
+      "ATA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -3546,7 +4246,9 @@
       "震"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "ATA",
+    "ACCENT_TYPE": [
+      "ATA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -3558,7 +4260,9 @@
       "撲"
     ],
     "KANA_END": "つ",
-    "ACCENT_TYPE": "ATA",
+    "ACCENT_TYPE": [
+      "ATA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -3568,7 +4272,9 @@
       "打"
     ],
     "KANA_END": "つかる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -3578,7 +4284,9 @@
       "打"
     ],
     "KANA_END": "つける",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -3588,7 +4296,9 @@
       "減"
     ],
     "KANA_END": "らす",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -3598,7 +4308,9 @@
       "減"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -3609,7 +4321,9 @@
       "歴"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "ATA",
+    "ACCENT_TYPE": [
+      "ATA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -3620,7 +4334,9 @@
       "頬笑"
     ],
     "KANA_END": "えむ",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -3631,7 +4347,9 @@
       "誉"
     ],
     "KANA_END": "める",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -3641,7 +4359,9 @@
       "参"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "ATA",
+    "ACCENT_TYPE": [
+      "ATA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -3651,7 +4371,9 @@
       "曲"
     ],
     "KANA_END": "がる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -3662,7 +4384,9 @@
       "捲"
     ],
     "KANA_END": "く",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -3672,7 +4396,9 @@
       "負"
     ],
     "KANA_END": "ける",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -3683,7 +4409,9 @@
       "枉"
     ],
     "KANA_END": "げる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -3694,7 +4422,9 @@
       "益"
     ],
     "KANA_END": "す",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VIT"
   },
@@ -3705,7 +4435,9 @@
       "俟"
     ],
     "KANA_END": "つ",
-    "ACCENT_TYPE": "ATA",
+    "ACCENT_TYPE": [
+      "ATA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -3715,7 +4447,9 @@
       "纏"
     ],
     "KANA_END": "まる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -3725,7 +4459,9 @@
       "纏"
     ],
     "KANA_END": "める",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -3735,7 +4471,9 @@
       "学"
     ],
     "KANA_END": "ぶ",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -3745,7 +4483,9 @@
       "招"
     ],
     "KANA_END": "く",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -3755,7 +4495,9 @@
       "真似"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -3766,7 +4508,9 @@
       "護"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -3776,7 +4520,9 @@
       "迷"
     ],
     "KANA_END": "う",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -3788,7 +4534,9 @@
       "周"
     ],
     "KANA_END": "す",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -3800,7 +4548,9 @@
       "周"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -3810,7 +4560,9 @@
       "見"
     ],
     "KANA_END": "える",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -3821,7 +4573,9 @@
       "研"
     ],
     "KANA_END": "く",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -3831,7 +4585,9 @@
       "見"
     ],
     "KANA_END": "せる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -3840,8 +4596,10 @@
     "KANJI_START": [
       "認"
     ],
-    "KANA_END": "めるく",
-    "ACCENT_TYPE": "NAKA",
+    "KANA_END": "める",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -3852,7 +4610,9 @@
       "診"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "ATA",
+    "ACCENT_TYPE": [
+      "ATA"
+    ],
     "CONJ_CLASS": "KAMI_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -3863,7 +4623,9 @@
       "対"
     ],
     "KANA_END": "かう",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -3874,7 +4636,9 @@
       "邀"
     ],
     "KANA_END": "える",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -3884,7 +4648,9 @@
       "剥"
     ],
     "KANA_END": "く",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -3894,7 +4660,9 @@
       "向"
     ],
     "KANA_END": "く",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -3904,7 +4672,9 @@
       "向"
     ],
     "KANA_END": "ける",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -3914,7 +4684,9 @@
       "結"
     ],
     "KANA_END": "ぶ",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -3925,7 +4697,9 @@
       "廻"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -3935,7 +4709,9 @@
       "申"
     ],
     "KANA_END": "す",
-    "ACCENT_TYPE": "ATA",
+    "ACCENT_TYPE": [
+      "ATA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -3945,7 +4721,9 @@
       "持"
     ],
     "KANA_END": "つ",
-    "ACCENT_TYPE": "ATA",
+    "ACCENT_TYPE": [
+      "ATA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -3955,7 +4733,9 @@
       "戻"
     ],
     "KANA_END": "す",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -3965,7 +4745,9 @@
       "基"
     ],
     "KANA_END": "づく",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -3975,9 +4757,11 @@
       "求"
     ],
     "KANA_END": "める",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
-    "TRANSITIVITY": "OTHER"
+    "TRANSITIVITY": "VT"
   },
   {
     "KANA_START": "もど",
@@ -3985,7 +4769,9 @@
       "戻"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -3995,7 +4781,9 @@
       "貰"
     ],
     "KANA_END": "う",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -4005,7 +4793,9 @@
       "焼"
     ],
     "KANA_END": "く",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -4015,7 +4805,9 @@
       "焼"
     ],
     "KANA_END": "ける",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -4025,7 +4817,9 @@
       "休"
     ],
     "KANA_END": "む",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -4036,7 +4830,9 @@
       "瘠"
     ],
     "KANA_END": "せる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -4046,7 +4842,9 @@
       "破"
     ],
     "KANA_END": "く",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -4057,7 +4855,9 @@
       "敗"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -4068,7 +4868,9 @@
       "敗"
     ],
     "KANA_END": "れる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -4079,7 +4881,9 @@
       "已"
     ],
     "KANA_END": "む",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -4092,7 +4896,9 @@
       "罷"
     ],
     "KANA_END": "める",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -4102,7 +4908,9 @@
       "遣"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -4112,7 +4920,9 @@
       "譲"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -4123,7 +4933,9 @@
       "赦"
     ],
     "KANA_END": "す",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -4133,7 +4945,9 @@
       "揺"
     ],
     "KANA_END": "れる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -4143,7 +4957,9 @@
       "酔"
     ],
     "KANA_END": "う",
-    "ACCENT_TYPE": "ATA",
+    "ACCENT_TYPE": [
+      "ATA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -4152,8 +4968,11 @@
     "KANJI_START": [
       "汚"
     ],
-    "KANA_END": "すよごす",
-    "ACCENT_TYPE": "NAKA",
+    "KANA_END": "す",
+    "ACCENT_TYPE": [
+      "NAKA",
+      "HEI"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -4162,8 +4981,11 @@
     "KANJI_START": [
       "汚"
     ],
-    "KANA_END": "れるよごれる",
-    "ACCENT_TYPE": "NAKA",
+    "KANA_END": "れる",
+    "ACCENT_TYPE": [
+      "NAKA",
+      "HEI"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -4173,7 +4995,9 @@
       "寄"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -4184,7 +5008,9 @@
       "喚"
     ],
     "KANA_END": "ぶ",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -4195,7 +5021,9 @@
       "詠"
     ],
     "KANA_END": "む",
-    "ACCENT_TYPE": "ATA",
+    "ACCENT_TYPE": [
+      "ATA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -4206,7 +5034,9 @@
       "凭"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -4217,7 +5047,9 @@
       "悦"
     ],
     "KANA_END": "ぶ",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VIT"
   },
@@ -4227,7 +5059,9 @@
       "沸"
     ],
     "KANA_END": "かす",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -4237,7 +5071,9 @@
       "分"
     ],
     "KANA_END": "かる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -4248,7 +5084,9 @@
       "別"
     ],
     "KANA_END": "かれる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   },
@@ -4259,7 +5097,9 @@
       "別"
     ],
     "KANA_END": "ける",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "NAKA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -4269,7 +5109,9 @@
       "沸"
     ],
     "KANA_END": "く",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -4279,7 +5121,9 @@
       "忘"
     ],
     "KANA_END": "れる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VT"
   },
@@ -4290,7 +5134,9 @@
       "濟"
     ],
     "KANA_END": "す",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -4301,7 +5147,9 @@
       "渉"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VI"
   },
@@ -4312,7 +5160,9 @@
       "咲"
     ],
     "KANA_END": "う",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VIT"
   },
@@ -4323,7 +5173,9 @@
       "破"
     ],
     "KANA_END": "る",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "GODAN",
     "TRANSITIVITY": "VT"
   },
@@ -4334,7 +5186,9 @@
       "破"
     ],
     "KANA_END": "れる",
-    "ACCENT_TYPE": "NAKA",
+    "ACCENT_TYPE": [
+      "ODA"
+    ],
     "CONJ_CLASS": "SHIMO_ICHIDAN",
     "TRANSITIVITY": "VI"
   }

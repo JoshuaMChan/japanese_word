@@ -97,3 +97,162 @@ h1 {
     border: 1px solid #ccc;
     border-top: none;
 }
+
+.verb-cell {
+    display: flex;
+    flex-direction: column;
+}
+
+.verb-base {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.verb-conjugated {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.verb-base {
+    display: inline-block;
+}
+
+.kanji-fancy-enter-active,
+.kanji-fancy-leave-active {
+    transition:
+            opacity 0.3s ease-out,
+            transform 0.3s ease-out;
+}
+
+.kanji-fancy-enter-from {
+    opacity: 0;
+    transform: translateY(3px);
+}
+
+.kanji-fancy-leave-to {
+    opacity: 0;
+    transform: translateY(-3px);
+}
+
+.toggle-row {
+    margin-left: 20px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.toggle-label {
+    margin-right: 8px;
+    font-size: 12px;
+    color: #555;
+}
+
+.toggle-btn {
+    padding: 4px 10px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    border-radius: 999px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.toggle-btn.active {
+    border-color: #2c7be5;
+    background-color: #009879;
+    color: #fff;
+}
+
+.toggle-btn:hover {
+    border-color: #2c7be5;
+}
+
+.page-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 左右布局：左表格，右侧栏 */
+.layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+/* 左侧主内容占满剩余宽度 */
+.layout-main {
+    flex: 1 1 auto;
+    min-width: 0; /* 防止表格撑破布局 */
+}
+
+/* 右侧控制面板 */
+.layout-sidebar {
+    flex: 0 0 180px;     /* 固定宽度侧栏，可按需要调整 */
+    position: sticky;
+    top: 80px;           /* 离顶部多少，看你标题高度调整 */
+    align-self: flex-start;
+}
+
+/* 侧栏内的小块分组 */
+.sidebar-section {
+    margin-bottom: 16px;
+}
+
+.sidebar-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 6px;
+}
+
+/* 纵向按钮排列 */
+.toggle-column {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* 你原来的按钮样式，可以沿用 */
+.toggle-btn {
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 1.4;
+    white-space: nowrap;
+}
+
+.toggle-btn.active {
+    border-color: #2c7be5;
+    background-color: #009879;
+    color: #fff;
+}
+
+/* 小屏幕时让侧栏掉到下面（可选） */
+@media (max-width: 768px) {
+    .layout {
+        flex-direction: column;
+    }
+
+    .layout-sidebar {
+        position: static;
+        flex-basis: auto;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 6px;
+    }
+
+    .toggle-column {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}

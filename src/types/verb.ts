@@ -32,5 +32,3 @@ export type PrimaryFormId =
 
 // 语态槽（互斥）：受身 / 尊敬 / 使役 / 可能
 export type VoiceId = 'PASSIVE' | 'CAUSATIVE' | 'POTENTIAL' | 'RESPECT'
-
-export type AccentSegment = { cls: string; text: string }
