@@ -4,7 +4,7 @@ import {Verb} from "../types/verb.ts";
 type AccentSegment = { cls: string; text: string }
 
 export const accentSegments = (v: Verb, accent: string): AccentSegment[] => {
-    const all = v.KANA_START + v.KANA_END
+    const all = v.kanaStart + v.kanaEnd
     const first = all.charAt(0)
     const rest = all.substring(1)
 

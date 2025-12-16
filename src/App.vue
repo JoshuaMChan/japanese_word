@@ -3,61 +3,41 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import verbs from './assets/verbs.json'
 import {TRANSITIVITY_JA} from './constants/transitivity.ts'
 import {
-  Verb,
-  PrimaryFormId,
-  VoiceId,
+  Verb
 } from './types/verb'
-import {
-  conjugatedEnding,
-} from './utils/conjugation'
 import {
   accentSegments
 } from './utils/accent'
+import {conjugateEnding, Conjugation} from "./utils/conjugation.ts";
 
-interface PrimaryFormDef {
-  id: PrimaryFormId
-  label: string
-}
-
-interface VoiceDef {
-  id: VoiceId
+interface Form {
+  id: Conjugation
   label: string
 }
 
 const vocabulary = verbs as Verb[]
 const transLabel = (t: string) => TRANSITIVITY_JA[t] ?? t
 
-const PRIMARY_FORMS: PrimaryFormDef[] = [
+const forms = [
   { id: 'DICT',   label: '辞書形' },
-  { id: 'MASU',   label: 'ます形' },
-  { id: 'TA',     label: 'た形' },
-  { id: 'TE',     label: 'て形' },
-  { id: 'KATEI',  label: '仮定形' },
-  { id: 'MEIREI', label: '命令形' },
-  { id: 'IKOU',   label: '意向形' },
-  { id: 'KIBOU',  label: '希望形' },
-  { id: 'PROG',   label: '進行形' },
-  { id: 'PERF',   label: '完了形' },
-]
-
-const VOICE_FORMS: VoiceDef[] = [
+  { id: 'YOU',   label: 'よう形' },
+  { id: 'NEGATIVE',   label: '否定形' },
   { id: 'PASSIVE',   label: '受身形' },
   { id: 'CAUSATIVE', label: '使役形' },
-  { id: 'POTENTIAL', label: '可能形' },
-  { id: 'RESPECT',   label: '尊敬形' },
-]
+  { id: 'CAUSATIVE_PASSIVE', label: '使役受身形' },
+  { id: 'POLITE',   label: 'ます形' },
+  { id: 'TAI', label: '希望形' },
+  { id: 'SOU', label: 'そう形' },
+  { id: 'MEIREI', label: '命令形' },
+  { id: 'POTENTIAL',   label: '可能形' },
+  { id: 'KATEI',  label: '仮定形' },
+  { id: 'IKOU',   label: '意向形' },
+  { id: 'TE',     label: 'て形' },
+  { id: 'PASS',     label: 'た形' },
+] as const
 
 // ===== 状态 =====
-const primaryForm = ref<PrimaryFormId>('DICT')
-const selectedVoice = ref<VoiceId | null>(null)
-const negative = ref(false)
-
-const toggleVoice = (id: VoiceId) => {
-  selectedVoice.value = selectedVoice.value === id ? null : id
-}
-const toggleNegative = () => {
-  negative.value = !negative.value
-}
+const conjugation = ref<Conjugation>('DICT')
 
 // ===== 汉字轮播（仍然属于 UI 层） =====
 const kanjiTick = ref(0)
@@ -76,9 +56,9 @@ onUnmounted(() => {
 })
 
 const activeKanji = (v: Verb): string => {
-  if (!v.KANJI_START || v.KANJI_START.length === 0) return ''
-  const idx = kanjiTick.value % v.KANJI_START.length
-  return v.KANJI_START[idx]
+  if (!v.kanjiStart || v.kanjiStart.length === 0) return ''
+  const idx = kanjiTick.value % v.kanjiStart.length
+  return v.kanjiStart[idx]
 }
 </script>
 
@@ -106,20 +86,20 @@ const activeKanji = (v: Verb): string => {
                 <ruby>
                   <transition name="kanji-fancy" mode="out-in">
                     <span
-                        :key="activeKanji(v) || v.KANA_START"
+                        :key="activeKanji(v) || v.kanaStart"
                         class="kanji-char"
                     >
-                      {{ activeKanji(v) || v.KANA_START }}
+                      {{ activeKanji(v) || v.kanaStart }}
                     </span>
                   </transition>
-                  <rt>{{ v.KANA_START }}</rt>
+                  <rt>{{ v.kanaStart }}</rt>
                 </ruby>
-                {{ conjugatedEnding(v, primaryForm, selectedVoice, negative) }}
+                {{ conjugateEnding(v, conjugation) }}
               </div>
             </th>
 
             <th class="accent-cell">
-              <template v-for="(accent, aIdx) in v.ACCENT_TYPE" :key="aIdx">
+              <template v-for="(accent, aIdx) in v.accent" :key="aIdx">
                 <span
                     v-for="(seg, sIdx) in accentSegments(v, accent)"
                     :key="`${accent}-${sIdx}`"
@@ -127,11 +107,11 @@ const activeKanji = (v: Verb): string => {
                 >
                   {{ seg.text }}
                 </span>
-                <span v-if="aIdx < v.ACCENT_TYPE.length - 1">・</span>
+                <span v-if="aIdx < v.accent.length - 1">・</span>
               </template>
             </th>
 
-            <th>{{ transLabel(v.TRANSITIVITY) }}</th>
+            <th>{{ transLabel(v.transitivity) }}</th>
           </tr>
           </tbody>
         </table>
@@ -139,49 +119,17 @@ const activeKanji = (v: Verb): string => {
 
       <!-- 右侧：形态切换控制面板 -->
       <aside class="layout-sidebar">
-        <!-- 主形態（单选） -->
         <div class="sidebar-section">
-          <div class="sidebar-title">主形</div>
           <div class="toggle-column">
             <button
-                v-for="form in PRIMARY_FORMS"
+                v-for="form in forms"
                 :key="form.id"
                 type="button"
                 class="toggle-btn"
-                :class="{ active: primaryForm === form.id }"
-                @click="primaryForm = form.id"
+                :class="{ active: conjugation === form.id }"
+                @click="conjugation = form.id"
             >
               {{ form.label }}
-            </button>
-          </div>
-        </div>
-
-        <!-- 否定 -->
-        <div class="sidebar-section">
-          <div class="sidebar-title">否定</div>
-          <button
-              type="button"
-              class="toggle-btn"
-              :class="{ active: negative }"
-              @click="toggleNegative"
-          >
-            否定形
-          </button>
-        </div>
-
-        <!-- 语態 -->
-        <div class="sidebar-section">
-          <div class="sidebar-title">態</div>
-          <div class="toggle-column">
-            <button
-                v-for="voice in VOICE_FORMS"
-                :key="voice.id"
-                type="button"
-                class="toggle-btn"
-                :class="{ active: selectedVoice === voice.id }"
-                @click="toggleVoice(voice.id)"
-            >
-              {{ voice.label }}
             </button>
           </div>
         </div>
