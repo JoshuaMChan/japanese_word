@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, nextTick } from 'vue'
 import verbs from './assets/verbs.json'
 import {TRANSITIVITY_JA} from './constants/transitivity.ts'
 import {
@@ -65,6 +65,14 @@ const handleKeyDown = (event: KeyboardEvent) => {
     }
     
     conjugation.value = forms[nextIndex].id
+    
+    // 滚动到当前选中的按钮
+    nextTick(() => {
+      const activeButton = document.querySelector(`button[data-form-id="${forms[nextIndex].id}"]`) as HTMLElement
+      if (activeButton) {
+        activeButton.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+      }
+    })
   }
 }
 
@@ -158,6 +166,7 @@ const activeKanji = (v: Verb): string => {
                 type="button"
                 class="toggle-btn"
                 :class="{ active: conjugation === form.id }"
+                :data-form-id="form.id"
                 @click="conjugation = form.id"
             >
               {{ form.label }}
