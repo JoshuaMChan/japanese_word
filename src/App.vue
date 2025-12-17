@@ -55,6 +55,11 @@ const handleKeyDown = (event: KeyboardEvent) => {
   if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
     event.preventDefault()
     
+    // 移除所有按钮的焦点状态
+    document.querySelectorAll('.toggle-btn').forEach(btn => {
+      (btn as HTMLElement).blur()
+    })
+    
     let nextIndex: number
     if (event.key === 'ArrowUp') {
       // 上键：向前（索引减1，如果到开头则循环到末尾）
@@ -71,6 +76,8 @@ const handleKeyDown = (event: KeyboardEvent) => {
       const activeButton = document.querySelector(`button[data-form-id="${forms[nextIndex].id}"]`) as HTMLElement
       if (activeButton) {
         activeButton.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+        // 确保不保留焦点
+        activeButton.blur()
       }
     })
   }
