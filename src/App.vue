@@ -43,16 +43,47 @@ const conjugation = ref<Conjugation>('DICT')
 const kanjiTick = ref(0)
 let kanjiTimer: number | undefined
 
+// ===== 键盘切换活用形态 =====
+const handleKeyDown = (event: KeyboardEvent) => {
+  // 如果用户正在输入框中输入，不处理键盘事件
+  if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement) {
+    return
+  }
+
+  const currentIndex = forms.findIndex(form => form.id === conjugation.value)
+  
+  if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
+    event.preventDefault()
+    
+    let nextIndex: number
+    if (event.key === 'ArrowUp') {
+      // 上键：向前（索引减1，如果到开头则循环到末尾）
+      nextIndex = currentIndex <= 0 ? forms.length - 1 : currentIndex - 1
+    } else {
+      // 下键：向后（索引加1，如果到末尾则循环到开头）
+      nextIndex = currentIndex >= forms.length - 1 ? 0 : currentIndex + 1
+    }
+    
+    conjugation.value = forms[nextIndex].id
+  }
+}
+
 onMounted(() => {
   kanjiTimer = window.setInterval(() => {
     kanjiTick.value++
   }, 5000)
+  
+  // 添加键盘事件监听
+  window.addEventListener('keydown', handleKeyDown)
 })
 
 onUnmounted(() => {
   if (kanjiTimer !== undefined) {
     window.clearInterval(kanjiTimer)
   }
+  
+  // 移除键盘事件监听
+  window.removeEventListener('keydown', handleKeyDown)
 })
 
 const activeKanji = (v: Verb): string => {
