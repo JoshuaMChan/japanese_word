@@ -108,7 +108,7 @@ h1 {
 .verb-cell {
     display: flex;
     flex-direction: column;
-    min-height: 1.9em; /* 固定最小高度，容纳 ruby 振假名，防止隐藏后收缩 */
+    min-height: 2em; /* 固定最小高度，容纳 ruby 振假名，防止隐藏后收缩 */
     min-width: 220px; /* 固定最小宽度，防止内容变化时列宽收缩 */
     width: 220px; /* 固定宽度 */
 }
