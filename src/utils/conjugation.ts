@@ -11,7 +11,6 @@ import {
 export type Conjugation =
 // u stem
     | 'DICT'
-    | 'YOU'
 
     // a stem
     | 'NEGATIVE'
@@ -38,12 +37,11 @@ export type Conjugation =
 
 export const conjugateEnding = (verb: Verb, conjugation: Conjugation): string => {
     if (verb.conjClass == 'GODAN') {
+
         const stem = verb.kanaEnd.slice(0, -1)
         const last = verb.kanaEnd.slice(-1)
 
         switch (conjugation) {
-            case 'YOU':
-                return verb.kanaEnd + 'よう'
             case 'NEGATIVE':
                 return stem + aStem[last] + 'ない'
             case 'PASSIVE':
@@ -76,8 +74,6 @@ export const conjugateEnding = (verb: Verb, conjugation: Conjugation): string =>
         }
     } else {
         switch (conjugation) {
-            case 'YOU':
-                return verb.kanaEnd + 'よう'
             case 'NEGATIVE':
                 return verb.kanaEnd.slice(0, -1) + 'ない'
             case 'PASSIVE':

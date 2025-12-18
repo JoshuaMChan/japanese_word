@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, nextTick } from 'vue'
 import verbs from './assets/verbs.json'
-import {TRANSITIVITY_JA} from './constants/transitivity.ts'
+import {TRANSITIVITY_JA} from './utils/transitivity.ts'
 import {
   Verb
 } from './types/verb'
@@ -10,17 +10,11 @@ import {
 } from './utils/accent'
 import {conjugateEnding, Conjugation} from "./utils/conjugation.ts";
 
-interface Form {
-  id: Conjugation
-  label: string
-}
-
 const vocabulary = verbs as Verb[]
 const transLabel = (t: string) => TRANSITIVITY_JA[t] ?? t
 
 const forms = [
   { id: 'DICT',   label: '辞書形' },
-  { id: 'YOU',   label: 'よう形' },
   { id: 'NEGATIVE',   label: '否定形' },
   { id: 'PASSIVE',   label: '受身形' },
   { id: 'CAUSATIVE', label: '使役形' },
@@ -55,11 +49,6 @@ const handleKeyDown = (event: KeyboardEvent) => {
   if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
     event.preventDefault()
     
-    // 移除所有按钮的焦点状态
-    document.querySelectorAll('.toggle-btn').forEach(btn => {
-      (btn as HTMLElement).blur()
-    })
-    
     let nextIndex: number
     if (event.key === 'ArrowUp') {
       // 上键：向前（索引减1，如果到开头则循环到末尾）
@@ -76,8 +65,6 @@ const handleKeyDown = (event: KeyboardEvent) => {
       const activeButton = document.querySelector(`button[data-form-id="${forms[nextIndex].id}"]`) as HTMLElement
       if (activeButton) {
         activeButton.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
-        // 确保不保留焦点
-        activeButton.blur()
       }
     })
   }
@@ -110,7 +97,7 @@ const activeKanji = (v: Verb): string => {
 
 <template>
   <main class="page-container">
-    <h1>日本語動詞</h1>
+    <h1>日本語語彙</h1>
 
     <!-- 左：表格  右：控制面板 -->
     <div class="layout">
