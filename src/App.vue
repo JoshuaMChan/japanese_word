@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, nextTick } from 'vue'
 import verbs from './assets/verbs.json'
-import {TRANSITIVITY_JA} from './utils/transitivity.ts'
+import {TRANSITIVITY_JA} from './constants/transitivity.ts'
 import {
   Verb
 } from './types/verb'
@@ -93,6 +93,27 @@ const activeKanji = (v: Verb): string => {
   const idx = kanjiTick.value % v.kanjiStart.length
   return v.kanjiStart[idx]
 }
+
+// ===== 自他动词显示逻辑 =====
+const getTransitivityDisplay = (v: Verb): { particle: string; text: string } => {
+  const fullText = v.kanaStart + v.kanaEnd
+  
+  if (v.transitivity === 'VT') {
+    // 他動詞：を + kanaStart + kanaEnd
+    return { particle: 'を', text: fullText }
+  } else if (v.transitivity === 'VI') {
+    // 自動詞：が + kanaStart + kanaEnd
+    return { particle: 'が', text: fullText }
+  } else if (v.transitivity === 'VIT') {
+    // 自他動詞：を和が渐变交替
+    const particles = ['を', 'が']
+    const idx = kanjiTick.value % particles.length
+    return { particle: particles[idx], text: fullText }
+  } else {
+    // 其他情况：显示原来的标签
+    return { particle: '', text: transLabel(v.transitivity) }
+  }
+}
 </script>
 
 <template>
@@ -144,7 +165,18 @@ const activeKanji = (v: Verb): string => {
               </template>
             </th>
 
-            <th>{{ transLabel(v.transitivity) }}</th>
+            <th>
+              <template v-if="v.transitivity === 'VIT'">
+                <transition name="kanji-fancy" mode="out-in">
+                  <span :key="getTransitivityDisplay(v).particle" class="particle-transition">
+                    {{ getTransitivityDisplay(v).particle }}
+                  </span>
+                </transition>{{ getTransitivityDisplay(v).text }}
+              </template>
+              <template v-else>
+                {{ getTransitivityDisplay(v).particle }}{{ getTransitivityDisplay(v).text }}
+              </template>
+            </th>
           </tr>
           </tbody>
         </table>

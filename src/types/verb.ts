@@ -1,4 +1,4 @@
-import {TransitivityCode} from "../utils/transitivity.ts";
+import {TransitivityCode} from "../constants/transitivity.ts";
 
 export interface Verb {
     kanaStart: string
