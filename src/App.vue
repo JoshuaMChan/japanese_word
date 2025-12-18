@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, nextTick } from 'vue'
 import verbs from './assets/verbs.json'
-import {TRANSITIVITY_JA} from './constants/transitivity.ts'
 import {
   Verb
 } from './types/verb'
@@ -11,7 +10,6 @@ import {
 import {conjugate, Conjugation} from "./utils/conjugation.ts";
 
 const vocabulary = verbs as Verb[]
-const transLabel = (t: string) => TRANSITIVITY_JA[t] ?? t
 
 const forms = [
   { id: 'DICT',   label: '辞書形' },
@@ -99,22 +97,15 @@ const getConjugatedVerb = (v: Verb): Verb => {
   return conjugate(v, conjugation.value)
 }
 
-// ===== 自他动词显示逻辑 =====
-const getTransitivityDisplay = (v: Verb): { particle: string; text: string } => {
-  const fullText = v.kanaStart + v.kanaEnd
-  
-  if (v.transitivity === 'VT') {
-    return { particle: 'を', text: fullText }
-  } else if (v.transitivity === 'VI') {
-    return { particle: 'が', text: fullText }
-  } else if (v.transitivity === 'VIT') {
-    const particles = ['を', 'が']
-    const idx = kanjiTick.value % particles.length
-    return { particle: particles[idx], text: fullText }
-  } else {
-    // 其他情况：显示原来的标签
-    return { particle: '', text: transLabel(v.transitivity) }
-  }
+// ===== 判断动词是否需要下划线 =====
+const shouldStrikethroughVerb = (v: Verb): boolean => {
+  // 自动词的使役、命令、希望、意向需要加下划线
+  return v.transitivity === 'VI' && (
+    conjugation.value === 'CAUSATIVE' || 
+    conjugation.value === 'MEIREI' || 
+    conjugation.value === 'TAI' || 
+    conjugation.value === 'IKOU'
+  )
 }
 </script>
 
@@ -131,18 +122,17 @@ const getTransitivityDisplay = (v: Verb): { particle: string; text: string } => 
           <tr>
             <th>動詞</th>
             <th>アクセント</th>
-            <th>自他動詞</th>
           </tr>
           </thead>
 
           <tbody>
           <tr v-for="(v, idx) in vocabulary" :key="idx">
             <th class="verb-cell">
-              <div class="verb-base">
+              <div v-if="!shouldStrikethroughVerb(v)" class="verb-base">
                 <ruby>
                   <transition name="kanji-fancy" mode="out-in">
                     <span
-                        :key="`${activeKanji(v) || getConjugatedVerb(v).kanaStart}-${conjugation}`"
+                        :key="`${idx}-${activeKanji(v) || getConjugatedVerb(v).kanaStart}`"
                         class="kanji-char"
                     >
                       {{ activeKanji(v) || getConjugatedVerb(v).kanaStart }}
@@ -155,28 +145,23 @@ const getTransitivityDisplay = (v: Verb): { particle: string; text: string } => 
             </th>
 
             <th class="accent-cell">
-              <template v-for="(accent, aIdx) in v.accent" :key="aIdx">
-                <span
-                    v-for="(seg, sIdx) in accentSegments(v, accent)"
-                    :key="`${accent}-${sIdx}`"
-                    :class="seg.cls"
-                >
-                  {{ seg.text }}
-                </span>
-                <span v-if="aIdx < v.accent.length - 1">・</span>
-              </template>
-            </th>
-
-            <th>
-              <template v-if="v.transitivity === 'VIT'">
+              <template v-if="v.accent.length > 1">
                 <transition name="kanji-fancy" mode="out-in">
-                  <span :key="getTransitivityDisplay(v).particle" class="particle-transition">
-                    {{ getTransitivityDisplay(v).particle }}
+                  <span :key="`${idx}-${kanjiTick % v.accent.length}`">
+                    <template v-for="(seg, sIdx) in accentSegments(v, v.accent[kanjiTick % v.accent.length])" :key="sIdx">
+                      <span :class="seg.cls">
+                        {{ seg.text }}
+                      </span>
+                    </template>
                   </span>
-                </transition>{{ getTransitivityDisplay(v).text }}
+                </transition>
               </template>
               <template v-else>
-                {{ getTransitivityDisplay(v).particle }}{{ getTransitivityDisplay(v).text }}
+                <template v-for="(seg, sIdx) in accentSegments(v, v.accent[0])" :key="sIdx">
+                  <span :class="seg.cls">
+                    {{ seg.text }}
+                  </span>
+                </template>
               </template>
             </th>
           </tr>

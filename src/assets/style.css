@@ -29,6 +29,13 @@
     padding: 12px 15px;
 }
 
+/* 固定第三列（自他動詞列）的宽度 */
+.styled-table tbody th:nth-child(3),
+.styled-table thead th:nth-child(3) {
+    min-width: 200px; /* 固定最小宽度，防止内容变化时列宽收缩 */
+    width: 200px; /* 固定宽度 */
+}
+
 .styled-table tbody tr.active-row {
     font-weight: bold;
     color: #009879;
@@ -101,6 +108,9 @@ h1 {
 .verb-cell {
     display: flex;
     flex-direction: column;
+    min-height: 1.9em; /* 固定最小高度，容纳 ruby 振假名，防止隐藏后收缩 */
+    min-width: 220px; /* 固定最小宽度，防止内容变化时列宽收缩 */
+    width: 220px; /* 固定宽度 */
 }
 
 .verb-base {
@@ -139,6 +149,10 @@ h1 {
     margin: 0;
     padding: 0;
     vertical-align: baseline;
+}
+
+.strikethrough {
+    text-decoration: line-through;
 }
 
 .toggle-row {
