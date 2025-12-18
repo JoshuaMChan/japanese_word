@@ -8,7 +8,7 @@ import {
 import {
   accentSegments
 } from './utils/accent'
-import {conjugateEnding, Conjugation} from "./utils/conjugation.ts";
+import {conjugate, Conjugation} from "./utils/conjugation.ts";
 
 const vocabulary = verbs as Verb[]
 const transLabel = (t: string) => TRANSITIVITY_JA[t] ?? t
@@ -18,7 +18,6 @@ const forms = [
   { id: 'NEGATIVE',   label: '否定形' },
   { id: 'PASSIVE',   label: '受身形' },
   { id: 'CAUSATIVE', label: '使役形' },
-  { id: 'CAUSATIVE_PASSIVE', label: '使役受身形' },
   { id: 'POLITE',   label: 'ます形' },
   { id: 'TAI', label: '希望形' },
   { id: 'SOU', label: 'そう形' },
@@ -89,9 +88,15 @@ onUnmounted(() => {
 })
 
 const activeKanji = (v: Verb): string => {
-  if (!v.kanjiStart || v.kanjiStart.length === 0) return ''
-  const idx = kanjiTick.value % v.kanjiStart.length
-  return v.kanjiStart[idx]
+  const conjugated = getConjugatedVerb(v)
+  if (!conjugated.kanjiStart || conjugated.kanjiStart.length === 0) return ''
+  const idx = kanjiTick.value % conjugated.kanjiStart.length
+  return conjugated.kanjiStart[idx]
+}
+
+// ===== 获取活用后的动词 =====
+const getConjugatedVerb = (v: Verb): Verb => {
+  return conjugate(v, conjugation.value)
 }
 
 // ===== 自他动词显示逻辑 =====
@@ -99,13 +104,10 @@ const getTransitivityDisplay = (v: Verb): { particle: string; text: string } => 
   const fullText = v.kanaStart + v.kanaEnd
   
   if (v.transitivity === 'VT') {
-    // 他動詞：を + kanaStart + kanaEnd
     return { particle: 'を', text: fullText }
   } else if (v.transitivity === 'VI') {
-    // 自動詞：が + kanaStart + kanaEnd
     return { particle: 'が', text: fullText }
   } else if (v.transitivity === 'VIT') {
-    // 自他動詞：を和が渐变交替
     const particles = ['を', 'が']
     const idx = kanjiTick.value % particles.length
     return { particle: particles[idx], text: fullText }
@@ -140,15 +142,15 @@ const getTransitivityDisplay = (v: Verb): { particle: string; text: string } => 
                 <ruby>
                   <transition name="kanji-fancy" mode="out-in">
                     <span
-                        :key="activeKanji(v) || v.kanaStart"
+                        :key="`${activeKanji(v) || getConjugatedVerb(v).kanaStart}-${conjugation}`"
                         class="kanji-char"
                     >
-                      {{ activeKanji(v) || v.kanaStart }}
+                      {{ activeKanji(v) || getConjugatedVerb(v).kanaStart }}
                     </span>
                   </transition>
-                  <rt>{{ v.kanaStart }}</rt>
+                  <rt>{{ getConjugatedVerb(v).kanaStart }}</rt>
                 </ruby>
-                {{ conjugateEnding(v, conjugation) }}
+                {{ getConjugatedVerb(v).kanaEnd }}
               </div>
             </th>
 

@@ -16,7 +16,6 @@ export type Conjugation =
     | 'NEGATIVE'
     | 'PASSIVE'
     | 'CAUSATIVE'
-    | 'CAUSATIVE_PASSIVE'
 
     //i stem
     | 'POLITE'
@@ -35,7 +34,8 @@ export type Conjugation =
     | 'TE'
     | 'PASS'
 
-export const conjugateEnding = (verb: Verb, conjugation: Conjugation): string => {
+export const conjugate = (verb: Verb, conjugation: Conjugation): Verb => {
+    let result = {...verb};
     if (verb.conjClass == 'GODAN') {
 
         const stem = verb.kanaEnd.slice(0, -1)
@@ -43,66 +43,193 @@ export const conjugateEnding = (verb: Verb, conjugation: Conjugation): string =>
 
         switch (conjugation) {
             case 'NEGATIVE':
-                return stem + aStem[last] + 'ない'
+                result.kanaEnd = stem + aStem[last] + 'ない'
+                break;
             case 'PASSIVE':
-                return stem + aStem[last] + 'れる'
+                result.kanaEnd = stem + aStem[last] + 'れる'
+                break;
             case 'CAUSATIVE':
-                return stem + aStem[last] + 'せる'
-            case 'CAUSATIVE_PASSIVE':
-                return stem + aStem[last] + 'せられる'
+                result.kanaEnd = stem + aStem[last] + 'せる'
+                break;
             case 'POLITE':
-                return stem + iStem[last] + 'ます'
+                result.kanaEnd = stem + iStem[last] + 'ます'
+                break;
             case 'TAI':
-                return stem + iStem[last] + 'たい'
+                result.kanaEnd = stem + iStem[last] + 'たい'
+                break;
             case 'SOU':
-                return stem + iStem[last] + 'そう'
+                result.kanaEnd = stem + iStem[last] + 'そう'
+                break;
             case 'MEIREI':
-                return stem + eStem[last]
+                result.kanaEnd = stem + eStem[last]
+                break;
             case 'POTENTIAL':
-                return stem + eStem[last] + 'る'
+                result.kanaEnd = stem + eStem[last] + 'る'
+                break;
             case 'KATEI':
-                return stem + eStem[last] + 'ば'
+                result.kanaEnd = stem + eStem[last] + 'ば'
+                break;
             case 'IKOU':
-                return stem + oStem[last] + 'う'
+                result.kanaEnd = stem + oStem[last] + 'う'
+                break;
             case 'TE':
-                return stem + teConjugate[last]
+                result.kanaEnd = stem + teConjugate[last]
+                break;
             case 'PASS':
-                return stem + taConjugate[last]
+                result.kanaEnd = stem + taConjugate[last]
+                break;
             case 'DICT':
             default:
-                return verb.kanaEnd
+                break;
         }
-    } else {
+    } else if(verb.conjClass == 'SHIMO_ICHIDAN' || verb.conjClass == 'KAMI_ICHIDAN') {
         switch (conjugation) {
             case 'NEGATIVE':
-                return verb.kanaEnd.slice(0, -1) + 'ない'
+                result.kanaEnd = verb.kanaEnd.slice(0, -1) + 'ない'
+                break;
             case 'PASSIVE':
-                return verb.kanaEnd.slice(0, -1) + 'られる'
+                result.kanaEnd = verb.kanaEnd.slice(0, -1) + 'られる'
+                break;
             case 'CAUSATIVE':
-                return verb.kanaEnd.slice(0, -1) + 'させる'
-            case 'CAUSATIVE_PASSIVE':
-                return verb.kanaEnd.slice(0, -1) + 'させられる'
+                result.kanaEnd = verb.kanaEnd.slice(0, -1) + 'させる'
+                break;
             case 'POLITE':
-                return verb.kanaEnd.slice(0, -1) + 'ます'
+                result.kanaEnd = verb.kanaEnd.slice(0, -1) + 'ます'
+                break;
             case 'TAI':
-                return verb.kanaEnd.slice(0, -1) + 'たい'
+                result.kanaEnd = verb.kanaEnd.slice(0, -1) + 'たい'
+                break;
             case 'SOU':
-                return verb.kanaEnd.slice(0, -1) + 'そう'
+                result.kanaEnd = verb.kanaEnd.slice(0, -1) + 'そう'
+                break;
             case 'MEIREI':
-                return verb.kanaEnd.slice(0, -1) + 'ろ'
+                result.kanaEnd = verb.kanaEnd.slice(0, -1) + 'ろ'
+                break;
             case 'POTENTIAL':
-                return verb.kanaEnd.slice(0, -1) + 'られる'
+                result.kanaEnd = verb.kanaEnd.slice(0, -1) + 'られる'
+                break;
             case 'KATEI':
-                return verb.kanaEnd.slice(0, -1) + 'れば'
+                result.kanaEnd = verb.kanaEnd.slice(0, -1) + 'れば'
+                break;
             case 'IKOU':
-                return verb.kanaEnd.slice(0, -1) + 'よう'
+                result.kanaEnd = verb.kanaEnd.slice(0, -1) + 'よう'
+                break;
             case 'TE':
-                return verb.kanaEnd.slice(0, -1) + 'て'
+                result.kanaEnd = verb.kanaEnd.slice(0, -1) + 'て'
+                break;
             case 'PASS':
-                return verb.kanaEnd.slice(0, -1) + 'た'
+                result.kanaEnd = verb.kanaEnd.slice(0, -1) + 'た'
+                break;
             case 'DICT':
             default:
-                return verb.kanaEnd
+                break;
+        }
+    } else if (verb.conjClass == 'SAHEN') {
+        switch (conjugation) {
+            case 'NEGATIVE':
+                result.kanaStart = 'し'
+                result.kanaEnd = 'ない'
+                break;
+            case 'PASSIVE':
+                result.kanaStart = 'さ'
+                result.kanaEnd = 'れる'
+                break;
+            case 'CAUSATIVE':
+                result.kanaStart = 'さ'
+                result.kanaEnd = 'せる'
+                break;
+            case 'POLITE':
+                result.kanaStart = 'し'
+                result.kanaEnd = 'ます'
+                break;
+            case 'TAI':
+                result.kanaStart = 'し'
+                result.kanaEnd = 'たい'
+                break;
+            case 'SOU':
+                result.kanaStart = 'し'
+                result.kanaEnd = 'そう'
+                break;
+            case 'MEIREI':
+                result.kanaStart = 'し'
+                result.kanaEnd = 'ろ'
+                break;
+            case 'POTENTIAL':
+                result.kanaStart = 'でき'
+                result.kanjiStart = ['出来']
+                result.kanaEnd = 'る'
+                break;
+            case 'KATEI':
+                result.kanaEnd = 'れば'
+                break;
+            case 'IKOU':
+                result.kanaStart = 'し'
+                result.kanaEnd = 'よう'
+                break;
+            case 'TE':
+                result.kanaStart = 'し'
+                result.kanaEnd = 'て'
+                break;
+            case 'PASS':
+                result.kanaStart = 'し'
+                result.kanaEnd = 'た'
+                break;
+            case 'DICT':
+            default:
+                break;
+        }
+    } else if (verb.conjClass == 'KAHEN') {
+        switch (conjugation) {
+            case 'NEGATIVE':
+                result.kanaStart = 'こ'
+                result.kanaEnd = 'ない'
+                break;
+            case 'PASSIVE':
+                result.kanaStart = 'こ'
+                result.kanaEnd = 'れる'
+                break;
+            case 'CAUSATIVE':
+                result.kanaStart = 'こ'
+                result.kanaEnd = 'せる'
+                break;
+            case 'POLITE':
+                result.kanaStart = 'き'
+                result.kanaEnd = 'ます'
+                break;
+            case 'TAI':
+                result.kanaStart = 'き'
+                result.kanaEnd = 'たい'
+                break;
+            case 'SOU':
+                result.kanaStart = 'き'
+                result.kanaEnd = 'そう'
+                break;
+            case 'MEIREI':
+                result.kanaStart = 'こ'
+                result.kanaEnd = 'い'
+                break;
+            case 'POTENTIAL':
+                result.kanaEnd = 'られる'
+                break;
+            case 'KATEI':
+                result.kanaEnd = 'れば'
+                break;
+            case 'IKOU':
+                result.kanaStart = 'こ'
+                result.kanaEnd = 'よう'
+                break;
+            case 'TE':
+                result.kanaStart = 'き'
+                result.kanaEnd = 'て'
+                break;
+            case 'PASS':
+                result.kanaStart = 'き'
+                result.kanaEnd = 'た'
+                break;
+            case 'DICT':
+            default:
+                break;
         }
     }
+    return result;
 }
