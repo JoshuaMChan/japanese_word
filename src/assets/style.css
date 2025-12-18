@@ -144,6 +144,21 @@ h1 {
     transform: translateY(-3px);
 }
 
+/* 声调红线淡入淡出效果 */
+.accent-fade-enter-active,
+.accent-fade-leave-active {
+    transition: opacity 0.5s ease-out;
+}
+
+.accent-fade-enter-from,
+.accent-fade-leave-to {
+    opacity: 0;
+}
+
+.accent-wrapper {
+    display: inline-block;
+}
+
 .particle-transition {
     display: inline-block;
     margin: 0;

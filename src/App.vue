@@ -146,8 +146,8 @@ const shouldStrikethroughVerb = (v: Verb): boolean => {
 
             <th class="accent-cell">
               <template v-if="v.accent.length > 1">
-                <transition name="kanji-fancy" mode="out-in">
-                  <span :key="`${idx}-${kanjiTick % v.accent.length}`">
+                <transition name="accent-fade" mode="out-in">
+                  <span :key="`${idx}-${kanjiTick % v.accent.length}`" class="accent-wrapper">
                     <template v-for="(seg, sIdx) in accentSegments(v, v.accent[kanjiTick % v.accent.length])" :key="sIdx">
                       <span :class="seg.cls">
                         {{ seg.text }}
