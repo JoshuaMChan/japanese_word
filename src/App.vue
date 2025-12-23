@@ -97,9 +97,7 @@ const getConjugatedVerb = (v: Verb): Verb => {
   return conjugate(v, conjugation.value)
 }
 
-// ===== 判断动词是否需要下划线 =====
-const shouldStrikethroughVerb = (v: Verb): boolean => {
-  // 自动词的使役、命令、希望、意向需要加下划线
+const shouldHide = (v: Verb): boolean => {
   return v.transitivity === 'VI' && (
     conjugation.value === 'CAUSATIVE' || 
     conjugation.value === 'MEIREI' || 
@@ -128,7 +126,7 @@ const shouldStrikethroughVerb = (v: Verb): boolean => {
           <tbody>
           <tr v-for="(v, idx) in vocabulary" :key="idx">
             <th class="verb-cell">
-              <div v-if="!shouldStrikethroughVerb(v)" class="verb-base">
+              <div v-if="!shouldHide(v)" class="verb-base">
                 <ruby>
                   <transition name="kanji-fancy" mode="out-in">
                     <span
