@@ -118,8 +118,8 @@ const shouldHide = (v: Verb): boolean => {
 
         <tbody>
         <tr v-for="(v, idx) in vocabulary" :key="idx">
-          <th class="verb-cell">
-            <div v-if="!shouldHide(v)" class="verb-base">
+          <th>
+            <div v-if="!shouldHide(v)" class="text-base">
               <ruby>
                 <transition name="kanji-fancy" mode="out-in">
                   <span
@@ -135,7 +135,7 @@ const shouldHide = (v: Verb): boolean => {
             </div>
           </th>
 
-          <th class="accent-cell">
+          <th>
             <template v-if="v.accent.length > 1">
               <transition name="accent-fade" mode="out-in">
                 <span :key="`${idx}-${kanjiTick % v.accent.length}`" class="accent-wrapper">

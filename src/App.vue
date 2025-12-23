@@ -1,10 +1,29 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import VerbTable from './components/VerbTable.vue'
-import NumbersTab from './components/NumbersTab.vue'
+import CSVTable from "./components/CSVTable.vue";
+
+// ===== CSV 模块配置 =====
+interface CSVModuleConfig {
+  id: string
+  displayName: string
+}
+
+// ===== CSV 模块列表 =====
+const csvModules: CSVModuleConfig[] = [
+  { id: 'compound', displayName: '複合動詞' },
+  { id: 'honorific', displayName: '敬語' },
+  { id: 'ki', displayName: '気の動詞' },
+]
+
+// ===== 标签页配置 =====
+const tabs = [
+  { id: 'verbs', label: '動詞' },
+  ...csvModules.map(module => ({ id: module.id, label: module.displayName }))
+]
 
 // ===== 状态 =====
-const activeTab = ref<'verbs' | 'numbers'>('verbs')
+const activeTab = ref<string>(tabs[0].id)
 </script>
 
 <template>
@@ -14,20 +33,14 @@ const activeTab = ref<'verbs' | 'numbers'>('verbs')
     <!-- 标签页 -->
     <div class="tab">
       <button 
+        v-for="tab in tabs"
+        :key="tab.id"
         type="button"
         class="tab-button"
-        :class="{ active: activeTab === 'verbs' }"
-        @click="activeTab = 'verbs'"
+        :class="{ active: activeTab === tab.id }"
+        @click="activeTab = tab.id"
       >
-        動詞
-      </button>
-      <button 
-        type="button"
-        class="tab-button"
-        :class="{ active: activeTab === 'numbers' }"
-        @click="activeTab = 'numbers'"
-      >
-        数字
+        {{ tab.label }}
       </button>
     </div>
 
@@ -36,9 +49,19 @@ const activeTab = ref<'verbs' | 'numbers'>('verbs')
       <VerbTable />
     </div>
 
-    <!-- 数字标签页内容 -->
-    <div v-show="activeTab === 'numbers'" class="tabcontent">
-      <NumbersTab />
-    </div>
+    <!-- CSV 模块标签页内容 -->
+    <template v-for="module in csvModules" :key="module.id">
+      <div 
+        v-show="activeTab === module.id"
+        class="tabcontent"
+        :data-module-id="module.id"
+        :data-active-tab="activeTab"
+      >
+        <CSVTable
+          :id="module.id"
+          :displayName="module.displayName"
+        />
+      </div>
+    </template>
   </main>
 </template>

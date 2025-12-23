@@ -27,6 +27,7 @@
 .styled-table th,
 .styled-table td {
     padding: 12px 15px;
+    text-align: center;
 }
 
 /* 固定第三列（自他動詞列）的宽度 */
@@ -125,18 +126,15 @@ h1 {
     width: 220px; /* 固定宽度 */
 }
 
-.verb-base {
+.text-base {
     font-weight: bold;
     font-size: 15px;
+    display: inline-block;
 }
 
 .verb-conjugated {
     font-size: 12px;
     opacity: 0.8;
-}
-
-.verb-base {
-    display: inline-block;
 }
 
 .kanji-fancy-enter-active,
