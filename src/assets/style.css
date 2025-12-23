@@ -1,10 +1,16 @@
 .styled-table {
     border-collapse: collapse;
-    margin: 15px 10px;
+    margin: 20px 0 20px 20px;
     font-size: 0.9em;
     font-family: sans-serif;
     min-width: 400px;
     box-shadow: 0 0 20px rgba(0, 12, 0, 0.15);
+}
+
+/* 确保 CSV 表格的左侧间距与动词表格一致 */
+.layout-main .styled-table {
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .styled-table tbody tr {
@@ -106,7 +112,7 @@ h1 {
 }
 
 .tabcontent {
-    padding: 20px;
+    padding: 10px 20px;
     border: 1px solid #ccc;
     border-top: none;
     margin: 0 20px 20px 20px;
@@ -231,11 +237,11 @@ h1 {
     padding: 20px;
 }
 
-/* 左右布局：左表格，右侧栏 */
+/* 左右布局：左表格，右控制面板 */
 .layout {
     display: flex;
     align-items: flex-start;
-    gap: 24px;
+    gap: 0;
 }
 
 /* 左侧主内容占满剩余宽度 */
@@ -244,12 +250,13 @@ h1 {
     min-width: 0; /* 防止表格撑破布局 */
 }
 
-/* 右侧控制面板 */
+/* 右侧控制面板，紧贴表格 */
 .layout-sidebar {
     flex: 0 0 180px;     /* 固定宽度侧栏，可按需要调整 */
     position: sticky;
     top: 80px;           /* 离顶部多少，看你标题高度调整 */
     align-self: flex-start;
+    margin-left: 0;      /* 紧贴表格，无间距 */
 }
 
 /* 侧栏内的小块分组 */
