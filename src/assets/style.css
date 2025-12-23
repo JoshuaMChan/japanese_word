@@ -77,10 +77,13 @@ h1 {
 .tab {
     overflow: hidden;
     border: 1px solid #ccc;
+    border-bottom: none;
     background-color: #f1f1f1;
+    margin: 20px 20px 0 20px;
+    border-radius: 4px 4px 0 0;
 }
 
-.tab button {
+.tab-button {
     background-color: inherit;
     float: left;
     border: none;
@@ -89,20 +92,29 @@ h1 {
     padding: 14px 16px;
     transition: 0.3s;
     font-size: 17px;
+    color: #333;
 }
 
-.tab button:hover {
+.tab-button:hover {
     background-color: #ddd;
 }
 
-.tab button.active {
-    background-color: #ccc;
+.tab-button.active {
+    background-color: #009879;
+    color: #fff;
 }
 
 .tabcontent {
-    padding: 6px 12px;
+    padding: 20px;
     border: 1px solid #ccc;
     border-top: none;
+    margin: 0 20px 20px 20px;
+    min-height: 400px;
+    border-radius: 0 0 4px 4px;
+}
+
+.numbers-tab-content {
+    padding: 20px;
 }
 
 .verb-cell {
