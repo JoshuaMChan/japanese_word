@@ -1,4 +1,4 @@
-// A-stem（あ段）
+// A-stem (あ段)
 export const aStem: Record<string, string> = {
     'う': 'わ',
     'く': 'か',
@@ -11,7 +11,7 @@ export const aStem: Record<string, string> = {
     'る': 'ら',
 }
 
-// I-stem（い段）— 连用形
+// I-stem (い段) — Continuative form
 export const iStem: Record<string, string> = {
     'う': 'い',
     'く': 'き',
@@ -24,7 +24,7 @@ export const iStem: Record<string, string> = {
     'る': 'り',
 }
 
-// E-stem（え段）
+// E-stem (え段)
 export const eStem: Record<string, string> = {
     'う': 'え',
     'く': 'け',
@@ -37,7 +37,7 @@ export const eStem: Record<string, string> = {
     'る': 'れ',
 }
 
-// O-stem（お段）
+// O-stem (お段)
 export const oStem: Record<string, string> = {
     'う': 'お',
     'く': 'こ',

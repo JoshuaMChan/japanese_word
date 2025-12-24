@@ -3,26 +3,27 @@ import { ref } from 'vue'
 import VerbTable from './components/VerbTable.vue'
 import CSVTable from "./components/CSVTable.vue";
 
-// ===== CSV 模块配置 =====
+// ===== CSV Module Configuration =====
 interface CSVModuleConfig {
   id: string
   displayName: string
 }
 
-// ===== CSV 模块列表 =====
+// ===== CSV Module List =====
 const csvModules: CSVModuleConfig[] = [
   { id: 'compound', displayName: '複合動詞' },
-  { id: 'honorific', displayName: '敬語' },
+  { id: 'honorific', displayName: '敬語動詞' },
   { id: 'ki', displayName: '気の動詞' },
+  { id: 'unit', displayName: '単位' },
 ]
 
-// ===== 标签页配置 =====
+// ===== Tab Configuration =====
 const tabs = [
-  { id: 'verbs', label: '動詞' },
+  { id: 'verbs', label: '動詞リスト' },
   ...csvModules.map(module => ({ id: module.id, label: module.displayName }))
 ]
 
-// ===== 状态 =====
+// ===== State =====
 const activeTab = ref<string>(tabs[0].id)
 </script>
 
@@ -30,7 +31,7 @@ const activeTab = ref<string>(tabs[0].id)
   <main class="page-container">
     <h1>日本語語彙</h1>
 
-    <!-- 标签页 -->
+    <!-- Tabs -->
     <div class="tab">
       <button 
         v-for="tab in tabs"
@@ -44,12 +45,12 @@ const activeTab = ref<string>(tabs[0].id)
       </button>
     </div>
 
-    <!-- 動詞标签页内容 -->
+    <!-- Verbs tab content -->
     <div v-show="activeTab === 'verbs'" class="tabcontent">
       <VerbTable />
     </div>
 
-    <!-- CSV 模块标签页内容 -->
+    <!-- CSV module tab content -->
     <template v-for="module in csvModules" :key="module.id">
       <div 
         v-show="activeTab === module.id"

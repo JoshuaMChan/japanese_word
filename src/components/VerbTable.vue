@@ -23,16 +23,16 @@ const forms = [
   { id: 'PASS', label: 'た形' },
 ] as const
 
-// ===== 状态 =====
+// ===== State =====
 const conjugation = ref<Conjugation>('DICT')
 
-// ===== 汉字轮播（仍然属于 UI 层） =====
+// ===== Kanji rotation (still UI layer) =====
 const kanjiTick = ref(0)
 let kanjiTimer: number | undefined
 
-// ===== 键盘切换活用形态 =====
+// ===== Keyboard navigation for conjugation forms =====
 const handleKeyDown = (event: KeyboardEvent) => {
-  // 如果用户正在输入框中输入，不处理键盘事件
+  // If user is typing in an input field, don't handle keyboard events
   if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement) {
     return
   }
@@ -44,16 +44,16 @@ const handleKeyDown = (event: KeyboardEvent) => {
     
     let nextIndex: number
     if (event.key === 'ArrowUp') {
-      // 上键：向前（索引减1，如果到开头则循环到末尾）
+      // Up key: move forward (decrement index, wrap to end if at start)
       nextIndex = currentIndex <= 0 ? forms.length - 1 : currentIndex - 1
     } else {
-      // 下键：向后（索引加1，如果到末尾则循环到开头）
+      // Down key: move backward (increment index, wrap to start if at end)
       nextIndex = currentIndex >= forms.length - 1 ? 0 : currentIndex + 1
     }
     
     conjugation.value = forms[nextIndex].id
     
-    // 滚动到当前选中的按钮
+    // Scroll to currently selected button
     nextTick(() => {
       const activeButton = document.querySelector(`button[data-form-id="${forms[nextIndex].id}"]`) as HTMLElement
       if (activeButton) {
@@ -68,7 +68,7 @@ onMounted(() => {
     kanjiTick.value++
   }, 5000)
   
-  // 添加键盘事件监听
+  // Add keyboard event listener
   window.addEventListener('keydown', handleKeyDown)
 })
 
@@ -77,7 +77,7 @@ onUnmounted(() => {
     window.clearInterval(kanjiTimer)
   }
   
-  // 移除键盘事件监听
+  // Remove keyboard event listener
   window.removeEventListener('keydown', handleKeyDown)
 })
 
@@ -88,7 +88,7 @@ const activeKanji = (v: Verb): string => {
   return conjugated.kanjiStart[idx]
 }
 
-// ===== 获取活用后的动词 =====
+// ===== Get conjugated verb =====
 const getConjugatedVerb = (v: Verb): Verb => {
   return conjugate(v, conjugation.value)
 }
@@ -104,9 +104,9 @@ const shouldHide = (v: Verb): boolean => {
 </script>
 
 <template>
-  <!-- 左：表格  右：控制面板 -->
+  <!-- Left: Table  Right: Control Panel -->
   <div class="layout">
-    <!-- 左侧：動詞表 -->
+    <!-- Left: Verb Table -->
     <div class="layout-main">
       <table class="styled-table sortable">
         <thead>
@@ -160,7 +160,7 @@ const shouldHide = (v: Verb): boolean => {
       </table>
     </div>
 
-    <!-- 右侧：形态切换控制面板 -->
+    <!-- Right: Conjugation form control panel -->
     <aside class="layout-sidebar">
       <div class="sidebar-section">
         <div class="toggle-column">

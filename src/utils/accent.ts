@@ -1,4 +1,4 @@
-// ===== アクセント 分段 =====
+// ===== Accent Segmentation =====
 import {Verb} from "../types/verb.ts";
 
 type AccentSegment = { cls: string; text: string }
@@ -9,12 +9,12 @@ export const accentSegments = (v: Verb, accent: string): AccentSegment[] => {
     const rest = all.substring(1)
 
     switch (accent) {
-        case 'ATA': // 頭高型
+        case 'ATA': // Atamadaka (head-high)
             return [
                 { cls: 'h2l', text: first },
                 { cls: 'l', text: rest },
             ]
-        case 'NAKA': { // 中高型
+        case 'NAKA': { // Nakadaka (middle-high)
             if (rest.length <= 1) {
                 return [
                     { cls: 'l2h', text: first },
@@ -29,8 +29,8 @@ export const accentSegments = (v: Verb, accent: string): AccentSegment[] => {
                 { cls: 'l', text: last },
             ]
         }
-        case 'ODA': // 尾高型
-        case 'HEI': // 平板型
+        case 'ODA': // Odaka (tail-high)
+        case 'HEI': // Heiban (flat)
             return [
                 { cls: 'l2h', text: first },
                 { cls: 'h', text: rest },

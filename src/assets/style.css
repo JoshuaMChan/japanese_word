@@ -7,8 +7,8 @@
     box-shadow: 0 0 20px rgba(0, 12, 0, 0.15);
 }
 
-/* 确保 CSV 表格的左侧间距与动词表格一致 */
-.layout-main .styled-table {
+/* Ensure CSV table left spacing matches verb table */
+.layout-main .styled-table {
     margin-left: 10px;
     margin-right: 10px;
 }
@@ -32,15 +32,11 @@
 
 .styled-table th,
 .styled-table td {
-    padding: 12px 15px;
+    padding: 10px 6px;
     text-align: center;
-}
-
-/* 固定第三列（自他動詞列）的宽度 */
-.styled-table tbody th:nth-child(3),
-.styled-table thead th:nth-child(3) {
-    min-width: 200px; /* 固定最小宽度，防止内容变化时列宽收缩 */
-    width: 200px; /* 固定宽度 */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    vertical-align: middle;
 }
 
 .styled-table tbody tr.active-row {
@@ -127,9 +123,9 @@ h1 {
 .verb-cell {
     display: flex;
     flex-direction: column;
-    min-height: 2em; /* 固定最小高度，容纳 ruby 振假名，防止隐藏后收缩 */
-    min-width: 220px; /* 固定最小宽度，防止内容变化时列宽收缩 */
-    width: 220px; /* 固定宽度 */
+    min-height: 2em; /* Fixed min-height to accommodate ruby furigana, prevent shrinkage after hiding */
+    min-width: 220px; /* Fixed min-width to prevent column width shrinkage when content changes */
+    width: 220px; /* Fixed width */
 }
 
 .text-base {
@@ -160,7 +156,7 @@ h1 {
     transform: translateY(-3px);
 }
 
-/* 声调红线淡入淡出效果 */
+/* Accent red line fade in/out effect */
 .accent-fade-enter-active,
 .accent-fade-leave-active {
     transition: opacity 0.5s ease-out;
@@ -237,29 +233,29 @@ h1 {
     padding: 20px;
 }
 
-/* 左右布局：左表格，右控制面板 */
+/* Left-right layout: left table, right control panel */
 .layout {
     display: flex;
     align-items: flex-start;
     gap: 0;
 }
 
-/* 左侧主内容占满剩余宽度 */
+/* Left main content takes remaining width */
 .layout-main {
     flex: 1 1 auto;
-    min-width: 0; /* 防止表格撑破布局 */
+    min-width: 0; /* Prevent table from breaking layout */
 }
 
-/* 右侧控制面板，紧贴表格 */
+/* Right control panel, close to table */
 .layout-sidebar {
-    flex: 0 0 180px;     /* 固定宽度侧栏，可按需要调整 */
+    flex: 0 0 180px;     /* Fixed width sidebar, adjust as needed */
     position: sticky;
-    top: 80px;           /* 离顶部多少，看你标题高度调整 */
+    top: 80px;           /* Distance from top, adjust based on title height */
     align-self: flex-start;
-    margin-left: 0;      /* 紧贴表格，无间距 */
+    margin-left: 0;      /* Close to table, no spacing */
 }
 
-/* 侧栏内的小块分组 */
+/* Small sections within sidebar */
 .sidebar-section {
     margin-bottom: 16px;
 }
@@ -271,14 +267,14 @@ h1 {
     margin-bottom: 6px;
 }
 
-/* 纵向按钮排列 */
+/* Vertical button arrangement */
 .toggle-column {
     display: flex;
     flex-direction: column;
     gap: 6px;
 }
 
-/* 你原来的按钮样式，可以沿用 */
+/* Original button styles, can be reused */
 .toggle-btn {
     padding: 4px 10px;
     border-radius: 999px;
@@ -297,7 +293,7 @@ h1 {
     color: #fff;
 }
 
-/* 小屏幕时让侧栏掉到下面（可选） */
+/* Move sidebar below on small screens (optional) */
 @media (max-width: 768px) {
     .layout {
         flex-direction: column;

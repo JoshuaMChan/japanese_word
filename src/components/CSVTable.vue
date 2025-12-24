@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {ref, onMounted} from 'vue'
+import {ref, onMounted, computed} from 'vue'
 import {parseCSV, CSVData} from '../utils/csvParser'
 
 interface Props {
@@ -13,40 +13,46 @@ const csvData = ref<CSVData>({headers: [], rows: []})
 const loading = ref(true)
 const error = ref<string | null>(null)
 
-// 使用 Vite 的 glob 导入来预加载所有 CSV 文件
+// Use Vite's glob import to preload all CSV files
 const csvModules = import.meta.glob('../assets/csvs/*.csv', {
   eager: false,
   query: '?raw',
   import: 'default'
 }) as Record<string, () => Promise<string>>
 
+// Process cell content to replace / with line breaks
+const processCell = (cell: string | undefined): string => {
+  if (!cell) return ''
+  return cell.replace(/\//g, '<br>')
+}
+
 onMounted(async () => {
   try {
-    // 构建文件路径（需要匹配 glob 模式）
+    // Build file path (needs to match glob pattern)
     const filePath = `../assets/csvs/${props.id}.csv`
 
-    // 从 glob 导入中获取对应的模块加载函数
+    // Get the corresponding module loader from glob import
     const moduleLoader = csvModules[filePath]
 
     if (!moduleLoader) {
-      throw new Error(`未找到文件: ${props.id}.csv (路径: ${filePath})`)
+      throw new Error(`File not found: ${props.id}.csv (path: ${filePath})`)
     }
 
-    // 加载模块
+    // Load module
     const csvText = await moduleLoader()
     csvData.value = parseCSV(csvText)
     loading.value = false
   } catch (err) {
-    error.value = `无法加载文件: ${props.id}.csv`
+    error.value = `Failed to load file: ${props.id}.csv`
     loading.value = false
-    console.error('CSV加载错误:', err)
-    console.error('可用文件:', Object.keys(csvModules))
+    console.error('CSV loading error:', err)
+    console.error('Available files:', Object.keys(csvModules))
   }
 })
 </script>
 
 <template>
-  <div v-if="loading" class="csv-loading">加载中...</div>
+  <div v-if="loading" class="csv-loading">Loading...</div>
   <div v-else-if="error" class="csv-error">{{ error }}</div>
   <div v-else class="layout">
     <div class="layout-main">
@@ -60,9 +66,8 @@ onMounted(async () => {
         </thead>
         <tbody>
         <tr v-for="(row, rowIdx) in csvData.rows" :key="rowIdx">
-          <td v-for="(cell, cellIdx) in row" :key="cellIdx">
-            <div class="text-base" v-html="cell.replace(/\//g, '<br>')">
-            </div>
+          <td v-for="(header, headerIdx) in csvData.headers" :key="headerIdx" class="csv-cell">
+            <span class="csv-cell-content" v-html="processCell(row[headerIdx])"></span>
           </td>
         </tr>
         </tbody>
@@ -72,7 +77,6 @@ onMounted(async () => {
 </template>
 
 <style scoped>
-
 .csv-loading,
 .csv-error {
   padding: 20px;
@@ -82,6 +86,17 @@ onMounted(async () => {
 
 .csv-error {
   color: #d32f2f;
+}
+
+.csv-cell {
+  vertical-align: middle;
+}
+
+.csv-cell-content {
+  display: block;
+  line-height: 1.8;
+  font-weight: bold;
+  font-size: 15px;
 }
 </style>
 

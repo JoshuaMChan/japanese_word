@@ -1,5 +1,5 @@
 /**
- * CSV 解析工具
+ * CSV Parser Utility
  */
 
 export interface CSVData {
@@ -8,7 +8,7 @@ export interface CSVData {
 }
 
 /**
- * 解析 CSV 字符串
+ * Parse CSV string
  */
 export function parseCSV(csvText: string): CSVData {
   const lines = csvText.trim().split('\n')
@@ -16,17 +16,17 @@ export function parseCSV(csvText: string): CSVData {
     return { headers: [], rows: [] }
   }
 
-  // 第一行是标题
+  // First line is headers
   const headers = parseCSVLine(lines[0])
   
-  // 其余行是数据
+  // Remaining lines are data
   const rows = lines.slice(1).map(line => parseCSVLine(line))
 
   return { headers, rows }
 }
 
 /**
- * 解析 CSV 行（处理逗号分隔的值）
+ * Parse CSV line (handle comma-separated values)
  */
 function parseCSVLine(line: string): string[] {
   const result: string[] = []
