@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted, watch } from 'vue'
 import VerbTable from './components/VerbTable.vue'
 import CSVTable from "./components/CSVTable.vue";
 
@@ -23,8 +23,36 @@ const tabs = [
   ...csvModules.map(module => ({ id: module.id, label: module.displayName }))
 ]
 
+// ===== Get initial tab from URL =====
+const getTabFromURL = (): string => {
+  const hash = window.location.hash.slice(1) // Remove #
+  if (hash && tabs.some(tab => tab.id === hash)) {
+    return hash
+  }
+  return tabs[0].id
+}
+
 // ===== State =====
-const activeTab = ref<string>(tabs[0].id)
+const activeTab = ref<string>(getTabFromURL())
+
+// ===== Update URL when tab changes =====
+watch(activeTab, (newTab) => {
+  window.history.pushState(null, '', `#${newTab}`)
+})
+
+// ===== Handle browser back/forward =====
+onMounted(() => {
+  window.addEventListener('popstate', () => {
+    activeTab.value = getTabFromURL()
+  })
+  
+  // Update URL on initial load
+  if (window.location.hash) {
+    window.history.replaceState(null, '', window.location.hash)
+  } else {
+    window.history.replaceState(null, '', `#${activeTab.value}`)
+  }
+})
 </script>
 
 <template>

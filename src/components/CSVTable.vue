@@ -20,10 +20,16 @@ const csvModules = import.meta.glob('../assets/csvs/*.csv', {
   import: 'default'
 }) as Record<string, () => Promise<string>>
 
-// Process cell content to replace / with line breaks
+// Process cell content to replace / with line breaks and handle ＊
 const processCell = (cell: string | undefined): string => {
   if (!cell) return ''
-  return cell.replace(/\//g, '<br>')
+  let processed = cell.replace(/\//g, '<br>')
+  // Replace text between ＊ with red text styling and remove the ＊
+  // First, handle text between two ＊ characters (e.g., ＊text＊)
+  processed = processed.replace(/＊([^＊]*)＊/g, '<span class="csv-red-text">$1</span>')
+  // Then, handle single ＊ at the end (legacy format: text＊)
+  processed = processed.replace(/([^<]*?)＊(?!.*<)/g, '<span class="csv-red-text">$1</span>')
+  return processed
 }
 
 onMounted(async () => {
@@ -97,6 +103,10 @@ onMounted(async () => {
   line-height: 1.8;
   font-weight: bold;
   font-size: 15px;
+}
+
+:deep(.csv-red-text) {
+  color: red !important;
 }
 </style>
 
