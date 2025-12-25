@@ -13,6 +13,28 @@ const csvData = ref<CSVData>({headers: [], rows: []})
 const loading = ref(true)
 const error = ref<string | null>(null)
 
+// ===== Search =====
+const searchQuery = ref('')
+
+// Filter rows based on search query
+const filteredRows = computed(() => {
+  if (!searchQuery.value.trim()) {
+    return csvData.value.rows
+  }
+  
+  const query = searchQuery.value.toLowerCase().trim()
+  
+  return csvData.value.rows.filter(row => {
+    // Search in all cells of the row (search raw cell content)
+    return row.some(cell => {
+      if (!cell) return false
+      // Remove ＊ markers for search, but keep the text
+      const searchableText = cell.replace(/＊/g, '').toLowerCase()
+      return searchableText.includes(query)
+    })
+  })
+})
+
 // Use Vite's glob import to preload all CSV files
 const csvModules = import.meta.glob('../assets/csvs/*.csv', {
   eager: false,
@@ -62,6 +84,19 @@ onMounted(async () => {
   <div v-else-if="error" class="csv-error">{{ error }}</div>
   <div v-else class="layout">
     <div class="layout-main">
+      <!-- Search Input -->
+      <div class="search-container">
+        <input
+          v-model="searchQuery"
+          type="text"
+          class="search-input"
+          placeholder="検索..."
+        />
+        <span v-if="searchQuery" class="search-results">
+          {{ filteredRows.length }} / {{ csvData.rows.length }}
+        </span>
+      </div>
+      
       <table class="styled-table sortable">
         <thead>
         <tr>
@@ -71,7 +106,7 @@ onMounted(async () => {
         </tr>
         </thead>
         <tbody>
-        <tr v-for="(row, rowIdx) in csvData.rows" :key="rowIdx">
+        <tr v-for="(row, rowIdx) in filteredRows" :key="rowIdx">
           <td v-for="(header, headerIdx) in csvData.headers" :key="headerIdx" class="csv-cell">
             <span class="csv-cell-content" v-html="processCell(row[headerIdx])"></span>
           </td>

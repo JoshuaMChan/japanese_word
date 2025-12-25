@@ -1,11 +1,45 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, nextTick } from 'vue'
+import { ref, computed, onMounted, onUnmounted, nextTick } from 'vue'
 import verbs from '../assets/verbs.json'
 import { Verb } from '../types/verb'
 import { accentSegments } from '../utils/accent'
 import { conjugate, Conjugation } from '../utils/conjugation.ts'
 
 const vocabulary = verbs as Verb[]
+
+// ===== Search =====
+const searchQuery = ref('')
+
+// Filter vocabulary based on search query
+const filteredVocabulary = computed(() => {
+  if (!searchQuery.value.trim()) {
+    return vocabulary
+  }
+  
+  const query = searchQuery.value.toLowerCase().trim()
+  
+  return vocabulary.filter(v => {
+    // Search in original kana
+    const originalKana = (v.kanaStart + v.kanaEnd).toLowerCase()
+    if (originalKana.includes(query)) return true
+    
+    // Search in kanji
+    if (v.kanjiStart && v.kanjiStart.some(kanji => kanji.includes(query))) {
+      return true
+    }
+    
+    // Search in conjugated form
+    const conjugated = conjugate(v, conjugation.value)
+    const conjugatedKana = (conjugated.kanaStart + conjugated.kanaEnd).toLowerCase()
+    if (conjugatedKana.includes(query)) return true
+    
+    if (conjugated.kanjiStart && conjugated.kanjiStart.some(kanji => kanji.includes(query))) {
+      return true
+    }
+    
+    return false
+  })
+})
 
 const forms = [
   { id: 'DICT', label: '辞書形' },
@@ -108,6 +142,19 @@ const shouldHide = (v: Verb): boolean => {
   <div class="layout">
     <!-- Left: Verb Table -->
     <div class="layout-main">
+      <!-- Search Input -->
+      <div class="search-container">
+        <input
+          v-model="searchQuery"
+          type="text"
+          class="search-input"
+          placeholder="検索..."
+        />
+        <span v-if="searchQuery" class="search-results">
+          {{ filteredVocabulary.length }} / {{ vocabulary.length }}
+        </span>
+      </div>
+      
       <table class="styled-table sortable">
         <thead>
         <tr>
@@ -117,7 +164,7 @@ const shouldHide = (v: Verb): boolean => {
         </thead>
 
         <tbody>
-        <tr v-for="(v, idx) in vocabulary" :key="idx">
+        <tr v-for="(v, idx) in filteredVocabulary" :key="idx">
           <th>
             <div v-if="!shouldHide(v)" class="text-base">
               <ruby>
