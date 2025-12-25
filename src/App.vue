@@ -12,9 +12,9 @@ interface CSVModuleConfig {
 // ===== CSV Module List =====
 const csvModules: CSVModuleConfig[] = [
   { id: 'compound', displayName: '複合動詞' },
-  { id: 'honorific', displayName: '敬語動詞' },
+  { id: 'honorific', displayName: '敬語の動詞' },
   { id: 'ki', displayName: '気の動詞' },
-  { id: 'unit', displayName: '単位' },
+  { id: 'unit', displayName: '数え方' },
 ]
 
 // ===== Tab Configuration =====
