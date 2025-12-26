@@ -7,6 +7,8 @@ import { conjugate, Conjugation } from '../utils/conjugation.ts'
 import { TRANSITIVITY_JA } from '../constants/transitivity'
 import { romajiToHiragana, containsRomaji } from '../utils/romajiToKana'
 import Pagination from './Pagination.vue'
+import GojuuonPanel from './GojuuonPanel.vue'
+import SearchInput from './SearchInput.vue'
 
 const vocabulary = verbs as Verb[]
 
@@ -68,26 +70,6 @@ const uniqueAccents = computed(() => {
   return sortByDefinedOrder(accents, ACCENT_ORDER)
 })
 
-// ===== Gojuuon (50 Sounds) =====
-const GOJUUON_ROWS = [
-  ['あ', 'い', 'う', 'え', 'お'],
-  ['か', 'き', 'く', 'け', 'こ'],
-  ['が', 'ぎ', 'ぐ', 'げ', 'ご'],
-  ['さ', 'し', 'す', 'せ', 'そ'],
-  ['ざ', 'じ', 'ず', 'ぜ', 'ぞ'],
-  ['た', 'ち', 'つ', 'て', 'と'],
-  ['だ', 'ぢ', 'づ', 'で', 'ど'],
-  ['な', 'に', 'ぬ', 'ね', 'の'],
-  ['は', 'ひ', 'ふ', 'へ', 'ほ'],
-  ['ば', 'び', 'ぶ', 'べ', 'ぼ'],
-  ['ぱ', 'ぴ', 'ぷ', 'ぺ', 'ぽ'],
-  ['ま', 'み', 'む', 'め', 'も'],
-  ['や', 'ゆ', 'よ'],
-  ['ら', 'り', 'る', 'れ', 'ろ'],
-  ['わ', 'を', 'ん'],
-] as const
-
-const GOJUUON_CHARS = GOJUUON_ROWS.flat()
 
 // ===== Filter State =====
 const searchQuery = ref('')
@@ -240,6 +222,18 @@ const handleKeyDown = (event: KeyboardEvent) => {
   } else if (event.key === 'ArrowDown') {
     event.preventDefault()
     navigateConjugation('down')
+  } else if (event.key === 'ArrowLeft') {
+    // Navigate to previous page if pagination is active
+    if (filteredVocabulary.value.length > ROWS_PER_PAGE && currentPage.value > 1) {
+      event.preventDefault()
+      currentPage.value--
+    }
+  } else if (event.key === 'ArrowRight') {
+    // Navigate to next page if pagination is active
+    if (filteredVocabulary.value.length > ROWS_PER_PAGE && currentPage.value < totalPages.value) {
+      event.preventDefault()
+      currentPage.value++
+    }
   }
 }
 
@@ -291,14 +285,12 @@ const shouldHide = (v: Verb): boolean => {
       <!-- Filters -->
       <div class="filters-container">
         <!-- Search Input -->
-        <div class="search-container">
-          <input
-            v-model="searchQuery"
-            type="text"
-            class="search-input"
-            placeholder="検索..."
-          />
-        </div>
+        <SearchInput
+          v-model="searchQuery"
+          :show-results="true"
+          :filtered-count="filteredVocabulary.length"
+          :total-count="vocabulary.length"
+        />
         
         <!-- Dropdown Filters -->
         <div class="filter-row">
@@ -333,12 +325,6 @@ const shouldHide = (v: Verb): boolean => {
           </div>
         </div>
         
-        <!-- Results count -->
-        <div class="search-results-container">
-          <span v-if="searchQuery || selectedConjClass || selectedTransitivity || selectedAccent || selectedGojuuon" class="search-results">
-            {{ filteredVocabulary.length }} / {{ vocabulary.length }}
-          </span>
-        </div>
       </div>
       
       <table class="styled-table sortable">
@@ -408,28 +394,7 @@ const shouldHide = (v: Verb): boolean => {
       <div class="sidebar-sections-row">
         <!-- Gojuuon Filter Panel -->
         <div class="sidebar-section">
-          <div class="gojuuon-panel">
-            <div
-                v-for="(row, rowIdx) in GOJUUON_ROWS"
-                :key="rowIdx"
-                class="gojuuon-row"
-                :class="{ 'gojuuon-row-3': row.length === 3 }"
-            >
-              <button
-                  v-for="(char, charIdx) in row"
-                  :key="char"
-                  type="button"
-                  class="gojuuon-btn"
-                  :class="{ 
-                    active: selectedGojuuon === char,
-                    'gojuuon-btn-3-pos': row.length === 3 && (charIdx === 0 || charIdx === 1 || charIdx === 2)
-                  }"
-                  @click="selectedGojuuon = selectedGojuuon === char ? '' : char"
-              >
-                {{ char }}
-              </button>
-            </div>
-          </div>
+          <GojuuonPanel v-model="selectedGojuuon" />
         </div>
         
         <!-- Conjugation form control panel -->

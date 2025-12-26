@@ -1,8 +1,10 @@
 <script setup lang="ts">
-import {ref, onMounted, computed, watch} from 'vue'
+import {ref, onMounted, onUnmounted, computed, watch} from 'vue'
 import {parseCSV, CSVData} from '../utils/csvParser'
 import { romajiToHiragana, containsRomaji } from '../utils/romajiToKana'
 import Pagination from './Pagination.vue'
+import GojuuonPanel from './GojuuonPanel.vue'
+import SearchInput from './SearchInput.vue'
 
 interface Props {
   id: string
@@ -16,26 +18,6 @@ const csvData = ref<CSVData>({headers: [], rows: []})
 const loading = ref(true)
 const error = ref<string | null>(null)
 
-// ===== Gojuuon (50 Sounds) =====
-const GOJUUON_ROWS = [
-  ['あ', 'い', 'う', 'え', 'お'],
-  ['か', 'き', 'く', 'け', 'こ'],
-  ['が', 'ぎ', 'ぐ', 'げ', 'ご'],
-  ['さ', 'し', 'す', 'せ', 'そ'],
-  ['ざ', 'じ', 'ず', 'ぜ', 'ぞ'],
-  ['た', 'ち', 'つ', 'て', 'と'],
-  ['だ', 'ぢ', 'づ', 'で', 'ど'],
-  ['な', 'に', 'ぬ', 'ね', 'の'],
-  ['は', 'ひ', 'ふ', 'へ', 'ほ'],
-  ['ば', 'び', 'ぶ', 'べ', 'ぼ'],
-  ['ぱ', 'ぴ', 'ぷ', 'ぺ', 'ぽ'],
-  ['ま', 'み', 'む', 'め', 'も'],
-  ['や', 'ゆ', 'よ'],
-  ['ら', 'り', 'る', 'れ', 'ろ'],
-  ['わ', 'を', 'ん'],
-] as const
-
-const GOJUUON_CHARS = GOJUUON_ROWS.flat()
 
 // ===== Search =====
 const searchQuery = ref('')
@@ -126,7 +108,35 @@ const processCell = (cell: string | undefined): string => {
   return processed
 }
 
+// ===== Keyboard navigation =====
+const isInputElement = (target: EventTarget | null): boolean => {
+  return target instanceof HTMLInputElement ||
+         target instanceof HTMLTextAreaElement ||
+         target instanceof HTMLSelectElement
+}
+
+const handleKeyDown = (event: KeyboardEvent) => {
+  if (isInputElement(event.target)) return
+  
+  if (event.key === 'ArrowLeft') {
+    // Navigate to previous page if pagination is active
+    if (filteredRows.value.length > ROWS_PER_PAGE && currentPage.value > 1) {
+      event.preventDefault()
+      currentPage.value--
+    }
+  } else if (event.key === 'ArrowRight') {
+    // Navigate to next page if pagination is active
+    if (filteredRows.value.length > ROWS_PER_PAGE && currentPage.value < totalPages.value) {
+      event.preventDefault()
+      currentPage.value++
+    }
+  }
+}
+
 onMounted(async () => {
+  // Add keyboard event listener
+  window.addEventListener('keydown', handleKeyDown)
+  
   try {
     // Build file path (needs to match glob pattern)
     const filePath = `../assets/csvs/${props.id}.csv`
@@ -149,6 +159,11 @@ onMounted(async () => {
     console.error('Available files:', Object.keys(csvModules))
   }
 })
+
+onUnmounted(() => {
+  // Remove keyboard event listener
+  window.removeEventListener('keydown', handleKeyDown)
+})
 </script>
 
 <template>
@@ -157,17 +172,12 @@ onMounted(async () => {
   <div v-else class="layout">
     <div class="layout-main">
       <!-- Search Input -->
-      <div class="search-container">
-        <input
-          v-model="searchQuery"
-          type="text"
-          class="search-input"
-          placeholder="検索..."
-        />
-        <span v-if="searchQuery || selectedGojuuon" class="search-results">
-          {{ filteredRows.length }} / {{ csvData.rows.length }}
-        </span>
-      </div>
+      <SearchInput
+        v-model="searchQuery"
+        :show-results="true"
+        :filtered-count="filteredRows.length"
+        :total-count="csvData.rows.length"
+      />
       
       <table class="styled-table sortable">
         <thead>
@@ -200,28 +210,7 @@ onMounted(async () => {
     <!-- Right: Gojuuon Filter Panel -->
     <aside v-if="showGojuuon" class="layout-sidebar">
       <div class="sidebar-section">
-        <div class="gojuuon-panel">
-          <div
-              v-for="(row, rowIdx) in GOJUUON_ROWS"
-              :key="rowIdx"
-              class="gojuuon-row"
-              :class="{ 'gojuuon-row-3': row.length === 3 }"
-          >
-            <button
-                v-for="(char, charIdx) in row"
-                :key="char"
-                type="button"
-                class="gojuuon-btn"
-                :class="{ 
-                  active: selectedGojuuon === char,
-                  'gojuuon-btn-3-pos': row.length === 3 && (charIdx === 0 || charIdx === 1 || charIdx === 2)
-                }"
-                @click="selectedGojuuon = selectedGojuuon === char ? '' : char"
-            >
-              {{ char }}
-            </button>
-          </div>
-        </div>
+        <GojuuonPanel v-model="selectedGojuuon" />
       </div>
     </aside>
   </div>
