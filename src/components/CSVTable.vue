@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import {ref, onMounted, computed} from 'vue'
 import {parseCSV, CSVData} from '../utils/csvParser'
+import { romajiToHiragana, containsRomaji } from '../utils/romajiToKana'
 
 interface Props {
   id: string
@@ -22,7 +23,14 @@ const filteredRows = computed(() => {
     return csvData.value.rows
   }
   
-  const query = searchQuery.value.toLowerCase().trim()
+  const rawQuery = searchQuery.value.trim()
+  const query = rawQuery.toLowerCase()
+  
+  // Convert romaji to kana if the query contains romaji
+  let kanaQuery = query
+  if (containsRomaji(query)) {
+    kanaQuery = romajiToHiragana(query)
+  }
   
   return csvData.value.rows.filter(row => {
     // Search in all cells of the row (search raw cell content)
@@ -30,7 +38,8 @@ const filteredRows = computed(() => {
       if (!cell) return false
       // Remove ＊ markers for search, but keep the text
       const searchableText = cell.replace(/＊/g, '').toLowerCase()
-      return searchableText.includes(query)
+      // Search with both original query and converted kana
+      return searchableText.includes(query) || searchableText.includes(kanaQuery)
     })
   })
 })

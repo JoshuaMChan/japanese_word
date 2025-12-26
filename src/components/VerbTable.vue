@@ -5,6 +5,7 @@ import { Verb } from '../types/verb'
 import { accentSegments } from '../utils/accent'
 import { conjugate, Conjugation } from '../utils/conjugation.ts'
 import { TRANSITIVITY_JA } from '../constants/transitivity'
+import { romajiToHiragana, containsRomaji } from '../utils/romajiToKana'
 
 const vocabulary = verbs as Verb[]
 
@@ -95,24 +96,39 @@ const filteredVocabulary = computed(() => {
   
   // Search filter
   if (searchQuery.value.trim()) {
-    const query = searchQuery.value.toLowerCase().trim()
+    const rawQuery = searchQuery.value.trim()
+    const query = rawQuery.toLowerCase()
+
+    // Convert romaji to kana if the query contains romaji
+    let kanaQuery = query
+    if (containsRomaji(query)) {
+      kanaQuery = romajiToHiragana(query)
+    }
+
     result = result.filter(v => {
-      // Search in original kana
+      // Search in original kana (both original query and converted kana)
       const originalKana = (v.kanaStart + v.kanaEnd).toLowerCase()
-      if (originalKana.includes(query)) return true
+      if (originalKana.includes(query) || originalKana.includes(kanaQuery)) return true
       
       // Search in kanji
-      if (v.kanjiStart && v.kanjiStart.some(kanji => kanji.includes(query))) {
+      if (v.kanjiStart && v.kanjiStart.some(kanji => kanji.includes(query) || kanji.includes(kanaQuery))) {
         return true
       }
       
       // Search in conjugated form
       const conjugated = conjugate(v, conjugation.value)
       const conjugatedKana = (conjugated.kanaStart + conjugated.kanaEnd).toLowerCase()
-      if (conjugatedKana.includes(query)) return true
+      if (conjugatedKana.includes(query) || conjugatedKana.includes(kanaQuery)) return true
       
-      if (conjugated.kanjiStart && conjugated.kanjiStart.some(kanji => kanji.includes(query))) {
+      if (conjugated.kanjiStart && conjugated.kanjiStart.some(kanji => kanji.includes(query) || kanji.includes(kanaQuery))) {
         return true
+      }
+      
+      // Also search in romaji directly (for partial matches)
+      if (containsRomaji(query)) {
+        const romajiKana = originalKana
+        // Try to match romaji patterns in the kana string
+        if (romajiKana.includes(kanaQuery)) return true
       }
       
       return false
