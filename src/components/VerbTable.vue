@@ -4,41 +4,144 @@ import verbs from '../assets/verbs.json'
 import { Verb } from '../types/verb'
 import { accentSegments } from '../utils/accent'
 import { conjugate, Conjugation } from '../utils/conjugation.ts'
+import { TRANSITIVITY_JA } from '../constants/transitivity'
 
 const vocabulary = verbs as Verb[]
 
-// ===== Search =====
-const searchQuery = ref('')
+// ===== Conjugation Class Japanese Labels =====
+const CONJ_CLASS_JA: Record<string, string> = {
+  'GODAN': '五段',
+  'KAMI_ICHIDAN': '上一段',
+  'SHIMO_ICHIDAN': '下一段',
+  'SAHEN': 'サ変',
+  'KAHEN': 'カ変',
+}
 
-// Filter vocabulary based on search query
+// Define order for conjugation classes
+const CONJ_CLASS_ORDER = Object.keys(CONJ_CLASS_JA)
+
+// ===== Get unique filter values =====
+const uniqueConjClasses = computed(() => {
+  const classes = new Set<string>()
+  vocabulary.forEach(v => classes.add(v.conjClass))
+  
+  // Sort by defined order, then add any unknown classes at the end
+  const ordered: string[] = []
+  const unordered: string[] = []
+  
+  CONJ_CLASS_ORDER.forEach(cls => {
+    if (classes.has(cls)) {
+      ordered.push(cls)
+    }
+  })
+  
+  classes.forEach(cls => {
+    if (!CONJ_CLASS_ORDER.includes(cls)) {
+      unordered.push(cls)
+    }
+  })
+  
+  return [...ordered, ...unordered.sort()]
+})
+
+// Transitivity filter only has VI and VT options (VIT is always shown)
+const transitivityOptions = ['VI', 'VT'] as const
+
+// ===== Accent Japanese Labels =====
+const ACCENT_JA: Record<string, string> = {
+  'ATA': '頭高',
+  'NAKA': '中高',
+  'ODA': '尾高',
+  'HEI': '平板',
+}
+
+// Define order for accents
+const ACCENT_ORDER = Object.keys(ACCENT_JA)
+
+const uniqueAccents = computed(() => {
+  const accents = new Set<string>()
+  vocabulary.forEach(v => {
+    v.accent.forEach(acc => accents.add(acc))
+  })
+  
+  // Sort by defined order, then add any unknown accents at the end
+  const ordered: string[] = []
+  const unordered: string[] = []
+  
+  ACCENT_ORDER.forEach(acc => {
+    if (accents.has(acc)) {
+      ordered.push(acc)
+    }
+  })
+  
+  accents.forEach(acc => {
+    if (!ACCENT_ORDER.includes(acc)) {
+      unordered.push(acc)
+    }
+  })
+  
+  return [...ordered, ...unordered.sort()]
+})
+
+// ===== Filter State =====
+const searchQuery = ref('')
+const selectedConjClass = ref<string>('')
+const selectedTransitivity = ref<string>('')
+const selectedAccent = ref<string>('')
+
+// ===== Filter vocabulary based on all filters =====
 const filteredVocabulary = computed(() => {
-  if (!searchQuery.value.trim()) {
-    return vocabulary
+  let result = vocabulary
+  
+  // Search filter
+  if (searchQuery.value.trim()) {
+    const query = searchQuery.value.toLowerCase().trim()
+    result = result.filter(v => {
+      // Search in original kana
+      const originalKana = (v.kanaStart + v.kanaEnd).toLowerCase()
+      if (originalKana.includes(query)) return true
+      
+      // Search in kanji
+      if (v.kanjiStart && v.kanjiStart.some(kanji => kanji.includes(query))) {
+        return true
+      }
+      
+      // Search in conjugated form
+      const conjugated = conjugate(v, conjugation.value)
+      const conjugatedKana = (conjugated.kanaStart + conjugated.kanaEnd).toLowerCase()
+      if (conjugatedKana.includes(query)) return true
+      
+      if (conjugated.kanjiStart && conjugated.kanjiStart.some(kanji => kanji.includes(query))) {
+        return true
+      }
+      
+      return false
+    })
   }
   
-  const query = searchQuery.value.toLowerCase().trim()
+  // Conjugation class filter
+  if (selectedConjClass.value) {
+    result = result.filter(v => v.conjClass === selectedConjClass.value)
+  }
   
-  return vocabulary.filter(v => {
-    // Search in original kana
-    const originalKana = (v.kanaStart + v.kanaEnd).toLowerCase()
-    if (originalKana.includes(query)) return true
-    
-    // Search in kanji
-    if (v.kanjiStart && v.kanjiStart.some(kanji => kanji.includes(query))) {
-      return true
-    }
-    
-    // Search in conjugated form
-    const conjugated = conjugate(v, conjugation.value)
-    const conjugatedKana = (conjugated.kanaStart + conjugated.kanaEnd).toLowerCase()
-    if (conjugatedKana.includes(query)) return true
-    
-    if (conjugated.kanjiStart && conjugated.kanjiStart.some(kanji => kanji.includes(query))) {
-      return true
-    }
-    
-    return false
-  })
+  // Transitivity filter (VIT is always shown regardless of selection)
+  if (selectedTransitivity.value) {
+    result = result.filter(v => {
+      // VIT verbs are always included
+      if (v.transitivity === 'VIT') {
+        return true
+      }
+      // Otherwise, match the selected transitivity
+      return v.transitivity === selectedTransitivity.value
+    })
+  }
+  
+  // Accent filter
+  if (selectedAccent.value) {
+    result = result.filter(v => v.accent.includes(selectedAccent.value))
+  }
+  
+  return result
 })
 
 const forms = [
@@ -66,8 +169,10 @@ let kanjiTimer: number | undefined
 
 // ===== Keyboard navigation for conjugation forms =====
 const handleKeyDown = (event: KeyboardEvent) => {
-  // If user is typing in an input field, don't handle keyboard events
-  if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement) {
+  // If user is typing in an input field or selecting from dropdown, don't handle keyboard events
+  if (event.target instanceof HTMLInputElement || 
+      event.target instanceof HTMLTextAreaElement || 
+      event.target instanceof HTMLSelectElement) {
     return
   }
 
@@ -142,17 +247,57 @@ const shouldHide = (v: Verb): boolean => {
   <div class="layout">
     <!-- Left: Verb Table -->
     <div class="layout-main">
-      <!-- Search Input -->
-      <div class="search-container">
-        <input
-          v-model="searchQuery"
-          type="text"
-          class="search-input"
-          placeholder="検索..."
-        />
-        <span v-if="searchQuery" class="search-results">
-          {{ filteredVocabulary.length }} / {{ vocabulary.length }}
-        </span>
+      <!-- Filters -->
+      <div class="filters-container">
+        <!-- Search Input -->
+        <div class="search-container">
+          <input
+            v-model="searchQuery"
+            type="text"
+            class="search-input"
+            placeholder="検索..."
+          />
+        </div>
+        
+        <!-- Dropdown Filters -->
+        <div class="filter-row">
+          <div class="filter-wrapper">
+            <label class="filter-label" :class="{ hidden: selectedConjClass }">活用形</label>
+            <select v-model="selectedConjClass" class="filter-select" :class="{ 'empty-selected': !selectedConjClass }">
+              <option value="">全て</option>
+              <option v-for="cls in uniqueConjClasses" :key="cls" :value="cls">
+                {{ CONJ_CLASS_JA[cls] || cls }}
+              </option>
+            </select>
+          </div>
+          
+          <div class="filter-wrapper">
+            <label class="filter-label" :class="{ hidden: selectedTransitivity }">自他動詞</label>
+            <select v-model="selectedTransitivity" class="filter-select" :class="{ 'empty-selected': !selectedTransitivity }">
+              <option value="">全て</option>
+              <option v-for="trans in transitivityOptions" :key="trans" :value="trans">
+                {{ TRANSITIVITY_JA[trans] || trans }}
+              </option>
+            </select>
+          </div>
+          
+          <div class="filter-wrapper">
+            <label class="filter-label" :class="{ hidden: selectedAccent }">アクセント</label>
+            <select v-model="selectedAccent" class="filter-select" :class="{ 'empty-selected': !selectedAccent }">
+              <option value="">全て</option>
+              <option v-for="acc in uniqueAccents" :key="acc" :value="acc">
+                {{ ACCENT_JA[acc] || acc }}
+              </option>
+            </select>
+          </div>
+        </div>
+        
+        <!-- Results count -->
+        <div class="search-results-container">
+          <span v-if="searchQuery || selectedConjClass || selectedTransitivity || selectedAccent" class="search-results">
+            {{ filteredVocabulary.length }} / {{ vocabulary.length }}
+          </span>
+        </div>
       </div>
       
       <table class="styled-table sortable">

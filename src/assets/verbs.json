@@ -398,7 +398,7 @@
     "kanaEnd": "す",
     "accent": [
       "NAKA",
-      "HEI"
+      "ODA"
     ],
     "conjClass": "GODAN",
     "transitivity": "VT"
@@ -620,7 +620,7 @@
     "kanaEnd": "く",
     "accent": [
       "NAKA",
-      "HEI"
+      "ODA"
     ],
     "conjClass": "GODAN",
     "transitivity": "VI"
@@ -721,7 +721,7 @@
     "kanaEnd": "じる",
     "accent": [
       "NAKA",
-      "HEI"
+      "ODA"
     ],
     "conjClass": "KAMI_ICHIDAN",
     "transitivity": "VI"
@@ -1117,7 +1117,7 @@
     "kanaEnd": "わる",
     "accent": [
       "NAKA",
-      "HEI"
+      "ODA"
     ],
     "conjClass": "GODAN",
     "transitivity": "VI"
@@ -1634,7 +1634,7 @@
     "kanaEnd": "える",
     "accent": [
       "NAKA",
-      "HEI"
+      "ODA"
     ],
     "conjClass": "SHIMO_ICHIDAN",
     "transitivity": "VT"
@@ -1647,7 +1647,7 @@
     "kanaEnd": "わる",
     "accent": [
       "NAKA",
-      "HEI"
+      "ODA"
     ],
     "conjClass": "GODAN",
     "transitivity": "VI"
@@ -1883,7 +1883,7 @@
     "kanaEnd": "える",
     "accent": [
       "NAKA",
-      "HEI"
+      "ODA"
     ],
     "conjClass": "SHIMO_ICHIDAN",
     "transitivity": "VT"
@@ -1989,7 +1989,7 @@
     "kanaEnd": "う",
     "accent": [
       "NAKA",
-      "HEI"
+      "ODA"
     ],
     "conjClass": "GODAN",
     "transitivity": "VI"
@@ -2038,7 +2038,7 @@
     "kanaEnd": "す",
     "accent": [
       "NAKA",
-      "HEI"
+      "ODA"
     ],
     "conjClass": "GODAN",
     "transitivity": "VT"
@@ -2114,7 +2114,7 @@
     "kanaEnd": "じる",
     "accent": [
       "NAKA",
-      "HEI"
+      "ODA"
     ],
     "conjClass": "KAMI_ICHIDAN",
     "transitivity": "VT"
@@ -2322,7 +2322,7 @@
     "kanaEnd": "う",
     "accent": [
       "ATA",
-      "HEI"
+      "ODA"
     ],
     "conjClass": "GODAN",
     "transitivity": "VI"
@@ -2796,7 +2796,7 @@
     "kanaEnd": "く",
     "accent": [
       "ATA",
-      "HEI"
+      "ODA"
     ],
     "conjClass": "GODAN",
     "transitivity": "VI"
@@ -2877,7 +2877,7 @@
     "kanaEnd": "える",
     "accent": [
       "NAKA",
-      "HEI"
+      "ODA"
     ],
     "conjClass": "SHIMO_ICHIDAN",
     "transitivity": "VT"
@@ -2978,7 +2978,7 @@
     "kanaEnd": "らす",
     "accent": [
       "NAKA",
-      "HEI"
+      "ODA"
     ],
     "conjClass": "GODAN",
     "transitivity": "VT"
@@ -3016,7 +3016,7 @@
     "kanaEnd": "う",
     "accent": [
       "ATA",
-      "HEI"
+      "ODA"
     ],
     "conjClass": "GODAN",
     "transitivity": "VT"
@@ -4044,7 +4044,7 @@
     "kanaEnd": "がる",
     "accent": [
       "NAKA",
-      "HEI"
+      "ODA"
     ],
     "conjClass": "GODAN",
     "transitivity": "VI"
@@ -4122,7 +4122,7 @@
     "kanaEnd": "く",
     "accent": [
       "ATA",
-      "HEI"
+      "ODA"
     ],
     "conjClass": "GODAN",
     "transitivity": "VIT"
@@ -4959,7 +4959,7 @@
     "kanaEnd": "す",
     "accent": [
       "NAKA",
-      "HEI"
+      "ODA"
     ],
     "conjClass": "GODAN",
     "transitivity": "VT"
@@ -4972,7 +4972,7 @@
     "kanaEnd": "れる",
     "accent": [
       "NAKA",
-      "HEI"
+      "ODA"
     ],
     "conjClass": "SHIMO_ICHIDAN",
     "transitivity": "VI"

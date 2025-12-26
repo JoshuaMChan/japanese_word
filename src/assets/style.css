@@ -314,9 +314,13 @@ h1 {
     }
 }
 
-/* Search Container */
-.search-container {
+/* Filters Container */
+.filters-container {
     margin: 10px 0 15px 10px;
+}
+
+.search-container {
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -336,6 +340,68 @@ h1 {
 .search-input:focus {
     border-color: #009879;
     box-shadow: 0 0 0 2px rgba(0, 152, 121, 0.1);
+}
+
+.filter-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.filter-wrapper {
+    position: relative;
+    min-width: 150px;
+}
+
+.filter-label {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #666;
+    font-size: 14px;
+    z-index: 2;
+    background-color: #fff;
+    padding: 0 2px;
+}
+
+.filter-label.hidden {
+    display: none;
+}
+
+.filter-select {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #fff;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+/* Hide select text when empty option is selected */
+.filter-select.empty-selected {
+    color: transparent;
+}
+
+.filter-select:focus {
+    border-color: #009879;
+    box-shadow: 0 0 0 2px rgba(0, 152, 121, 0.1);
+}
+
+.filter-select:hover {
+    border-color: #009879;
+}
+
+.search-results-container {
+    display: flex;
+    align-items: center;
 }
 
 .search-results {
