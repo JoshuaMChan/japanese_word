@@ -336,13 +336,13 @@ const shouldHide = (v: Verb): boolean => {
         </thead>
 
         <tbody>
-        <tr v-for="(v, idx) in paginatedVocabulary" :key="idx">
+        <tr v-for="(v, idx) in paginatedVocabulary" :key="`${v.kanaStart}-${v.kanaEnd}`">
           <th>
             <div v-if="!shouldHide(v)" class="text-base">
               <ruby>
                 <transition name="kanji-fancy" mode="out-in">
                   <span
-                      :key="`${idx}-${activeKanji(v) || getConjugatedVerb(v).kanaStart}`"
+                      :key="`${v.kanaStart}-${v.kanaEnd}-${activeKanji(v) || getConjugatedVerb(v).kanaStart}`"
                       class="kanji-char"
                   >
                     {{ activeKanji(v) || getConjugatedVerb(v).kanaStart }}
@@ -356,15 +356,25 @@ const shouldHide = (v: Verb): boolean => {
 
           <th>
             <template v-if="v.accent.length > 1">
-              <transition name="accent-fade" mode="out-in">
-                <span :key="`${idx}-${kanjiTick % v.accent.length}`" class="accent-wrapper">
-                  <template v-for="(seg, sIdx) in accentSegments(v, v.accent[kanjiTick % v.accent.length])" :key="sIdx">
-                    <span :class="seg.cls">
-                      {{ seg.text }}
-                    </span>
-                  </template>
+              <div class="accent-container">
+                <!-- Static text layer (no transition) -->
+                <span class="accent-text">
+                  {{ v.kanaStart + v.kanaEnd }}
                 </span>
-              </transition>
+                <!-- Accent line layers (with transition) -->
+                <transition name="accent-fade" mode="out-in">
+                  <span 
+                    :key="`${v.kanaStart}-${v.kanaEnd}-${kanjiTick % v.accent.length}`" 
+                    class="accent-lines"
+                  >
+                    <template v-for="(seg, sIdx) in accentSegments(v, v.accent[kanjiTick % v.accent.length])" :key="sIdx">
+                      <span :class="seg.cls" class="accent-line-segment">
+                        {{ seg.text }}
+                      </span>
+                    </template>
+                  </span>
+                </transition>
+              </div>
             </template>
             <template v-else>
               <template v-for="(seg, sIdx) in accentSegments(v, v.accent[0])" :key="sIdx">

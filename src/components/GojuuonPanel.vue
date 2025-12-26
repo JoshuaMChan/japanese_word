@@ -107,6 +107,15 @@ const toggleGojuuon = (char: string) => {
   text-align: center;
   transition: all 0.2s;
   line-height: 1.2;
+  outline: none;
+}
+
+.gojuuon-btn:focus {
+  outline: none;
+}
+
+.gojuuon-btn:focus-visible {
+  outline: none;
 }
 
 .gojuuon-btn:hover {

@@ -45,29 +45,29 @@
 }
 
 .h {
-    PADDING: 1px 0px 0px 0px;
-    MARGIN: 0px 0px 0px 0px;
-    BORDER-TOP: red 1px solid;
+    padding: 1px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    border-top: #ff7f50 1px solid;
 }
 
 .l {
-    PADDING: 1px 0px 0px 0px;
-    MARGIN: 0px 0px 0px 0px;
-    BORDER-BOTTOM: red 1px solid;
+    padding: 1px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    border-bottom: #ff7f50 1px solid;
 }
 
 .h2l {
-    PADDING: 1px 0px 0px 0px;
-    MARGIN: 0px 0px 0px 0px;
-    BORDER-TOP: red 1px solid;
-    BORDER-RIGHT: red 1px solid;
+    padding: 1px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    border-top: #ff7f50 1px solid;
+    border-right: #ff7f50 1px solid;
 }
 
 .l2h {
-    PADDING: 1px 0px 0px 0px;
-    MARGIN: 0px 0px 0px 0px;
-    BORDER-BOTTOM: red 1px solid;
-    BORDER-RIGHT: red 1px solid;
+    padding: 1px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    border-bottom: #ff7f50 1px solid;
+    border-right: #ff7f50 1px solid;
 }
 
 h1 {
@@ -171,6 +171,43 @@ h1 {
     display: inline-block;
 }
 
+/* Accent container: text + accent lines overlay */
+.accent-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Static text layer (no transition) */
+.accent-text {
+    display: inline;
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+}
+
+/* Accent lines layer (with transition, overlays text) */
+.accent-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline;
+    color: transparent; /* Hide text, only show borders */
+    pointer-events: none; /* Allow clicks to pass through */
+    white-space: nowrap; /* Prevent line breaks */
+    font-size: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+}
+
+/* Accent line segments inherit border styles but hide text */
+.accent-line-segment {
+    display: inline;
+    color: transparent;
+    font-size: inherit;
+    line-height: inherit;
+}
+
 .particle-transition {
     display: inline-block;
     margin: 0;
@@ -210,13 +247,13 @@ h1 {
 }
 
 .toggle-btn.active {
-    border-color: #2c7be5;
+    border-color: #009879;
     background-color: #009879;
     color: #fff;
 }
 
 .toggle-btn:hover {
-    border-color: #2c7be5;
+    border-color: #009879;
 }
 
 .toggle-btn:focus {
@@ -298,7 +335,7 @@ h1 {
 }
 
 .toggle-btn.active {
-    border-color: #2c7be5;
+    border-color: #009879;
     background-color: #009879;
     color: #fff;
 }

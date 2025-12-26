@@ -95,6 +95,7 @@ const updateInputWidth = () => {
 }
 
 watch(pageInput, updateInputWidth)
+
 </script>
 
 <template>
@@ -169,6 +170,7 @@ watch(pageInput, updateInputWidth)
   flex-direction: column;
   gap: 12px;
   align-items: center;
+  /* min-height will be set dynamically via JavaScript */
 }
 
 .pagination-info {
@@ -197,6 +199,15 @@ watch(pageInput, updateInputWidth)
   font-size: 13px;
   transition: all 0.2s;
   min-width: 50px;
+  outline: none;
+}
+
+.pagination-btn:focus {
+  outline: none;
+}
+
+.pagination-btn:focus-visible {
+  outline: none;
 }
 
 .pagination-btn:hover:not(:disabled) {
