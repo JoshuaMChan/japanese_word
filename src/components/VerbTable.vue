@@ -5,6 +5,7 @@ import { Verb } from '../types/verb'
 import { accentSegments } from '../utils/accent'
 import { conjugate, Conjugation } from '../utils/conjugation.ts'
 import { TRANSITIVITY_JA } from '../constants/transitivity'
+import { iStem } from '../utils/gotan'
 import { romajiToHiragana, containsRomaji } from '../utils/romajiToKana'
 import Pagination from './Pagination.vue'
 import GojuuonPanel from './GojuuonPanel.vue'
@@ -267,6 +268,32 @@ const getConjugatedVerb = (v: Verb): Verb => {
   return conjugate(v, conjugation.value)
 }
 
+// ===== Get Ren'youkei (Continuative form) using iStem =====
+const getRenyoukei = (v: Verb): string => {
+  const kanji = v.kanjiStart && v.kanjiStart.length > 0 ? v.kanjiStart[0] : ''
+  
+  if (v.conjClass === 'GODAN') {
+    // For Godan verbs: replace last character with iStem
+    const stem = v.kanaEnd.slice(0, -1)
+    const last = v.kanaEnd.slice(-1)
+    const iStemChar = iStem[last] || last
+    return kanji + stem + iStemChar
+  } else if (v.conjClass === 'SHIMO_ICHIDAN' || v.conjClass === 'KAMI_ICHIDAN') {
+    // For Ichidan verbs: remove 'る' from kanaEnd
+    const stem = v.kanaEnd.slice(0, -1)
+    return kanji + stem
+  } else if (v.conjClass === 'SAHEN') {
+    // For Sahen verbs: kanaStart becomes 'し'
+    return kanji + 'し'
+  } else if (v.conjClass === 'KAHEN') {
+    // For Kahen verbs: '来' + 'き'
+    return kanji + 'き'
+  }
+  
+  // Fallback
+  return kanji + v.kanaEnd
+}
+
 const shouldHide = (v: Verb): boolean => {
   return v.transitivity === 'VI' && (
     conjugation.value === 'CAUSATIVE' || 
@@ -331,7 +358,9 @@ const shouldHide = (v: Verb): boolean => {
         <thead>
         <tr>
           <th>動詞</th>
+          <th>連用形</th>
           <th>アクセント</th>
+          <th>自他動詞</th>
         </tr>
         </thead>
 
@@ -352,6 +381,10 @@ const shouldHide = (v: Verb): boolean => {
               </ruby>
               {{ getConjugatedVerb(v).kanaEnd }}
             </div>
+          </th>
+
+          <th>
+            {{ getRenyoukei(v) }}
           </th>
 
           <th>
@@ -383,6 +416,9 @@ const shouldHide = (v: Verb): boolean => {
                 </span>
               </template>
             </template>
+          </th>
+          <th>
+            {{ TRANSITIVITY_JA[v.transitivity] || v.transitivity }}
           </th>
         </tr>
         </tbody>
