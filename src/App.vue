@@ -23,35 +23,29 @@ const tabs = [
   ...csvModules.map(module => ({ id: module.id, label: module.displayName }))
 ]
 
-// ===== Get initial tab from URL =====
+// ===== URL Routing =====
 const getTabFromURL = (): string => {
-  const hash = window.location.hash.slice(1) // Remove #
-  if (hash && tabs.some(tab => tab.id === hash)) {
-    return hash
-  }
-  return tabs[0].id
+  const hash = window.location.hash.slice(1)
+  return tabs.some(tab => tab.id === hash) ? hash : tabs[0].id
+}
+
+const updateURL = (tabId: string) => {
+  window.history.pushState(null, '', `#${tabId}`)
 }
 
 // ===== State =====
 const activeTab = ref<string>(getTabFromURL())
 
-// ===== Update URL when tab changes =====
-watch(activeTab, (newTab) => {
-  window.history.pushState(null, '', `#${newTab}`)
-})
+// ===== URL Synchronization =====
+watch(activeTab, updateURL)
 
-// ===== Handle browser back/forward =====
 onMounted(() => {
   window.addEventListener('popstate', () => {
     activeTab.value = getTabFromURL()
   })
   
-  // Update URL on initial load
-  if (window.location.hash) {
-    window.history.replaceState(null, '', window.location.hash)
-  } else {
-    window.history.replaceState(null, '', `#${activeTab.value}`)
-  }
+  const hash = window.location.hash
+  window.history.replaceState(null, '', hash || `#${activeTab.value}`)
 })
 </script>
 
@@ -89,6 +83,7 @@ onMounted(() => {
         <CSVTable
           :id="module.id"
           :displayName="module.displayName"
+          :showGojuuon="module.id === csvModules[0].id"
         />
       </div>
     </template>

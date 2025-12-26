@@ -1,8 +1,9 @@
 /**
- * Convert romaji to hiragana for search purposes
- * This is a simplified converter that handles common patterns
+ * Romaji to Hiragana Converter
+ * Converts romaji input to hiragana for search functionality
  */
 
+// ===== Romaji to Hiragana Mapping =====
 const romajiToHiraganaMap: Record<string, string> = {
   // Basic vowels
   'a': 'あ', 'i': 'い', 'u': 'う', 'e': 'え', 'o': 'お',
@@ -58,33 +59,33 @@ export function romajiToHiragana(romaji: string): string {
   let result = ''
   let i = 0
   
-  // Map for geminated consonants (double consonants -> っ + single consonant)
-  const geminateMap: Record<string, string> = {
-    'tt': 'っ', 'kk': 'っ', 'ss': 'っ', 'pp': 'っ', 'cc': 'っ',
-    'dd': 'っ', 'gg': 'っ', 'bb': 'っ', 'mm': 'っ', 'nn': 'っ', 'rr': 'っ',
-    'zz': 'っ', 'jj': 'っ', 'hh': 'っ', 'ff': 'っ', 'vv': 'っ', 'ww': 'っ', 'yy': 'っ',
-    'll': 'っ', 'xx': 'っ'
-  }
+// ===== Geminated Consonants Mapping =====
+const GEMINATE_MAP: Record<string, string> = {
+  'tt': 'っ', 'kk': 'っ', 'ss': 'っ', 'pp': 'っ', 'cc': 'っ',
+  'dd': 'っ', 'gg': 'っ', 'bb': 'っ', 'mm': 'っ', 'nn': 'っ', 'rr': 'っ',
+  'zz': 'っ', 'jj': 'っ', 'hh': 'っ', 'ff': 'っ', 'vv': 'っ', 'ww': 'っ', 'yy': 'っ',
+  'll': 'っ', 'xx': 'っ'
+}
+
+const VOWEL_REGEX = /[aeiou]/
   
   while (i < lower.length) {
-    // Check for geminated consonants (double consonants like tta, kka, etc.)
+    // Check for geminated consonants (e.g., tta -> った)
     if (i + 2 < lower.length) {
       const twoChars = lower.substring(i, i + 2)
       const nextChar = lower[i + 2]
       
-      // Check if it's a geminated consonant followed by a vowel
-      if (geminateMap[twoChars] && /[aeiou]/.test(nextChar)) {
-        // Get the single consonant + vowel mapping
+      if (GEMINATE_MAP[twoChars] && VOWEL_REGEX.test(nextChar)) {
         const singleConsonant = twoChars[0] + nextChar
         if (romajiToHiraganaMap[singleConsonant]) {
-          result += geminateMap[twoChars] + romajiToHiraganaMap[singleConsonant]
+          result += GEMINATE_MAP[twoChars] + romajiToHiraganaMap[singleConsonant]
           i += 3
           continue
         }
       }
     }
     
-    // Try 3-character sequences first (e.g., kya, shi, chu)
+    // Try 3-character sequences (e.g., kya, shi, chu)
     if (i + 3 <= lower.length) {
       const three = lower.substring(i, i + 3)
       if (romajiToHiraganaMap[three]) {
@@ -105,13 +106,8 @@ export function romajiToHiragana(romaji: string): string {
     }
     
     // Try single character
-    const one = lower[i]
-    if (romajiToHiraganaMap[one]) {
-      result += romajiToHiraganaMap[one]
-    } else {
-      // If not found, keep the original character (for numbers, punctuation, etc.)
-      result += one
-    }
+    const char = lower[i]
+    result += romajiToHiraganaMap[char] || char
     i++
   }
   

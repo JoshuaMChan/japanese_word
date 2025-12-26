@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, onUnmounted, nextTick } from 'vue'
+import { ref, computed, watch, onMounted, onUnmounted, nextTick } from 'vue'
 import verbs from '../assets/verbs.json'
 import { Verb } from '../types/verb'
 import { accentSegments } from '../utils/accent'
 import { conjugate, Conjugation } from '../utils/conjugation.ts'
 import { TRANSITIVITY_JA } from '../constants/transitivity'
 import { romajiToHiragana, containsRomaji } from '../utils/romajiToKana'
+import Pagination from './Pagination.vue'
 
 const vocabulary = verbs as Verb[]
 
@@ -21,28 +22,30 @@ const CONJ_CLASS_JA: Record<string, string> = {
 // Define order for conjugation classes
 const CONJ_CLASS_ORDER = Object.keys(CONJ_CLASS_JA)
 
+// ===== Helper: Sort by defined order =====
+const sortByDefinedOrder = <T extends string>(
+  items: Set<T>,
+  definedOrder: readonly T[]
+): T[] => {
+  const ordered: T[] = []
+  const unordered: T[] = []
+  
+  definedOrder.forEach(item => {
+    if (items.has(item)) ordered.push(item)
+  })
+  
+  items.forEach(item => {
+    if (!definedOrder.includes(item)) unordered.push(item)
+  })
+  
+  return [...ordered, ...unordered.sort()]
+}
+
 // ===== Get unique filter values =====
 const uniqueConjClasses = computed(() => {
   const classes = new Set<string>()
   vocabulary.forEach(v => classes.add(v.conjClass))
-  
-  // Sort by defined order, then add any unknown classes at the end
-  const ordered: string[] = []
-  const unordered: string[] = []
-  
-  CONJ_CLASS_ORDER.forEach(cls => {
-    if (classes.has(cls)) {
-      ordered.push(cls)
-    }
-  })
-  
-  classes.forEach(cls => {
-    if (!CONJ_CLASS_ORDER.includes(cls)) {
-      unordered.push(cls)
-    }
-  })
-  
-  return [...ordered, ...unordered.sort()]
+  return sortByDefinedOrder(classes, CONJ_CLASS_ORDER)
 })
 
 // Transitivity filter only has VI and VT options (VIT is always shown)
@@ -61,34 +64,68 @@ const ACCENT_ORDER = Object.keys(ACCENT_JA)
 
 const uniqueAccents = computed(() => {
   const accents = new Set<string>()
-  vocabulary.forEach(v => {
-    v.accent.forEach(acc => accents.add(acc))
-  })
-  
-  // Sort by defined order, then add any unknown accents at the end
-  const ordered: string[] = []
-  const unordered: string[] = []
-  
-  ACCENT_ORDER.forEach(acc => {
-    if (accents.has(acc)) {
-      ordered.push(acc)
-    }
-  })
-  
-  accents.forEach(acc => {
-    if (!ACCENT_ORDER.includes(acc)) {
-      unordered.push(acc)
-    }
-  })
-  
-  return [...ordered, ...unordered.sort()]
+  vocabulary.forEach(v => v.accent.forEach(acc => accents.add(acc)))
+  return sortByDefinedOrder(accents, ACCENT_ORDER)
 })
+
+// ===== Gojuuon (50 Sounds) =====
+const GOJUUON_ROWS = [
+  ['あ', 'い', 'う', 'え', 'お'],
+  ['か', 'き', 'く', 'け', 'こ'],
+  ['が', 'ぎ', 'ぐ', 'げ', 'ご'],
+  ['さ', 'し', 'す', 'せ', 'そ'],
+  ['ざ', 'じ', 'ず', 'ぜ', 'ぞ'],
+  ['た', 'ち', 'つ', 'て', 'と'],
+  ['だ', 'ぢ', 'づ', 'で', 'ど'],
+  ['な', 'に', 'ぬ', 'ね', 'の'],
+  ['は', 'ひ', 'ふ', 'へ', 'ほ'],
+  ['ば', 'び', 'ぶ', 'べ', 'ぼ'],
+  ['ぱ', 'ぴ', 'ぷ', 'ぺ', 'ぽ'],
+  ['ま', 'み', 'む', 'め', 'も'],
+  ['や', 'ゆ', 'よ'],
+  ['ら', 'り', 'る', 'れ', 'ろ'],
+  ['わ', 'を', 'ん'],
+] as const
+
+const GOJUUON_CHARS = GOJUUON_ROWS.flat()
 
 // ===== Filter State =====
 const searchQuery = ref('')
 const selectedConjClass = ref<string>('')
 const selectedTransitivity = ref<string>('')
 const selectedAccent = ref<string>('')
+const selectedGojuuon = ref<string>('')
+
+// ===== Helper Functions =====
+const matchesSearchQuery = (verb: Verb, query: string, kanaQuery: string): boolean => {
+  const originalKana = (verb.kanaStart + verb.kanaEnd).toLowerCase()
+  if (originalKana.includes(query) || originalKana.includes(kanaQuery)) return true
+  
+  if (verb.kanjiStart?.some(kanji => kanji.includes(query) || kanji.includes(kanaQuery))) {
+    return true
+  }
+  
+  const conjugated = conjugate(verb, conjugation.value)
+  const conjugatedKana = (conjugated.kanaStart + conjugated.kanaEnd).toLowerCase()
+  if (conjugatedKana.includes(query) || conjugatedKana.includes(kanaQuery)) return true
+  
+  if (conjugated.kanjiStart?.some(kanji => kanji.includes(query) || kanji.includes(kanaQuery))) {
+    return true
+  }
+  
+  return false
+}
+
+const matchesTransitivity = (verb: Verb, selected: string): boolean => {
+  if (verb.transitivity === 'VIT') return true
+  return verb.transitivity === selected
+}
+
+// ===== Pagination Configuration =====
+const ROWS_PER_PAGE = 10 // Define rows per page here
+const VISIBLE_PAGES_AT_START = 10 // Number of pages to show at the beginning
+const VISIBLE_PAGES_AT_END = 3 // Number of pages to show at the end
+const JUMP_PAGES = 10 // Number of pages to jump when clicking -/+ buttons
 
 // ===== Filter vocabulary based on all filters =====
 const filteredVocabulary = computed(() => {
@@ -96,43 +133,10 @@ const filteredVocabulary = computed(() => {
   
   // Search filter
   if (searchQuery.value.trim()) {
-    const rawQuery = searchQuery.value.trim()
-    const query = rawQuery.toLowerCase()
-
-    // Convert romaji to kana if the query contains romaji
-    let kanaQuery = query
-    if (containsRomaji(query)) {
-      kanaQuery = romajiToHiragana(query)
-    }
-
-    result = result.filter(v => {
-      // Search in original kana (both original query and converted kana)
-      const originalKana = (v.kanaStart + v.kanaEnd).toLowerCase()
-      if (originalKana.includes(query) || originalKana.includes(kanaQuery)) return true
-      
-      // Search in kanji
-      if (v.kanjiStart && v.kanjiStart.some(kanji => kanji.includes(query) || kanji.includes(kanaQuery))) {
-        return true
-      }
-      
-      // Search in conjugated form
-      const conjugated = conjugate(v, conjugation.value)
-      const conjugatedKana = (conjugated.kanaStart + conjugated.kanaEnd).toLowerCase()
-      if (conjugatedKana.includes(query) || conjugatedKana.includes(kanaQuery)) return true
-      
-      if (conjugated.kanjiStart && conjugated.kanjiStart.some(kanji => kanji.includes(query) || kanji.includes(kanaQuery))) {
-        return true
-      }
-      
-      // Also search in romaji directly (for partial matches)
-      if (containsRomaji(query)) {
-        const romajiKana = originalKana
-        // Try to match romaji patterns in the kana string
-        if (romajiKana.includes(kanaQuery)) return true
-      }
-      
-      return false
-    })
+    const query = searchQuery.value.trim().toLowerCase()
+    const kanaQuery = containsRomaji(query) ? romajiToHiragana(query) : query
+    
+    result = result.filter(v => matchesSearchQuery(v, query, kanaQuery))
   }
   
   // Conjugation class filter
@@ -140,16 +144,9 @@ const filteredVocabulary = computed(() => {
     result = result.filter(v => v.conjClass === selectedConjClass.value)
   }
   
-  // Transitivity filter (VIT is always shown regardless of selection)
+  // Transitivity filter
   if (selectedTransitivity.value) {
-    result = result.filter(v => {
-      // VIT verbs are always included
-      if (v.transitivity === 'VIT') {
-        return true
-      }
-      // Otherwise, match the selected transitivity
-      return v.transitivity === selectedTransitivity.value
-    })
+    result = result.filter(v => matchesTransitivity(v, selectedTransitivity.value))
   }
   
   // Accent filter
@@ -157,7 +154,35 @@ const filteredVocabulary = computed(() => {
     result = result.filter(v => v.accent.includes(selectedAccent.value))
   }
   
+  // Gojuuon filter (filter by first character of kanaStart)
+  if (selectedGojuuon.value) {
+    result = result.filter(v => v.kanaStart.startsWith(selectedGojuuon.value))
+  }
+  
   return result
+})
+
+// ===== Pagination State =====
+const currentPage = ref(1)
+
+// ===== Pagination Computed =====
+const totalPages = computed(() => {
+  return Math.ceil(filteredVocabulary.value.length / ROWS_PER_PAGE)
+})
+
+const paginatedVocabulary = computed(() => {
+  if (filteredVocabulary.value.length <= ROWS_PER_PAGE) {
+    return filteredVocabulary.value
+  }
+  
+  const start = (currentPage.value - 1) * ROWS_PER_PAGE
+  const end = start + ROWS_PER_PAGE
+  return filteredVocabulary.value.slice(start, end)
+})
+
+// Reset to page 1 when filters change
+watch([searchQuery, selectedConjClass, selectedTransitivity, selectedAccent, selectedGojuuon], () => {
+  currentPage.value = 1
 })
 
 const forms = [
@@ -183,38 +208,38 @@ const conjugation = ref<Conjugation>('DICT')
 const kanjiTick = ref(0)
 let kanjiTimer: number | undefined
 
-// ===== Keyboard navigation for conjugation forms =====
-const handleKeyDown = (event: KeyboardEvent) => {
-  // If user is typing in an input field or selecting from dropdown, don't handle keyboard events
-  if (event.target instanceof HTMLInputElement || 
-      event.target instanceof HTMLTextAreaElement || 
-      event.target instanceof HTMLSelectElement) {
-    return
-  }
+// ===== Keyboard navigation =====
+const isInputElement = (target: EventTarget | null): boolean => {
+  return target instanceof HTMLInputElement ||
+         target instanceof HTMLTextAreaElement ||
+         target instanceof HTMLSelectElement
+}
 
+const navigateConjugation = (direction: 'up' | 'down') => {
   const currentIndex = forms.findIndex(form => form.id === conjugation.value)
+  const nextIndex = direction === 'up'
+    ? (currentIndex <= 0 ? forms.length - 1 : currentIndex - 1)
+    : (currentIndex >= forms.length - 1 ? 0 : currentIndex + 1)
   
-  if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
+  conjugation.value = forms[nextIndex].id
+  
+  nextTick(() => {
+    const activeButton = document.querySelector(
+      `button[data-form-id="${forms[nextIndex].id}"]`
+    ) as HTMLElement
+    activeButton?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+  })
+}
+
+const handleKeyDown = (event: KeyboardEvent) => {
+  if (isInputElement(event.target)) return
+  
+  if (event.key === 'ArrowUp') {
     event.preventDefault()
-    
-    let nextIndex: number
-    if (event.key === 'ArrowUp') {
-      // Up key: move forward (decrement index, wrap to end if at start)
-      nextIndex = currentIndex <= 0 ? forms.length - 1 : currentIndex - 1
-    } else {
-      // Down key: move backward (increment index, wrap to start if at end)
-      nextIndex = currentIndex >= forms.length - 1 ? 0 : currentIndex + 1
-    }
-    
-    conjugation.value = forms[nextIndex].id
-    
-    // Scroll to currently selected button
-    nextTick(() => {
-      const activeButton = document.querySelector(`button[data-form-id="${forms[nextIndex].id}"]`) as HTMLElement
-      if (activeButton) {
-        activeButton.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
-      }
-    })
+    navigateConjugation('up')
+  } else if (event.key === 'ArrowDown') {
+    event.preventDefault()
+    navigateConjugation('down')
   }
 }
 
@@ -310,7 +335,7 @@ const shouldHide = (v: Verb): boolean => {
         
         <!-- Results count -->
         <div class="search-results-container">
-          <span v-if="searchQuery || selectedConjClass || selectedTransitivity || selectedAccent" class="search-results">
+          <span v-if="searchQuery || selectedConjClass || selectedTransitivity || selectedAccent || selectedGojuuon" class="search-results">
             {{ filteredVocabulary.length }} / {{ vocabulary.length }}
           </span>
         </div>
@@ -325,7 +350,7 @@ const shouldHide = (v: Verb): boolean => {
         </thead>
 
         <tbody>
-        <tr v-for="(v, idx) in filteredVocabulary" :key="idx">
+        <tr v-for="(v, idx) in paginatedVocabulary" :key="idx">
           <th>
             <div v-if="!shouldHide(v)" class="text-base">
               <ruby>
@@ -366,23 +391,62 @@ const shouldHide = (v: Verb): boolean => {
         </tr>
         </tbody>
       </table>
+      
+      <!-- Pagination -->
+      <Pagination
+        v-if="filteredVocabulary.length > ROWS_PER_PAGE"
+        v-model:currentPage="currentPage"
+        :totalPages="totalPages"
+        :visiblePagesAtStart="VISIBLE_PAGES_AT_START"
+        :visiblePagesAtEnd="VISIBLE_PAGES_AT_END"
+        :jumpPages="JUMP_PAGES"
+      />
     </div>
 
-    <!-- Right: Conjugation form control panel -->
+    <!-- Right: Control panels -->
     <aside class="layout-sidebar">
-      <div class="sidebar-section">
-        <div class="toggle-column">
-          <button
-              v-for="form in forms"
-              :key="form.id"
-              type="button"
-              class="toggle-btn"
-              :class="{ active: conjugation === form.id }"
-              :data-form-id="form.id"
-              @click="conjugation = form.id"
-          >
-            {{ form.label }}
-          </button>
+      <div class="sidebar-sections-row">
+        <!-- Gojuuon Filter Panel -->
+        <div class="sidebar-section">
+          <div class="gojuuon-panel">
+            <div
+                v-for="(row, rowIdx) in GOJUUON_ROWS"
+                :key="rowIdx"
+                class="gojuuon-row"
+                :class="{ 'gojuuon-row-3': row.length === 3 }"
+            >
+              <button
+                  v-for="(char, charIdx) in row"
+                  :key="char"
+                  type="button"
+                  class="gojuuon-btn"
+                  :class="{ 
+                    active: selectedGojuuon === char,
+                    'gojuuon-btn-3-pos': row.length === 3 && (charIdx === 0 || charIdx === 1 || charIdx === 2)
+                  }"
+                  @click="selectedGojuuon = selectedGojuuon === char ? '' : char"
+              >
+                {{ char }}
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Conjugation form control panel -->
+        <div class="sidebar-section">
+          <div class="toggle-column">
+            <button
+                v-for="form in forms"
+                :key="form.id"
+                type="button"
+                class="toggle-btn"
+                :class="{ active: conjugation === form.id }"
+                :data-form-id="form.id"
+                @click="conjugation = form.id"
+            >
+              {{ form.label }}
+            </button>
+          </div>
         </div>
       </div>
     </aside>
