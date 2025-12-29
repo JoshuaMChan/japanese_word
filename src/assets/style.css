@@ -4,6 +4,8 @@
     font-size: 0.9em;
     font-family: sans-serif;
     min-width: 400px;
+    width: auto; /* Auto width based on content */
+    max-width: 100%; /* Don't exceed container width */
     box-shadow: 0 0 20px rgba(0, 12, 0, 0.15);
 }
 
@@ -38,6 +40,37 @@
     overflow-wrap: break-word;
     vertical-align: middle;
     min-height: 3.5em; /* Fixed min-height to prevent height changes when content is hidden */
+}
+
+/* Fixed column widths for verb table to prevent width changes when switching pages */
+.styled-table thead th:nth-child(1),
+.styled-table tbody th:nth-child(1) {
+    min-width: 200px; /* 動詞 */
+    width: auto;
+}
+
+.styled-table thead th:nth-child(2),
+.styled-table tbody th:nth-child(2) {
+    min-width: 150px; /* 連用形 */
+    width: auto;
+}
+
+.styled-table thead th:nth-child(3),
+.styled-table tbody th:nth-child(3) {
+    min-width: 250px; /* アクセント */
+    width: auto;
+}
+
+.styled-table thead th:nth-child(4),
+.styled-table tbody th:nth-child(4) {
+    min-width: 100px; /* 自他動詞 */
+    width: auto;
+}
+
+.styled-table thead th:nth-child(5),
+.styled-table tbody th:nth-child(5) {
+    min-width: 60px; /* Copy button */
+    width: auto;
 }
 
 .styled-table tbody tr.active-row {
@@ -283,6 +316,7 @@ h1 {
 .layout-main {
     flex: 1 1 auto;
     min-width: 0; /* Prevent table from breaking layout */
+    overflow-x: auto; /* Allow horizontal scroll if needed */
 }
 
 /* Right control panel, close to table */
