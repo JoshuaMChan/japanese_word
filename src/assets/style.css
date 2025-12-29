@@ -441,6 +441,14 @@ h1 {
 
 /* Pagination - Styles moved to Pagination.vue component */
 
+/* Action Buttons Container */
+.action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    justify-content: center;
+}
+
 /* Copy Button */
 .copy-wrapper {
     position: relative;
@@ -525,4 +533,40 @@ h1 {
 .copy-fade-leave-to {
     opacity: 0;
     transform: translateX(-50%) translateY(-10px);
+}
+
+/* Google Search Button */
+.google-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    padding: 4px 6px;
+    color: #666;
+    transition: all 0.2s;
+    line-height: 1;
+    vertical-align: middle;
+    font-family: inherit;
+}
+
+.google-btn:hover {
+    color: #009879;
+    background-color: #f0f0f0;
+    border-radius: 3px;
+}
+
+.google-icon {
+    display: inline-block;
+    font-size: 13px;
+    line-height: 1;
+}
+
+.google-btn:focus {
+    outline: none;
+}
+
+.google-btn:focus-visible {
+    outline: 2px solid #009879;
+    outline-offset: 2px;
+    border-radius: 3px;
 }

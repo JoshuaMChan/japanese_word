@@ -379,6 +379,13 @@ const getTextToCopy = (v: Verb): string => {
   return kanji + v.kanaEnd
 }
 
+// ===== Google Search Function =====
+const searchOnGoogle = (v: Verb) => {
+  const searchText = getTextToCopy(v)
+  const googleUrl = `https://www.google.com/search?q=${encodeURIComponent(searchText)}`
+  window.open(googleUrl, '_blank')
+}
+
 const shouldHide = (v: Verb): boolean => {
   return v.transitivity === 'VI' && (
     conjugation.value === 'CAUSATIVE' || 
@@ -507,20 +514,30 @@ const shouldHide = (v: Verb): boolean => {
             {{ TRANSITIVITY_JA[v.transitivity] || v.transitivity }}
           </th>
           <th>
-            <div class="copy-wrapper">
+            <div class="action-buttons">
+              <div class="copy-wrapper">
+                <button 
+                  type="button" 
+                  class="copy-btn"
+                  @click="copyToClipboard(getTextToCopy(v), `${v.kanaStart}-${v.kanaEnd}`)"
+                  title="Copy"
+                >
+                  <span class="copy-icon">📋</span>
+                </button>
+                <transition name="copy-fade">
+                  <span v-if="copiedStates[`${v.kanaStart}-${v.kanaEnd}`]" class="copy-success">
+                    コピーしました
+                  </span>
+                </transition>
+              </div>
               <button 
                 type="button" 
-                class="copy-btn"
-                @click="copyToClipboard(getTextToCopy(v), `${v.kanaStart}-${v.kanaEnd}`)"
-                title="Copy"
+                class="google-btn"
+                @click="searchOnGoogle(v)"
+                title="Google Search"
               >
-                <span class="copy-icon">📋</span>
+                <span class="google-icon">🔍</span>
               </button>
-              <transition name="copy-fade">
-                <span v-if="copiedStates[`${v.kanaStart}-${v.kanaEnd}`]" class="copy-success">
-                  コピーしました
-                </span>
-              </transition>
             </div>
           </th>
         </tr>
