@@ -37,6 +37,7 @@
     word-wrap: break-word;
     overflow-wrap: break-word;
     vertical-align: middle;
+    min-height: 3.5em; /* Fixed min-height to prevent height changes when content is hidden */
 }
 
 .styled-table tbody tr.active-row {
@@ -132,6 +133,7 @@ h1 {
     font-weight: bold;
     font-size: 15px;
     display: inline-block;
+    min-height: 2.5em; /* Fixed min-height to accommodate ruby furigana */
 }
 
 .verb-conjugated {

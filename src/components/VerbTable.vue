@@ -453,7 +453,7 @@ const shouldHide = (v: Verb): boolean => {
         <tbody>
         <tr v-for="(v, idx) in paginatedVocabulary" :key="`${v.kanaStart}-${v.kanaEnd}`">
           <th>
-            <div v-if="!shouldHide(v)" class="text-base">
+            <div class="text-base" :style="{ visibility: shouldHide(v) ? 'hidden' : 'visible' }">
               <ruby>
                 <transition name="kanji-fancy" mode="out-in">
                   <span
