@@ -294,6 +294,29 @@ const getRenyoukei = (v: Verb): string => {
   return kanji + v.kanaEnd
 }
 
+// ===== Copy Function with Success Feedback =====
+const copiedStates = ref<Record<string, boolean>>({})
+
+const copyToClipboard = async (text: string, verbKey: string) => {
+  try {
+    await navigator.clipboard.writeText(text)
+    // Show success message
+    copiedStates.value[verbKey] = true
+    // Hide after 0.8 seconds
+    setTimeout(() => {
+      copiedStates.value[verbKey] = false
+    }, 800)
+  } catch (err) {
+    console.error('Failed to copy:', err)
+  }
+}
+
+// ===== Get text to copy: first kanji + kanaEnd =====
+const getTextToCopy = (v: Verb): string => {
+  const kanji = v.kanjiStart && v.kanjiStart.length > 0 ? v.kanjiStart[0] : ''
+  return kanji + v.kanaEnd
+}
+
 const shouldHide = (v: Verb): boolean => {
   return v.transitivity === 'VI' && (
     conjugation.value === 'CAUSATIVE' || 
@@ -361,6 +384,7 @@ const shouldHide = (v: Verb): boolean => {
           <th>連用形</th>
           <th>アクセント</th>
           <th>自他動詞</th>
+          <th></th>
         </tr>
         </thead>
 
@@ -419,6 +443,23 @@ const shouldHide = (v: Verb): boolean => {
           </th>
           <th>
             {{ TRANSITIVITY_JA[v.transitivity] || v.transitivity }}
+          </th>
+          <th>
+            <div class="copy-wrapper">
+              <button 
+                type="button" 
+                class="copy-btn"
+                @click="copyToClipboard(getTextToCopy(v), `${v.kanaStart}-${v.kanaEnd}`)"
+                title="Copy"
+              >
+                <span class="copy-icon">📋</span>
+              </button>
+              <transition name="copy-fade">
+                <span v-if="copiedStates[`${v.kanaStart}-${v.kanaEnd}`]" class="copy-success">
+                  コピーしました
+                </span>
+              </transition>
+            </div>
           </th>
         </tr>
         </tbody>
