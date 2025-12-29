@@ -40,6 +40,17 @@ const selectedGojuuon = computed({
 const toggleGojuuon = (char: string) => {
   selectedGojuuon.value = selectedGojuuon.value === char ? '' : char
 }
+
+// ===== Check if a row has any enabled buttons =====
+const isRowEnabled = (row: readonly string[]): boolean => {
+  // If no disabledChars provided, all rows are enabled
+  if (!props.disabledChars || Object.keys(props.disabledChars).length === 0) {
+    return true
+  }
+  
+  // Check if at least one character in the row is enabled
+  return row.some(char => props.disabledChars[char] !== false)
+}
 </script>
 
 <template>
@@ -47,6 +58,7 @@ const toggleGojuuon = (char: string) => {
     <div
         v-for="(row, rowIdx) in GOJUUON_ROWS"
         :key="rowIdx"
+        v-show="isRowEnabled(row)"
         class="gojuuon-row"
         :class="{ 'gojuuon-row-3-chars': row.length === 3 }"
     >
