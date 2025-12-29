@@ -359,7 +359,16 @@ const getRenyoukei = (v: Verb): string => {
 // ===== Copy Function with Success Feedback =====
 const copiedStates = ref<Record<string, boolean>>({})
 
-const copyToClipboard = async (text: string, verbKey: string) => {
+const copyToClipboard = async (text: string, verbKey: string, event?: Event) => {
+  if (event) {
+    event.stopPropagation() // Prevent event bubbling
+  }
+  
+  // Prevent duplicate triggers
+  if (copiedStates.value[verbKey]) {
+    return
+  }
+  
   try {
     await navigator.clipboard.writeText(text)
     // Show success message
@@ -519,13 +528,17 @@ const shouldHide = (v: Verb): boolean => {
                 <button 
                   type="button" 
                   class="copy-btn"
-                  @click="copyToClipboard(getTextToCopy(v), `${v.kanaStart}-${v.kanaEnd}`)"
+                  @click="copyToClipboard(getTextToCopy(v), `${v.kanjiStart[0]}-${v.kanaEnd}`, $event)"
                   title="Copy"
                 >
                   <span class="copy-icon">📋</span>
                 </button>
                 <transition name="copy-fade">
-                  <span v-if="copiedStates[`${v.kanaStart}-${v.kanaEnd}`]" class="copy-success">
+                  <span 
+                    v-if="copiedStates[`${v.kanjiStart[0]}-${v.kanaEnd}`]"
+                    :key="`copy-${v.kanjiStart[0]}-${v.kanaEnd}`"
+                    class="copy-success"
+                  >
                     コピーしました
                   </span>
                 </transition>
