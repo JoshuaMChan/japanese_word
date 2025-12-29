@@ -4,8 +4,8 @@
     font-size: 0.9em;
     font-family: sans-serif;
     min-width: 400px;
-    width: auto; /* Auto width based on content */
-    max-width: 100%; /* Don't exceed container width */
+    width: max-content; /* Width based on maximum content across all pages */
+    max-width: calc(100vw - 250px); /* Don't exceed viewport width minus sidebar space */
     box-shadow: 0 0 20px rgba(0, 12, 0, 0.15);
 }
 
@@ -42,35 +42,30 @@
     min-height: 3.5em; /* Fixed min-height to prevent height changes when content is hidden */
 }
 
-/* Fixed column widths for verb table to prevent width changes when switching pages */
+/* Column widths for verb table - use fixed widths to maintain consistency */
 .styled-table thead th:nth-child(1),
 .styled-table tbody th:nth-child(1) {
-    min-width: 200px; /* 動詞 */
-    width: auto;
+    width: 220px; /* 動詞 - fixed width */
 }
 
 .styled-table thead th:nth-child(2),
 .styled-table tbody th:nth-child(2) {
-    min-width: 150px; /* 連用形 */
-    width: auto;
+    width: 180px; /* 連用形 - fixed width */
 }
 
 .styled-table thead th:nth-child(3),
 .styled-table tbody th:nth-child(3) {
-    min-width: 250px; /* アクセント */
-    width: auto;
+    width: 280px; /* アクセント - fixed width */
 }
 
 .styled-table thead th:nth-child(4),
 .styled-table tbody th:nth-child(4) {
-    min-width: 100px; /* 自他動詞 */
-    width: auto;
+    width: 120px; /* 自他動詞 - fixed width */
 }
 
 .styled-table thead th:nth-child(5),
 .styled-table tbody th:nth-child(5) {
-    min-width: 60px; /* Copy button */
-    width: auto;
+    width: 80px; /* Copy button - fixed width */
 }
 
 .styled-table tbody tr.active-row {

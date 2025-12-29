@@ -7,9 +7,12 @@ import { conjugate, Conjugation } from '../utils/conjugation.ts'
 import { TRANSITIVITY_JA } from '../constants/transitivity'
 import { iStem } from '../utils/gotan'
 import { romajiToHiragana, containsRomaji } from '../utils/romajiToKana'
+import { setCookie, getCookie } from '../utils/cookies'
 import Pagination from './Pagination.vue'
 import GojuuonPanel from './GojuuonPanel.vue'
 import SearchInput from './SearchInput.vue'
+
+const TAB_ID = 'verbs'
 
 const vocabulary = verbs as Verb[]
 
@@ -210,6 +213,40 @@ const gojuuonAvailability = computed(() => {
 // ===== Pagination State =====
 const currentPage = ref(1)
 
+// ===== Cookie Management =====
+const COOKIE_PREFIX = `tab_${TAB_ID}_`
+
+const saveStateToCookie = () => {
+  setCookie(`${COOKIE_PREFIX}search`, searchQuery.value)
+  setCookie(`${COOKIE_PREFIX}conjClass`, selectedConjClass.value)
+  setCookie(`${COOKIE_PREFIX}transitivity`, selectedTransitivity.value)
+  setCookie(`${COOKIE_PREFIX}accent`, selectedAccent.value)
+  setCookie(`${COOKIE_PREFIX}gojuuon`, selectedGojuuon.value)
+  setCookie(`${COOKIE_PREFIX}page`, currentPage.value.toString())
+  setCookie(`${COOKIE_PREFIX}conjugation`, conjugation.value)
+}
+
+const loadStateFromCookie = () => {
+  const savedSearch = getCookie(`${COOKIE_PREFIX}search`)
+  const savedConjClass = getCookie(`${COOKIE_PREFIX}conjClass`)
+  const savedTransitivity = getCookie(`${COOKIE_PREFIX}transitivity`)
+  const savedAccent = getCookie(`${COOKIE_PREFIX}accent`)
+  const savedGojuuon = getCookie(`${COOKIE_PREFIX}gojuuon`)
+  const savedPage = getCookie(`${COOKIE_PREFIX}page`)
+  const savedConjugation = getCookie(`${COOKIE_PREFIX}conjugation`)
+  
+  if (savedSearch !== null) searchQuery.value = savedSearch
+  if (savedConjClass !== null) selectedConjClass.value = savedConjClass
+  if (savedTransitivity !== null) selectedTransitivity.value = savedTransitivity
+  if (savedAccent !== null) selectedAccent.value = savedAccent
+  if (savedGojuuon !== null) selectedGojuuon.value = savedGojuuon
+  if (savedPage !== null) {
+    const page = parseInt(savedPage, 10)
+    if (!isNaN(page) && page > 0) currentPage.value = page
+  }
+  if (savedConjugation !== null) conjugation.value = savedConjugation as Conjugation
+}
+
 // ===== Pagination Computed =====
 const totalPages = computed(() => {
   return Math.ceil(filteredVocabulary.value.length / ROWS_PER_PAGE)
@@ -300,7 +337,20 @@ const handleKeyDown = (event: KeyboardEvent) => {
   }
 }
 
+// Watch for state changes and save to cookies (set up before onMounted)
+let isLoadingFromCookie = false
+watch([searchQuery, selectedConjClass, selectedTransitivity, selectedAccent, selectedGojuuon, currentPage, conjugation], () => {
+  if (!isLoadingFromCookie) {
+    saveStateToCookie()
+  }
+}, { deep: true })
+
 onMounted(() => {
+  // Load state from cookies
+  isLoadingFromCookie = true
+  loadStateFromCookie()
+  isLoadingFromCookie = false
+  
   kanjiTimer = window.setInterval(() => {
     kanjiTick.value++
   }, 5000)
