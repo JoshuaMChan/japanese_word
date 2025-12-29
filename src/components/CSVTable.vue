@@ -227,13 +227,16 @@ onUnmounted(() => {
   <div v-else-if="error" class="csv-error">{{ error }}</div>
   <div v-else class="layout">
     <div class="layout-main">
-      <!-- Search Input -->
-      <SearchInput
-        v-model="searchQuery"
-        :show-results="true"
-        :filtered-count="filteredRows.length"
-        :total-count="csvData.rows.length"
-      />
+      <!-- Filters -->
+      <div class="filters-container">
+        <!-- Search Input -->
+        <SearchInput
+          v-model="searchQuery"
+          :show-results="true"
+          :filtered-count="filteredRows.length"
+          :total-count="csvData.rows.length"
+        />
+      </div>
       
       <table class="styled-table sortable">
         <thead>
