@@ -145,6 +145,68 @@ const filteredVocabulary = computed(() => {
   return result
 })
 
+// ===== Compute vocabulary filtered by all filters except Gojuuon =====
+// This is used to determine which Gojuuon buttons should be disabled
+const vocabularyWithoutGojuuonFilter = computed(() => {
+  let result = vocabulary
+  
+  // Search filter
+  if (searchQuery.value.trim()) {
+    const query = searchQuery.value.trim().toLowerCase()
+    const kanaQuery = containsRomaji(query) ? romajiToHiragana(query) : query
+    result = result.filter(v => matchesSearchQuery(v, query, kanaQuery))
+  }
+  
+  // Conjugation class filter
+  if (selectedConjClass.value) {
+    result = result.filter(v => v.conjClass === selectedConjClass.value)
+  }
+  
+  // Transitivity filter
+  if (selectedTransitivity.value) {
+    result = result.filter(v => matchesTransitivity(v, selectedTransitivity.value))
+  }
+  
+  // Accent filter
+  if (selectedAccent.value) {
+    result = result.filter(v => v.accent.includes(selectedAccent.value))
+  }
+  
+  // Note: Gojuuon filter is intentionally excluded here
+  
+  return result
+})
+
+// ===== Compute which Gojuuon characters have results =====
+const gojuuonAvailability = computed(() => {
+  const availability: Record<string, boolean> = {}
+  const GOJUUON_CHARS = [
+    'あ', 'い', 'う', 'え', 'お',
+    'か', 'き', 'く', 'け', 'こ',
+    'が', 'ぎ', 'ぐ', 'げ', 'ご',
+    'さ', 'し', 'す', 'せ', 'そ',
+    'ざ', 'じ', 'ず', 'ぜ', 'ぞ',
+    'た', 'ち', 'つ', 'て', 'と',
+    'だ', 'ぢ', 'づ', 'で', 'ど',
+    'な', 'に', 'ぬ', 'ね', 'の',
+    'は', 'ひ', 'ふ', 'へ', 'ほ',
+    'ば', 'び', 'ぶ', 'べ', 'ぼ',
+    'ぱ', 'ぴ', 'ぷ', 'ぺ', 'ぽ',
+    'ま', 'み', 'む', 'め', 'も',
+    'や', 'ゆ', 'よ',
+    'ら', 'り', 'る', 'れ', 'ろ',
+    'わ', 'を', 'ん',
+  ]
+  
+  GOJUUON_CHARS.forEach(char => {
+    availability[char] = vocabularyWithoutGojuuonFilter.value.some(
+      v => v.kanaStart.startsWith(char)
+    )
+  })
+  
+  return availability
+})
+
 // ===== Pagination State =====
 const currentPage = ref(1)
 
@@ -481,7 +543,7 @@ const shouldHide = (v: Verb): boolean => {
       <div class="sidebar-sections-row">
         <!-- Gojuuon Filter Panel -->
         <div class="sidebar-section">
-          <GojuuonPanel v-model="selectedGojuuon" />
+          <GojuuonPanel v-model="selectedGojuuon" :disabled-chars="gojuuonAvailability" />
         </div>
         
         <!-- Conjugation form control panel -->

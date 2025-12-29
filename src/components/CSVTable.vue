@@ -10,9 +10,13 @@ interface Props {
   id: string
   displayName: string
   showGojuuon?: boolean
+  gojuuonFilterColumn?: number
 }
 
-const props = defineProps<Props>()
+const props = withDefaults(defineProps<Props>(), {
+  showGojuuon: false,
+  gojuuonFilterColumn: 0
+})
 
 const csvData = ref<CSVData>({headers: [], rows: []})
 const loading = ref(true)
@@ -44,11 +48,11 @@ const JUMP_PAGES = 10 // Number of pages to jump when clicking -/+ buttons
 const filteredRows = computed(() => {
   let result = csvData.value.rows
   
-  // Gojuuon filter (filter by first character of first cell)
+  // Gojuuon filter (filter by first character of specified column)
   if (selectedGojuuon.value) {
     result = result.filter(row => {
-      const firstCell = row[0] || ''
-      const normalizedCell = firstCell.replace(/＊/g, '').trim()
+      const filterCell = row[props.gojuuonFilterColumn] || ''
+      const normalizedCell = filterCell.replace(/＊/g, '').trim()
       return normalizedCell.startsWith(selectedGojuuon.value)
     })
   }
@@ -64,6 +68,58 @@ const filteredRows = computed(() => {
   }
   
   return result
+})
+
+// ===== Compute rows filtered by all filters except Gojuuon =====
+// This is used to determine which Gojuuon buttons should be disabled
+const rowsWithoutGojuuonFilter = computed(() => {
+  let result = csvData.value.rows
+  
+  // Search filter
+  if (searchQuery.value.trim()) {
+    const query = searchQuery.value.trim().toLowerCase()
+    const kanaQuery = containsRomaji(query) ? romajiToHiragana(query) : query
+    
+    result = result.filter(row =>
+      row.some(cell => matchesCellContent(cell, query, kanaQuery))
+    )
+  }
+  
+  // Note: Gojuuon filter is intentionally excluded here
+  
+  return result
+})
+
+// ===== Compute which Gojuuon characters have results =====
+const gojuuonAvailability = computed(() => {
+  const availability: Record<string, boolean> = {}
+  const GOJUUON_CHARS = [
+    'あ', 'い', 'う', 'え', 'お',
+    'か', 'き', 'く', 'け', 'こ',
+    'が', 'ぎ', 'ぐ', 'げ', 'ご',
+    'さ', 'し', 'す', 'せ', 'そ',
+    'ざ', 'じ', 'ず', 'ぜ', 'ぞ',
+    'た', 'ち', 'つ', 'て', 'と',
+    'だ', 'ぢ', 'づ', 'で', 'ど',
+    'な', 'に', 'ぬ', 'ね', 'の',
+    'は', 'ひ', 'ふ', 'へ', 'ほ',
+    'ば', 'び', 'ぶ', 'べ', 'ぼ',
+    'ぱ', 'ぴ', 'ぷ', 'ぺ', 'ぽ',
+    'ま', 'み', 'む', 'め', 'も',
+    'や', 'ゆ', 'よ',
+    'ら', 'り', 'る', 'れ', 'ろ',
+    'わ', 'を', 'ん',
+  ]
+  
+  GOJUUON_CHARS.forEach(char => {
+    availability[char] = rowsWithoutGojuuonFilter.value.some(row => {
+      const filterCell = row[props.gojuuonFilterColumn] || ''
+      const normalizedCell = filterCell.replace(/＊/g, '').trim()
+      return normalizedCell.startsWith(char)
+    })
+  })
+  
+  return availability
 })
 
 // ===== Pagination State =====
@@ -210,7 +266,7 @@ onUnmounted(() => {
     <!-- Right: Gojuuon Filter Panel -->
     <aside v-if="showGojuuon" class="layout-sidebar">
       <div class="sidebar-section">
-        <GojuuonPanel v-model="selectedGojuuon" />
+        <GojuuonPanel v-model="selectedGojuuon" :disabled-chars="gojuuonAvailability" />
       </div>
     </aside>
   </div>

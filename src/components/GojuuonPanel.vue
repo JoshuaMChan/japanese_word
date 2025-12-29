@@ -3,9 +3,12 @@ import { computed } from 'vue'
 
 interface Props {
   modelValue: string
+  disabledChars?: Record<string, boolean>
 }
 
-const props = defineProps<Props>()
+const props = withDefaults(defineProps<Props>(), {
+  disabledChars: () => ({})
+})
 const emit = defineEmits<{
   'update:modelValue': [value: string]
 }>()
@@ -52,7 +55,11 @@ const toggleGojuuon = (char: string) => {
           :key="char"
           type="button"
           class="gojuuon-btn"
-          :class="{ active: selectedGojuuon === char }"
+          :class="{ 
+            active: selectedGojuuon === char,
+            disabled: props.disabledChars && props.disabledChars[char] === false
+          }"
+          :disabled="props.disabledChars && props.disabledChars[char] === false"
           @click="toggleGojuuon(char)"
       >
         {{ char }}
@@ -124,9 +131,20 @@ const toggleGojuuon = (char: string) => {
 }
 
 .gojuuon-btn.active {
-  border-color: #009879;
-  background-color: #009879;
-  color: #fff;
+    border-color: #009879;
+    background-color: #009879;
+    color: #fff;
+}
+
+.gojuuon-btn.disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    background-color: #f5f5f5;
+}
+
+.gojuuon-btn.disabled:hover {
+    border-color: #ccc;
+    background-color: #f5f5f5;
 }
 </style>
 

@@ -7,11 +7,12 @@ import CSVTable from "./components/CSVTable.vue";
 interface CSVModuleConfig {
   id: string
   displayName: string
+  gojuuonFilterColumn?: number
 }
 
 // ===== CSV Module List =====
 const csvModules: CSVModuleConfig[] = [
-  { id: 'compound', displayName: '複合動詞' },
+  { id: 'compound', displayName: '複合動詞', gojuuonFilterColumn: 1 },
   { id: 'honorific', displayName: '敬語の動詞' },
   { id: 'ki', displayName: '気の動詞' },
   { id: 'unit', displayName: '数え方' },
@@ -84,6 +85,7 @@ onMounted(() => {
           :id="module.id"
           :displayName="module.displayName"
           :showGojuuon="module.id === csvModules[0].id"
+          :gojuuonFilterColumn="module.gojuuonFilterColumn"
         />
       </div>
     </template>
