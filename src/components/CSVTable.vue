@@ -2,7 +2,6 @@
 import {ref, onMounted, onUnmounted, computed, watch} from 'vue'
 import {parseCSV, CSVData} from '../utils/csvParser'
 import { romajiToHiragana, containsRomaji } from '../utils/romajiToKana'
-import { setCookie, getCookie } from '../utils/cookies'
 import Pagination from './Pagination.vue'
 import GojuuonPanel from './GojuuonPanel.vue'
 import SearchInput from './SearchInput.vue'
@@ -126,28 +125,6 @@ const gojuuonAvailability = computed(() => {
 // ===== Pagination State =====
 const currentPage = ref(1)
 
-// ===== Cookie Management =====
-const COOKIE_PREFIX = `tab_${props.id}_`
-
-const saveStateToCookie = () => {
-  setCookie(`${COOKIE_PREFIX}search`, searchQuery.value)
-  setCookie(`${COOKIE_PREFIX}gojuuon`, selectedGojuuon.value)
-  setCookie(`${COOKIE_PREFIX}page`, currentPage.value.toString())
-}
-
-const loadStateFromCookie = () => {
-  const savedSearch = getCookie(`${COOKIE_PREFIX}search`)
-  const savedGojuuon = getCookie(`${COOKIE_PREFIX}gojuuon`)
-  const savedPage = getCookie(`${COOKIE_PREFIX}page`)
-  
-  if (savedSearch !== null) searchQuery.value = savedSearch
-  if (savedGojuuon !== null) selectedGojuuon.value = savedGojuuon
-  if (savedPage !== null) {
-    const page = parseInt(savedPage, 10)
-    if (!isNaN(page) && page > 0) currentPage.value = page
-  }
-}
-
 // ===== Pagination Computed =====
 const totalPages = computed(() => {
   return Math.ceil(filteredRows.value.length / ROWS_PER_PAGE)
@@ -212,20 +189,7 @@ const handleKeyDown = (event: KeyboardEvent) => {
   }
 }
 
-// Watch for state changes and save to cookies (set up before onMounted)
-let isLoadingFromCookie = false
-watch([searchQuery, selectedGojuuon, currentPage], () => {
-  if (!isLoadingFromCookie) {
-    saveStateToCookie()
-  }
-}, { deep: true })
-
 onMounted(async () => {
-  // Load state from cookies
-  isLoadingFromCookie = true
-  loadStateFromCookie()
-  isLoadingFromCookie = false
-  
   // Add keyboard event listener
   window.addEventListener('keydown', handleKeyDown)
   
