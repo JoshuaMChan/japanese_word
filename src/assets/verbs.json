@@ -16,6 +16,18 @@
     "transitivity": "VI"
   },
   {
+    "kanaStart": "あお",
+    "kanjiStart": [
+      "扇"
+    ],
+    "kanaEnd": "ぐ",
+    "accent": [
+      "NAKA"
+    ],
+    "conjClass": "GODAN",
+    "transitivity": "VT"
+  },
+  {
     "kanaStart": "あ",
     "kanjiStart": [
       "上",
@@ -37,6 +49,33 @@
     "kanaEnd": "める",
     "accent": [
       "NAKA"
+    ],
+    "conjClass": "SHIMO_ICHIDAN",
+    "transitivity": "VI"
+  },
+  {
+    "kanaStart": "あ",
+    "kanjiStart": [
+      "飽",
+      "厭",
+      "倦"
+    ],
+    "kanaEnd": "きる",
+    "accent": [
+      "NAKA"
+    ],
+    "conjClass": "KAMI_ICHIDAN",
+    "transitivity": "VI"
+  },
+  {
+    "kanaStart": "あき",
+    "kanjiStart": [
+      "呆",
+      "惘"
+    ],
+    "kanaEnd": "れる",
+    "accent": [
+      "ODA"
     ],
     "conjClass": "SHIMO_ICHIDAN",
     "transitivity": "VI"
@@ -82,6 +121,69 @@
     ],
     "conjClass": "SHIMO_ICHIDAN",
     "transitivity": "VT"
+  },
+  {
+    "kanaStart": "あこが",
+    "kanjiStart": [
+      "憧",
+      "憬"
+    ],
+    "kanaEnd": "れる",
+    "accent": [
+      "ODA"
+    ],
+    "conjClass": "SHIMO_ICHIDAN",
+    "transitivity": "VI"
+  },
+
+  {
+    "kanaStart": "あじ",
+    "kanjiStart": [
+      "味"
+    ],
+    "kanaEnd": "わう",
+    "accent": [
+      "NAKA"
+    ],
+    "conjClass": "GODAN",
+    "transitivity": "VT"
+  },
+  {
+    "kanaStart": "あず",
+    "kanjiStart": [
+      "預"
+    ],
+    "kanaEnd": "かる",
+    "accent": [
+      "NAKA"
+    ],
+    "conjClass": "GODAN",
+    "transitivity": "VT"
+  },
+  {
+    "kanaStart": "あず",
+    "kanjiStart": [
+      "預"
+    ],
+    "kanaEnd": "ける",
+    "accent": [
+      "NAKA"
+    ],
+    "conjClass": "SHIMO_ICHIDAN",
+    "transitivity": "VT"
+  },
+  {
+    "kanaStart": "あせ",
+    "kanjiStart": [
+      "焦",
+      "急"
+    ],
+    "kanaEnd": "る",
+    "accent": [
+      "NAKA"
+    ],
+    "conjClass": "GODAN",
+    "transitivity": "VI"
   },
   {
     "kanaStart": "あそ",
@@ -147,6 +249,18 @@
     "transitivity": "VI"
   },
   {
+    "kanaStart": "あつか",
+    "kanjiStart": [
+      "扱"
+    ],
+    "kanaEnd": "う",
+    "accent": [
+      "ODA"
+    ],
+    "conjClass": "GODAN",
+    "transitivity": "VT"
+  },
+  {
     "kanaStart": "あつ",
     "kanjiStart": [
       "集"
@@ -184,6 +298,18 @@
     "transitivity": "VT"
   },
   {
+    "kanaStart": "あば",
+    "kanjiStart": [
+      "暴"
+    ],
+    "kanaEnd": "れる",
+    "accent": [
+      "ODA"
+    ],
+    "conjClass": "SHIMO_ICHIDAN",
+    "transitivity": "VI"
+  },
+  {
     "kanaStart": "あ",
     "kanjiStart": [
       "浴"
@@ -193,6 +319,31 @@
       "ODA"
     ],
     "conjClass": "KAMI_ICHIDAN",
+    "transitivity": "VT"
+  },
+  {
+    "kanaStart": "あふ",
+    "kanjiStart": [
+      "溢"
+    ],
+    "kanaEnd": "れる",
+    "accent": [
+      "NAKA"
+    ],
+    "conjClass": "SHIMO_ICHIDAN",
+    "transitivity": "VI"
+  },
+  {
+    "kanaStart": "あぶ",
+    "kanjiStart": [
+      "炙",
+      "焙"
+    ],
+    "kanaEnd": "る",
+    "accent": [
+      "NAKA"
+    ],
+    "conjClass": "GODAN",
     "transitivity": "VT"
   },
   {
@@ -208,6 +359,18 @@
     "transitivity": "VI"
   },
   {
+    "kanaStart": "あま",
+    "kanjiStart": [
+      "甘"
+    ],
+    "kanaEnd": "やかす",
+    "accent": [
+      "NAKA"
+    ],
+    "conjClass": "GODAN",
+    "transitivity": "VT"
+  },
+  {
     "kanaStart": "あやま",
     "kanjiStart": [
       "謝",
@@ -221,6 +384,18 @@
     "transitivity": "VIT"
   },
   {
+    "kanaStart": "あ",
+    "kanjiStart": [
+      "編"
+    ],
+    "kanaEnd": "む",
+    "accent": [
+      "ATA"
+    ],
+    "conjClass": "GODAN",
+    "transitivity": "VT"
+  },
+  {
     "kanaStart": "あら",
     "kanjiStart": [
       "洗"
@@ -228,6 +403,18 @@
     "kanaEnd": "う",
     "accent": [
       "ODA"
+    ],
+    "conjClass": "GODAN",
+    "transitivity": "VT"
+  },
+  {
+    "kanaStart": "あらそ",
+    "kanjiStart": [
+      "争"
+    ],
+    "kanaEnd": "う",
+    "accent": [
+      "NAKA"
     ],
     "conjClass": "GODAN",
     "transitivity": "VT"
@@ -298,6 +485,30 @@
       "NAKA"
     ],
     "conjClass": "GODAN",
+    "transitivity": "VI"
+  },
+  {
+    "kanaStart": "あ",
+    "kanjiStart": [
+      "荒"
+    ],
+    "kanaEnd": "れる",
+    "accent": [
+      "ODA"
+    ],
+    "conjClass": "SHIMO_ICHIDAN",
+    "transitivity": "VI"
+  },
+  {
+    "kanaStart": "あわ",
+    "kanjiStart": [
+      "荒"
+    ],
+    "kanaEnd": "てる",
+    "accent": [
+      "ODA"
+    ],
+    "conjClass": "SHIMO_ICHIDAN",
     "transitivity": "VI"
   },
   {
