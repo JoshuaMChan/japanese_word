@@ -627,6 +627,32 @@
     "transitivity": "VT"
   },
   {
+    "kanaStart": "いた",
+    "kanjiStart": [
+      "至",
+      "到"
+    ],
+    "kanaEnd": "る",
+    "accent": [
+      "NAKA"
+    ],
+    "conjClass": "GODAN",
+    "transitivity": "VI"
+  },
+  {
+    "kanaStart": "いだ",
+    "kanjiStart": [
+      "抱",
+      "懐"
+    ],
+    "kanaEnd": "く",
+    "accent": [
+      "NAKA"
+    ],
+    "conjClass": "GODAN",
+    "transitivity": "VT"
+  },
+  {
     "kanaStart": "いの",
     "kanjiStart": [
       "祈",
@@ -639,6 +665,19 @@
     "conjClass": "GODAN",
     "transitivity": "VT"
   },
+  {
+    "kanaStart": "いば",
+    "kanjiStart": [
+      "威張"
+    ],
+    "kanaEnd": "る",
+    "accent": [
+      "NAKA"
+    ],
+    "conjClass": "GODAN",
+    "transitivity": "VI"
+  },
+
   {
     "kanaStart": "い",
     "kanjiStart": [
@@ -667,6 +706,20 @@
   {
     "kanaStart": "い",
     "kanjiStart": [
+      "炒",
+      "熬",
+      "煎"
+    ],
+    "kanaEnd": "る",
+    "accent": [
+      "ATA"
+    ],
+    "conjClass": "GODAN",
+    "transitivity": "VT"
+  },
+  {
+    "kanaStart": "い",
+    "kanjiStart": [
       "入",
       "淹"
     ],
@@ -675,6 +728,18 @@
       "ODA"
     ],
     "conjClass": "SHIMO_ICHIDAN",
+    "transitivity": "VT"
+  },
+  {
+    "kanaStart": "いわ",
+    "kanjiStart": [
+      "祝"
+    ],
+    "kanaEnd": "う",
+    "accent": [
+      "NAKA"
+    ],
+    "conjClass": "GODAN",
     "transitivity": "VT"
   },
   {
