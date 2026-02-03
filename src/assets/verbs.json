@@ -1,21 +1,4 @@
 [
-
-  {
-    "kanaStart": "あ",
-    "kanjiStart": [
-      "会",
-      "合",
-      "遭",
-      "遇",
-      "逢"
-    ],
-    "kanaEnd": "う",
-    "accent": [
-      "ATA"
-    ],
-    "conjClass": "GODAN",
-    "transitivity": "VI"
-  },
   {
     "kanaStart": "あ",
     "kanjiStart": [
@@ -55,7 +38,7 @@
     "accent": [
       "ODA"
     ],
-    "conjClass": "SHIMO_ICHIDAN",
+    "conjClass": "GODAN",
     "transitivity": "VI"
   },
   {
@@ -68,7 +51,7 @@
       "NAKA"
     ],
     "conjClass": "SHIMO_ICHIDAN",
-    "transitivity": "VI"
+    "transitivity": "VT"
   },
   {
     "kanaStart": "あ",
@@ -481,7 +464,6 @@
     "kanaStart": "あ",
     "kanjiStart": [
       "有",
-      "或",
       "在"
     ],
     "kanaEnd": "る",
@@ -735,6 +717,20 @@
   {
     "kanaStart": "う",
     "kanjiStart": [
+      "飢",
+      "餓",
+      "饑"
+    ],
+    "kanaEnd": "える",
+    "accent": [
+      "NAKA"
+    ],
+    "conjClass": "SHIMO_ICHIDAN",
+    "transitivity": "VT"
+  },
+  {
+    "kanaStart": "う",
+    "kanjiStart": [
       "植"
     ],
     "kanaEnd": "える",
@@ -752,6 +748,57 @@
     "kanaEnd": "う",
     "accent": [
       "ODA"
+    ],
+    "conjClass": "GODAN",
+    "transitivity": "VT"
+  },
+  {
+    "kanaStart": "う",
+    "kanjiStart": [
+      "浮",
+      "泛"
+    ],
+    "kanaEnd": "かぶ",
+    "accent": [
+      "ODA"
+    ],
+    "conjClass": "GODAN",
+    "transitivity": "VI"
+  },
+  {
+    "kanaStart": "う",
+    "kanjiStart": [
+      "浮",
+      "泛"
+    ],
+    "kanaEnd": "かべる",
+    "accent": [
+      "ODA"
+    ],
+    "conjClass": "SHIMO_ICHIDAN",
+    "transitivity": "VT"
+  },
+  {
+    "kanaStart": "う",
+    "kanjiStart": [
+      "浮",
+      "泛"
+    ],
+    "kanaEnd": "く",
+    "accent": [
+      "ODA"
+    ],
+    "conjClass": "GODAN",
+    "transitivity": "VI"
+  },
+  {
+    "kanaStart": "うけたまわ",
+    "kanjiStart": [
+      "承"
+    ],
+    "kanaEnd": "る",
+    "accent": [
+      "NAKA"
     ],
     "conjClass": "GODAN",
     "transitivity": "VT"
@@ -1717,8 +1764,7 @@
   {
     "kanaStart": "き",
     "kanjiStart": [
-      "決",
-      "極"
+      "決"
     ],
     "kanaEnd": "まる",
     "accent": [
@@ -1730,8 +1776,7 @@
   {
     "kanaStart": "き",
     "kanjiStart": [
-      "決",
-      "極"
+      "決"
     ],
     "kanaEnd": "める",
     "accent": [
@@ -2127,7 +2172,7 @@
       "NAKA"
     ],
     "conjClass": "SHIMO_ICHIDAN",
-    "transitivity": "VI"
+    "transitivity": "VT"
   },
   {
     "kanaStart": "さ",
@@ -2230,7 +2275,7 @@
       "ODA"
     ],
     "conjClass": "GODAN",
-    "transitivity": "VIT"
+    "transitivity": "VI"
   },
   {
     "kanaStart": "しか",
@@ -2509,7 +2554,7 @@
     "accent": [
       "NAKA"
     ],
-    "conjClass": "KAMI_ICHIDAN",
+    "conjClass": "GODAN",
     "transitivity": "VI"
   },
   {
@@ -2708,7 +2753,7 @@
       "訪",
       "尋"
     ],
-    "kanaEnd": "れる",
+    "kanaEnd": "ねる",
     "accent": [
       "NAKA"
     ],
@@ -4496,8 +4541,7 @@
   {
     "kanaStart": "ふ",
     "kanjiStart": [
-      "振",
-      "震"
+      "振"
     ],
     "kanaEnd": "る",
     "accent": [
@@ -4510,7 +4554,6 @@
     "kanaStart": "ぶ",
     "kanjiStart": [
       "打",
-      "撃",
       "撲"
     ],
     "kanaEnd": "つ",
@@ -5269,11 +5312,11 @@
     "transitivity": "VI"
   },
   {
-    "kanaStart": "よせ",
+    "kanaStart": "よ",
     "kanjiStart": [
       "寄"
     ],
-    "kanaEnd": "る",
+    "kanaEnd": "せる",
     "accent": [
       "ODA"
     ],
@@ -5309,8 +5352,7 @@
   {
     "kanaStart": "よ",
     "kanjiStart": [
-      "寄",
-      "凭"
+      "寄"
     ],
     "kanaEnd": "る",
     "accent": [
